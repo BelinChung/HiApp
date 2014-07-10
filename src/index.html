@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<!--(if target dist)>
+{{banner}}
+<!(endif)-->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>HiApp</title>
+    
+    <!--(if target dev)><!-->
+    <link rel="stylesheet" href="style/css/app.css">
+    <!--<!(endif)-->
+    
+    <!--(if target dist)>
+      <link rel="stylesheet" href="style/css/hiapp.min.css?v={{rlsdate}}">
+    <!(endif)-->
+
+    <!--(if target dev)><!-->
+      <script type="text/javascript">
+          var $CONFIG = {};
+          $CONFIG['version'] = 'Test';
+          $CONFIG['release_time'] = 'Test';
+      </script>
+    <!--<!(endif)-->
+
+    <!--(if target dist)>
+    <script type="text/javascript">
+        var $CONFIG = {};
+        $CONFIG['version'] = '{{version}}';
+        $CONFIG['release_time'] = '{{rlsdate2}}';
+    </script>
+    <!(endif)-->
+  </head>
+  <body>
+        <div class="statusbar-overlay"></div>
+        <div class="panel-overlay"></div>
+    
+        <div class="views tabs toolbar-through">
+            <div id="ourView" class="view view-main tab active">
+               <div class="navbar">
+                 <div class="navbar-inner">
+                   
+                   <div class="left">
+                       <a href="#"  class="refresh-click link">
+                           <i class="icon ios7-reload"></i>
+                       </a>
+                   </div>
+                   
+                   <div class="center sliding">HiApp</div>
+                   
+                   <div class="right">
+                       <a href="#" data-popup=".send-popup" class="open-popup link icon-only">
+                           <i class="icon ios7-compose-outline"></i>
+                       </a>
+                   </div>
+
+                 </div>
+               </div>
+               <div class="pages navbar-through">
+                 <div data-page="ourView" class="page">
+                   <div data-distance="50" class="page-content pull-to-refresh-content infinite-scroll">
+                     <div class="pull-to-refresh-layer">
+                       <div class="preloader"></div>
+                       <div class="pull-to-refresh-arrow"></div>
+                     </div>
+                     <div class="list-block media-list">
+                       <ul class="time-line-content">
+                         
+                       </ul>
+                       
+                     </div>
+                   </div>
+                 </div>
+               </div> 
+            </div>
+
+            <div id="contatcView" class="view tab">
+
+                <div class="navbar">
+                    <div class="navbar-inner">
+
+                        <div class="center sliding">HiApp</div>
+
+                    </div>
+                </div>
+
+                <div class="pages navbar-through">
+                    <div data-page="contatcView" class="page contact-page">
+                        <!-- Search bar -->
+                        <form class="searchbar" data-search-list=".contacts-list" data-search-in=".item-title">
+                            <div class="searchbar-input">
+                                <input type="search" placeholder="Search">
+                                <a href="#" class="searchbar-clear"></a>
+                            </div>
+                            <a href="#" class="searchbar-cancel">Cancel</a>
+                        </form>
+
+                        <!-- Search bar overlay-->
+                        <div class="searchbar-overlay"></div>
+
+                        <div class="page-content">
+                            <div class="list-block media-list contacts-list searchbar-found">
+                                <div class="list-group">
+                                    <ul></ul>
+                                </div>
+                            </div>
+                            <div class="content-block searchbar-not-found">
+                                Nothing found
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="settingView" class="view tab">
+                <div class="navbar">
+                    <div class="navbar-inner">
+
+                    <div class="center sliding">HiApp</div>
+
+                    </div>
+                </div>
+                <div class="pages navbar-through">
+                    <div data-page="setting" class="page">
+                        <div class="page-content">
+                            <div class="setting-page list-block">
+                                <ul>
+                                    <li id="userInfo">
+                                        
+                                    </li>
+                                    <li>
+                                        <a href="page/feedback.html" class="item-link">
+                                            <div class="item-content">
+                                                <div class="item-media feedback spring"></div>
+                                                <div class="item-inner">
+                                                    <div class="item-title">意见反馈</div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="update-button item-link">
+                                            <div class="item-content">
+                                                <div class="item-media update spring"></div>
+                                                <div class="item-inner">
+                                                    <div class="item-title">检测更新</div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="page/about.html" class="item-link">
+                                            <div class="item-content">
+                                                <div class="item-media about spring"></div>
+                                                <div class="item-inner">
+                                                    <div class="item-title">关于HiApp</div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <a href="#" class="button button-big button-cancel logout-button">退出登录</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+   
+            </div>
+            
+            <!-- toolbar start -->
+            <div class="toolbar tabbar tabbar-labels">
+                <div class="toolbar-inner">
+                    <a href="#ourView" class="tab-link active">
+                        <i class="icon ios7-home-outline"></i>
+                        <span class="tabbar-label">动态</span>
+                    </a>
+
+                    <a href="#contatcView" class="tab-link">
+                        <i class="icon ios7-chatbubble-outline"></i>
+                        <span class="tabbar-label">联系人</span>
+                    </a>
+
+                    <a href="#settingView" class="tab-link">
+                        <i class="icon ios7-gear-outline">
+                            <!-- <span class="badge badge-red">4</span> -->
+                        </i>
+                        <span class="tabbar-label">设置</span>
+                    </a>
+                </div>
+            </div>
+            <!-- toolbar end -->
+        </div>
+
+
+        <div class="send-popup popup">
+            <div class="view navbar-fixed">
+                <div class="page">
+                      <div class="navbar">
+                        <div class="navbar-inner">
+                          <div class="left"><a href="#" class="link close-popup">取消</a></div>
+                          <div class="center">发动态</div>
+                          <div class="right"><a id="sendWeiboBtn" href="#" class="link orange">发送</a></div>
+                        </div>
+                      </div>
+                      <div class="page-content message-content">
+                        
+                        <div class="message-input">
+                            <textarea id="messageText" placeholder="呃，说点什么吧..."></textarea>  
+                        </div>
+
+                        <div class="message-tools">
+                            <ul>
+                                <li><i class="icon ios7-camera-outline"></i></li>
+                                <li class="upload-file">
+                                    <i class="icon ios7-pic"></i>
+                                    <input type="file" id="fileInput" name="upfile" class="file-input"/>
+                                </li>
+                                <li><i class="icon ios7-emotion"></i></li>
+                                <li><i class="icon ios7-at-outline"></i></li>
+                                <li class="get-position"><i class="icon ios7-dingxiang"></i></li>
+                            </ul>
+                        </div>
+
+                        <div id="geoInfo" class="geo-info">
+                            <div class="location"><i class="icon icon-load-a"></i> 正在获取您所在的位置...</div>
+                            <div class="close"><i class="icon ios7-close"></i></div>
+                        </div>
+
+                        <div id="uploadPicPreview" class="upload-pic-preview">
+                            <img src="" alt="" />
+                        </div>
+
+                      </div>
+                </div>
+            </div>
+        </div>
+
+
+        
+        <!--(if target dev)><!-->
+        <script data-main="script/main" src="vendors/require/require.js"></script>
+        <!--<!(endif)-->
+        
+        <!--(if target dist)>
+          <script data-main="script/hiapp.min" src="script/require.min.js?v={{rlsdate}}"></script>
+        <!(endif)-->
+
+  </body>
+  
+</html>

@@ -1,0 +1,16 @@
+{
+    "err_code": 0,
+    "err_msg": "success",
+    "data": {
+        "sid": "e651771fe37dc17c17421331a87721",
+        "user": {
+            "id": "10001",
+            "loginName": "10001@qq.com",
+            "nickName": "HiApp",
+            "points": "267",
+            "avatarUrl": "style/img/avatar/avatar01.jpg",
+            "gender": "m",
+            "location": "GuangZhou"
+        }
+    }
+}

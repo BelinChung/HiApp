@@ -1,0 +1,30 @@
+{
+    "err_code": 0,
+    "err_msg": "success",
+    "data": [
+        {
+            "avatar":"01",
+            "name":"不要相信我",
+            "text":"我是沙发！",
+            "time":"1404705240"
+        },
+        {
+            "avatar":"02",
+            "name":"大彬老邢",
+            "text":"二楼大SB！",
+            "time":"1404705260"
+        },
+        {
+            "avatar":"03",
+            "name":"jackgor",
+            "text":"围观二楼！",
+            "time":"1404705300"
+        },
+        {
+            "avatar":"04",
+            "name":"rubyleung",
+            "text":"哈哈哈，二楼亮了！",
+            "time":"1404705400"
+        }
+    ]
+}

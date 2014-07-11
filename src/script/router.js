@@ -1,11 +1,11 @@
 define(['GS','controller/module'],function(GS,CM) {
 
     function init() {
-		$$(document).on('pageBeforeInit', function (e) {
-			var page = e.detail.page;
+        $$(document).on('pageBeforeInit', function (e) {
+            var page = e.detail.page;
             console.log(page);
-			load(page);
-		});
+            load(page);
+        });
 
         if(!GS.isLogin()){
             mainView.loadPage('page/login.html');
@@ -15,10 +15,10 @@ define(['GS','controller/module'],function(GS,CM) {
     }
 
 	function load(page) {
-        var cName = page.name;
+        var name = page.name;
         var query = page.query;
         var from = page.from;
-        switch (cName) {
+        switch (name) {
             case 'login':
                 if(from === 'left') return;
                 CM.module('loginCtrl').init();
@@ -46,7 +46,7 @@ define(['GS','controller/module'],function(GS,CM) {
         }
 	}
 
-	return {
+    return {
         init: init
     };
 });

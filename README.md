@@ -4,7 +4,7 @@
 HiApp
 =====
 
-A web app made with Framework7.With PhoneGap you can easily convert it to native iOS 7 app.
+A simple and interesting Framework7 web app.With PhoneGap you can easily convert it to native iOS 7 app.
 
 ## Depend
 

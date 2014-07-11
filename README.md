@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/BelinChung/HiApp.svg?branch=master)](https://travis-ci.org/BelinChung/HiApp)
 [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 
 HiApp
@@ -16,9 +17,9 @@ HiApp are developed using these libraries.
 
 ## Demo
 
-WebSite: [http://dearb.me/hi/]
+[http://dearb.me/hi/]
 
-QRCode: ![hiapp qrcode](http://dearb.u.qiniudn.com/hiapp_qrcode.png)
+![hiapp qrcode](http://dearb.u.qiniudn.com/hiapp_qrcode_small.png)
 
 ## Server
 

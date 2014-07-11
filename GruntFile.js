@@ -173,6 +173,7 @@ module.exports = function(grunt) {
     require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
     grunt.registerTask('default', ['clean', 'requirejs','less:production', 'uglify', 'targethtml:dist', 'copy']);
+    grunt.registerTask('test','Test of <%= pkg.name %>', ['clean', 'requirejs','less:production', 'uglify', 'targethtml:dist']);
     grunt.registerTask('server', ['connect:server', 'open:server', 'watch:server','less:development']);
 
 };  

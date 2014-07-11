@@ -20,5 +20,8 @@
         "matchdep": "latest",
         "grunt-contrib-connect": "latest",
         "grunt-contrib-less":"latest"
+    },
+    "scripts": {
+        "test": "grunt test"
     }
 }

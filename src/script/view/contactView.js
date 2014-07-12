@@ -31,7 +31,7 @@ define(['utils/appFunc','utils/tplManager'],function(appFunc,TM){
 
     function filterResult(e){
         $$('.contacts-list .list-group-title').each(function(){
-            if($$(this).next().css('display') === 'none'){
+            if($$(this).next('.contact-item').css('display') === 'none'){
                 $$(this).hide();
             }
         })

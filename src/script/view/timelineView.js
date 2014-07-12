@@ -62,6 +62,8 @@ define(['utils/appFunc','utils/tplManager'],function(appFunc,TM){
 
         setTimeout(function () {
 
+            $$('#ourView .refresh-click').find('i').removeClass('ios7-reloading');
+
             if(newestId == 48) {
                 console.log('没有刷新到新动态！');
                 hiApp.pullToRefreshDone();
@@ -83,6 +85,7 @@ define(['utils/appFunc','utils/tplManager'],function(appFunc,TM){
             }else{
                 console.log('没有刷新到新动态！');
             }
+
             hiApp.pullToRefreshDone();
 
         },1500)
@@ -123,11 +126,20 @@ define(['utils/appFunc','utils/tplManager'],function(appFunc,TM){
         }
     }
 
+    function beforeRefreshTimelineByClick(){
+        setTimeout(function(){
+            $$('#ourView .refresh-click ').find('i').addClass('ios7-reloading');
+            var ptrContent = $$('#ourView').find('.pull-to-refresh-content');
+            ptrContent.addClass('pull-up transitioning refreshing');
+        },350)
+    }
+
     return{
         init:init,
         getTimeline:getTimeline,
         clearSendPopup:clearSendPopup,
         refreshTimeline:refreshTimeline,
-        infiniteTimeline:infiniteTimeline
+        infiniteTimeline:infiniteTimeline,
+        beforeRefreshTimelineByClick:beforeRefreshTimelineByClick
     }
 });

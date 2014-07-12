@@ -37,6 +37,7 @@ define(['utils/appFunc','utils/tplManager'],function(appFunc,TM){
         hiApp.addMessage({
             text: messageText,
             type: 'sent',
+            avatar:'style/img/avatar/avatar01.jpg',
             day: !conversationStarted ? 'Today' : false,
             time: !conversationStarted ? (new Date()).getHours() + ':' + (new Date()).getMinutes() : false
         });
@@ -47,6 +48,7 @@ define(['utils/appFunc','utils/tplManager'],function(appFunc,TM){
         answerTimeout = setTimeout(function () {
             hiApp.addMessage({
                 text: answers[Math.floor(Math.random() * answers.length)],
+                avatar:'style/img/avatar/avatar02.jpg',
                 type: 'received'
             });
         }, 1300);

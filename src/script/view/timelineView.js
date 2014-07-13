@@ -47,7 +47,7 @@ define(['utils/appFunc','utils/tplManager'],function(appFunc,TM){
     }
 
     function refreshItemTime(){
-        $$('#ourView').find('.item-header .item-time').each(function(){
+        $$('#ourView').find('.item-header .detail .create-time').each(function(){
             var nowTime = appFunc.timeFormat($$(this).data('time'));
             $$(this).html(nowTime);
         })

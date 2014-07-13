@@ -1,11 +1,16 @@
 <script id="timelineTemplate" type="text/template" >
 {{#weibo}}
-<li data-id="{{id}}" data-mid="{{mid}}" class="item-content">
+<li data-id="{{id}}" data-mid="{{mid}}" class="item-content card-content">
   <a href="page/item.html?id={{id}}">
       <div class="item-inner">
         <div class="item-header">
-            <span class="item-id"># {{id}}</span>
-            <span data-time="{{created_at}}" class="item-time">{{time}}</span>
+            <div class="avatar">
+                <img data-avatarid="{{avatar}}" src="style/img/avatar/avatar{{avatar}}.jpg">
+            </div>
+            <div class="detail">
+                <p class="nickname">{{nickname}}</p>
+                <p data-time="{{created_at}}" class="create-time">{{time}}</p>
+            </div>
         </div>
 
         <div class="item-subtitle">
@@ -35,10 +40,15 @@
 </script>
 
 <script id="itemTemplate" type="text/template" >
-<div class="item-header">
-    <span data-mid="{{mid}}" class="item-id"># {{id}}</span>
-    <span data-time="{{created_at}}" class="item-time">{{time}}</span>
-</div>
+    <div class="item-header">
+        <div class="avatar">
+            <img src="style/img/avatar/avatar{{avatar}}.jpg">
+        </div>
+        <div class="detail">
+            <p class="nickname">{{nickname}}</p>
+            <p data-time="{{created_at}}" class="create-time">{{time}}</p>
+        </div>
+    </div>
 <div class="item-subtitle">
 {{text}}
 </div>

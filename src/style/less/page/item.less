@@ -1,40 +1,66 @@
+.card-content {
+  .item-header {
+    padding: 5px 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 13px;
+    margin: 0 10px;
+    overflow: hidden;
+
+    .avatar {
+      float: left;
+      width: 35px;
+      height: 35px;
+
+      > img {
+        width: 35px;
+        height: 35px;
+      }
+    }
+
+    .detail {
+      float: left;
+      margin-left: 10px;
+
+      > p {
+        margin: 0;
+      }
+
+      .nickname {
+        color: #ff9630;
+      }
+
+      .create-time {
+        font-size: 11px;
+        color: #999;
+      }
+    }
+
+    .item-time {
+      float: right;
+    }
+
+  }
+
+  .item-subtitle {
+    padding: 10px;
+    white-space: normal;
+  }
+
+  .item-image {
+    padding: 0 0 5px 10px;
+
+    > img {
+      max-width: 50%;
+      min-height: 150px;
+      border: 0;
+    }
+  }
+}
+
 .item-detail {
   .content-block {
     .content-block();
     margin-bottom: 10px;
-
-    .item-header {
-      padding: 5px 0;
-      border-bottom: 1px solid #f0f0f0;
-      font-size: 13px;
-      margin: 0 10px;
-      overflow: hidden;
-
-      .item-id {
-        float: left;
-        color: #ff9630;
-      }
-
-      .item-time {
-        float: right;
-      }
-
-    }
-
-    .item-subtitle {
-      padding: 10px;
-      white-space: normal;
-    }
-
-    .item-image {
-      padding: 0 0 5px 10px;
-
-      > img {
-        max-width: 50%;
-        min-height: 150px;
-        border: 0;
-      }
-    }
 
   }
 }

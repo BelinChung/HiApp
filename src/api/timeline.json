@@ -4,72 +4,96 @@
     "data": [
         {
             "id": "41",
+            "nickname":"不要相信我",
+            "avatar":"01",
             "text": "想问充值饭卡那里什么时候放假",
             "original_pic": "",
             "created_at": "1404709434"
         },
         {
             "id": "40",
+            "nickname":"chaoranlee",
+            "avatar":"07",
             "text": "有些女生找的男友长的帅，有些女生找的男友有钱，亲爱的，我不帅也没钱，你为什么还不离不弃",
             "original_pic": "",
             "created_at": "1404708544"
         },
         {
             "id": "39",
+            "nickname":"澄澄",
+            "avatar":"03",
             "text": "有考了大学物理的没，在作业上出题还是课件上，求透漏，求助攻，不想死在物理上 ",
             "original_pic": "",
             "created_at": "1404708455"
         },
         {
             "id": "38",
+            "nickname":"chan咔咔",
+            "avatar":"05",
             "text": "最近搜索WiFi怎么有个叫144FREE的，是什么东西？而且怎么CHinaNet都连不上的？",
             "original_pic": "http://ww3.sinaimg.cn/large/e910bd00jw1ei41sk9omtj20hs0vkwgv.jpg",
             "created_at": "1404707590"
         },
         {
             "id": "37",
+            "nickname":"大彬老邢",
+            "avatar":"07",
             "text": "有人知道现在哪里可以寄物流吗？想级行李回家，好重",
             "original_pic": "",
             "created_at": "1404707580"
         },
         {
             "id": "36",
+            "nickname":"火焱燚炎",
+            "avatar":"04",
             "text": "下午外语楼有考试么？想去自习。",
             "original_pic": "",
             "created_at": "1404707197"
         },
         {
             "id": "35",
+            "nickname":"含羞草佩文",
+            "avatar":"08",
             "text": "【转山地车】 之前720买的，用了一年多，360，半价转了 双碟刹，指拨也是比较好的 ",
             "original_pic": "http://ww3.sinaimg.cn/large/e910bd00jw1ei3hrq0babj20qo0k00x9.jpg",
             "created_at": "1404706070"
         },
         {
             "id": "34",
+            "nickname":"jackgor",
+            "avatar":"03",
             "text": "9号去市区看变4会不会有很多人？想去工影看呢~~",
             "original_pic": "",
             "created_at": "1404706060"
         },
         {
             "id": "33",
+            "nickname":"极品鸭子",
+            "avatar":"06",
             "text": "这些书用不着扔了可惜，就送人吧。剩下的，话筒2元，英语接收机、口琴5元一件。哦，台灯木有灯泡，还挺新的，谁要送你。",
             "original_pic": "http://ww4.sinaimg.cn/large/e910bd00jw1ei3dotoc21j21kw16oamd.jpg",
             "created_at": "1404705260"
         },
         {
             "id": "32",
+            "nickname":"kobe",
+            "avatar":"06",
             "text": "有一部大黄蜂手机。买的时候是670，现在屏幕坏了、、、50有人要么？换一个屏幕能用！了631485",
             "original_pic": "",
             "created_at": "1404705240"
         },
         {
             "id": "31",
+            "nickname":"Kamwing",
+            "avatar":"10",
             "text": "我想问大家一下，如果一个女生还没开始谈恋爱，不过同时与几个男生走得挺近的，而且自己也明白他们是想追自己的，男生的话，会怎么看这个女生呢？？",
             "original_pic": "",
             "created_at": "1404705133"
         },
         {
             "id": "30",
+            "nickname":"longyili",
+            "avatar":"10",
             "text": "今天考古代文学史中本班两个大男生作弊，考虑过我这个为了考试只睡两个小时的人的感受么，要不是觉得读了这么久的书，这样被退学很可惜，真心不想忍",
             "original_pic": "",
             "created_at": "1404704742"

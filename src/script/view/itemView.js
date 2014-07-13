@@ -14,8 +14,9 @@ define(['utils/appFunc','utils/tplManager'],function(appFunc,TM){
 
         var item = [];
         item['id'] = $this.data('id');
-        item['mid'] = $this.data('mid');
-        item['time'] = appFunc.timeFormat($this.find('.item-header .item-time').data('time'));
+        item['nickname'] = $this.find('.item-header .detail .nickname').html();
+        item['avatar'] = $this.find('.item-header .avatar>img').data('avatarid');
+        item['time'] = appFunc.timeFormat($this.find('.item-header .detail .create-time').data('time'));
         item['text'] = $this.find('.item-subtitle').html();
 
         if($this.find('.item-image img')[0])

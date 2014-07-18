@@ -3,7 +3,7 @@ define(['utils/appFunc','view/module'],function(appFunc,VM){
     var bindings = [{
         element: '.back2setting',
         event: 'click',
-        handler: VM.module('feedbackView').showToolbar
+        handler: VM.module('appView').showToolbar
     },{
         element: '.send-feedback',
         event: 'click',

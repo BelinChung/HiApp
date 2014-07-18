@@ -1,4 +1,4 @@
-define(['utils/appFunc'],function(appFunc){
+define(['utils/appFunc','i18n!nls/lang','utils/tplManager'],function(appFunc,i18n,TM){
 
     function init(params){
         appFunc.bindEvents(params.bindings);
@@ -6,21 +6,27 @@ define(['utils/appFunc'],function(appFunc){
         appFunc.hideToolbar('.views');
     }
 
-    function showToolbar(){
-        appFunc.showToolbar('.views');
-    }
-
     function sendFeedback(){
-        hiApp.showPreloader('正在发送...');
+        hiApp.showPreloader(i18n.index.sending);
         setTimeout(function(){
             hiApp.hidePreloader();
-            hiApp.alert('感谢您的反馈，我们将尽快与您联系！');
+            hiApp.alert(i18n.setting.feed_back_result);
         },1000);
+    }
+
+    function i18next(content){
+        var renderData = [];
+        renderData['feedBack'] = i18n.setting.feed_back;
+        renderData['feedBackPlaceholder'] = i18n.setting.feed_back_placeholder;
+
+        var output = TM.renderTpl(content,renderData);
+
+        return output;
     }
 
     return{
         init:init,
-        showToolbar:showToolbar,
-        sendFeedback:sendFeedback
+        sendFeedback:sendFeedback,
+        i18next:i18next
     }
 });

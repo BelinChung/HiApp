@@ -1,0 +1,71 @@
+{
+    "err_code": 0,
+    "err_msg": "success",
+    "data": [
+
+            {
+                "date":"7月9号 12:58",
+                "text": "最近过的咋样？",
+                "from": "sent"
+            },
+            {
+                "text": "嗯",
+                "from": "received"
+            },
+            {
+                "text": "还好吧，你呢？",
+                "from": "received"
+            },
+            {
+                "text": "还算不错！",
+                "from": "sent"
+            },
+            {
+                "text": "我做了一个新的Logo,想让你帮我看看？",
+                "from": "sent"
+            },
+            {
+                "date":"7月12号 19:33",
+                "text": "嘿，怎么样？Logo还行吧",
+                "from": "sent"
+            },
+            {
+                "date":"7月13号 11:20",
+                "text": "额。。。",
+                "from": "sent"
+            },
+            {
+                "text": "你能收到我的消息吗?",
+                "from": "sent"
+            },
+            {
+                "text": "嗯,可以呢！",
+                "from": "received"
+            },
+            {
+                "text": "你的Logo挺不错的。",
+                "from": "received"
+            },
+            {
+                "text": "能让我一个人静一下吗？",
+                "from": "received"
+            },
+            {
+                "text": ":(",
+                "from": "sent"
+            },
+            {
+                "text": "看看，好可爱的猫咪呀!",
+                "from": "sent"
+            },
+            {
+                "text": "style/img/cat.jpg",
+                "image":true,
+                "from": "sent"
+            },
+            {
+                "text": "嗯",
+                "from": "received"
+            }
+    ]
+}

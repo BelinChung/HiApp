@@ -1,4 +1,5 @@
-define(['controller/loginCtrl',
+define(['controller/appCtrl',
+        'controller/loginCtrl',
         'controller/settingCtrl',
         'controller/aboutCtrl',
         'controller/feedbackCtrl',
@@ -7,11 +8,15 @@ define(['controller/loginCtrl',
         'controller/postCtrl',
         'controller/contactCtrl',
         'controller/commentCtrl',
-        'controller/chatCtrl'],function(loginCtrl,settingCtrl,aboutCtrl,feedbackCtrl,timelineCtrl,itemCtrl,postCtrl,contactCtrl,commentCtrl,chatCtrl) {
+        'controller/messageCtrl',
+        'controller/languageCtrl'],function(appCtrl,loginCtrl,settingCtrl,aboutCtrl,feedbackCtrl,timelineCtrl,itemCtrl,postCtrl,contactCtrl,commentCtrl,messageCtrl,languageCtrl) {
 
      function module (name){
 
         switch (name){
+            case 'appCtrl':
+                return appCtrl;
+                break;
             case 'loginCtrl':
                 return loginCtrl;
                 break;
@@ -39,8 +44,11 @@ define(['controller/loginCtrl',
             case 'commentCtrl':
                 return commentCtrl;
                 break;
-            case 'chatCtrl':
-                return chatCtrl;
+            case 'messageCtrl':
+                return messageCtrl;
+                break;
+            case 'languageCtrl':
+                return languageCtrl;
                 break;
         }
     }

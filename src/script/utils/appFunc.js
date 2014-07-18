@@ -1,4 +1,4 @@
-define([],function(){
+define(['i18n!nls/lang'],function(i18n){
 
     function isEmail(str){
        var reg = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$/;
@@ -46,13 +46,13 @@ define([],function(){
         d_minutes = Math.round(d / 60);
         d_second = Math.round(d);
         if (d_days > 0 && d_days < 2) {
-            return d_days + "天前";
+            return d_days + i18n.global.day_ago;
         } else if (d_days <= 0 && d_hours > 0) {
-            return d_hours + "小时前";
+            return d_hours + i18n.global.hour_ago;
         } else if (d_hours <= 0 && d_minutes > 0) {
-            return d_minutes + "分钟前";
+            return d_minutes + i18n.global.minute_ago;
         } else if (d_minutes <= 0 && d_second >= 0) {
-            return "刚刚";
+            return i18n.global.just_now;
         } else {
             var s = new Date();
             s.setTime(ms);
@@ -67,8 +67,7 @@ define([],function(){
         }
     }
 
-    function getCharLength(str)
-    {
+    function getCharLength(str){
         var iLength = 0;
         for(var i = 0;i<str.length;i++)
         {

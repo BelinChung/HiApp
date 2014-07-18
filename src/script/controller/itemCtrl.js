@@ -1,9 +1,9 @@
-define(['utils/appFunc','utils/xhr','view/module'],function(appFunc,xhr,VM){
+define(['utils/appFunc','view/module'],function(appFunc,VM){
 
     var bindings = [{
         element: '.back2home',
         event: 'click',
-        handler: VM.module('itemView').showToolbar
+        handler: VM.module('appView').showToolbar
     }];
 
     function init(query){

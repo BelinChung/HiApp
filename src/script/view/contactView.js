@@ -25,7 +25,7 @@ define(['utils/appFunc','utils/tplManager'],function(appFunc,TM){
 
             hiApp.hideIndicator();
 
-        },1000);
+        },500);
 
     }
 

@@ -1,29 +1,22 @@
-define(['utils/appFunc','utils/tplManager'],function(appFunc,TM){
+define(['utils/appFunc','i18n!nls/lang','utils/tplManager'],function(appFunc,i18n,TM){
 
     var conversationStarted = false;
-    var answers = [
-        '不好意思，我吃饭去了，88',
-        '您好，我现在有事不在，一会再和您联系。',
-        '我要睡觉了，明天再聊！',
-        '先洗澡去，洗完澡回头聊',
-        '这话说的我不知道该怎么说好了',
-        '呵呵，我先去吹个头发！',
-        '我先去接个电话，等下哦',
-        '有事，先下了',
-        '我妈妈喊我吃饭,.等会聊.'
-    ];
+    var answers = [];
     var answerTimeout;
 
     function init(params){
+        answers = params.answers;
         appFunc.bindEvents(params.bindings);
 
         var name = params['query']['nickname'];
         $$('.chat-name').html(name);
 
         hideToolbar();
+
+        hiApp.showIndicator();
     }
 
-    function submitChat(e){
+    function submitMessage(e){
 
         e.preventDefault();
         var input = $$(this).find('.ks-messages-input');
@@ -37,7 +30,6 @@ define(['utils/appFunc','utils/tplManager'],function(appFunc,TM){
         hiApp.addMessage({
             text: messageText,
             type: 'sent',
-            avatar:'style/img/avatar/avatar01.jpg',
             day: !conversationStarted ? 'Today' : false,
             time: !conversationStarted ? (new Date()).getHours() + ':' + (new Date()).getMinutes() : false
         });
@@ -48,28 +40,48 @@ define(['utils/appFunc','utils/tplManager'],function(appFunc,TM){
         answerTimeout = setTimeout(function () {
             hiApp.addMessage({
                 text: answers[Math.floor(Math.random() * answers.length)],
-                avatar:'style/img/avatar/avatar02.jpg',
                 type: 'received'
             });
-        }, 1300);
+        }, 1000);
     }
 
     function triggerSubmit(){
         $$('.ks-messages-form').trigger('submit');
     }
 
+    function renderMessages(message){
+        setTimeout(function(){
+            var renderData = {
+                message:message
+            };
+            var output = TM.renderTplById('messageTemplate',renderData);
+            $$('.page[data-page="message"] .messages').html(output);
+
+            hiApp.hideIndicator();
+
+        },600);
+    }
+
+    function i18next(content){
+        var renderData = [];
+        renderData['chat'] = i18n.chat.title;
+        renderData['chatPlaceholder'] = i18n.chat.chatPlaceholder;
+        renderData['send'] = i18n.global.send;
+
+        var output = TM.renderTpl(content,renderData);
+
+        return output;
+    }
+
     function hideToolbar(){
         appFunc.hideToolbar('.views');
     }
 
-    function showToolbar(){
-        appFunc.showToolbar('.views');
-    }
-
     return{
         init:init,
-        showToolbar:showToolbar,
-        submitChat:submitChat,
-        triggerSubmit:triggerSubmit
+        submitMessage:submitMessage,
+        triggerSubmit:triggerSubmit,
+        renderMessages:renderMessages,
+        i18next:i18next
     }
 });

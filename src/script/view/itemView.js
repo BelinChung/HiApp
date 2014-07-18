@@ -1,4 +1,4 @@
-define(['utils/appFunc','utils/tplManager'],function(appFunc,TM){
+define(['utils/appFunc','i18n!nls/lang','utils/tplManager'],function(appFunc,i18n,TM){
 
     function init(params){
         appFunc.hideToolbar('.views');
@@ -27,12 +27,20 @@ define(['utils/appFunc','utils/tplManager'],function(appFunc,TM){
         $$('#itemContent').html(output);
     }
 
-    function showToolbar(){
-        appFunc.showToolbar('.views');
+    function i18next(content){
+        var renderData = [];
+        renderData['back'] = i18n.global.back;
+        renderData['title'] = i18n.item.title;
+        renderData['comment'] = i18n.timeline.comment;
+        renderData['forward'] = i18n.timeline.forward;
+
+        var output = TM.renderTpl(content,renderData);
+
+        return output;
     }
 
     return{
         init:init,
-        showToolbar:showToolbar
+        i18next:i18next
     }
 });

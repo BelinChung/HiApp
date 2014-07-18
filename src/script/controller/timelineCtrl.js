@@ -1,10 +1,6 @@
 define(['utils/appFunc','utils/xhr','view/module'],function(appFunc,xhr,VM){
 
     var bindings = [{
-        element: '.send-popup',
-        event: 'open',
-        handler: VM.module('timelineView').clearSendPopup
-    },{
         element: '#ourView .pull-to-refresh-content',
         event: 'refresh',
         handler:refreshTimeline
@@ -16,8 +12,11 @@ define(['utils/appFunc','utils/xhr','view/module'],function(appFunc,xhr,VM){
         element: '#ourView .refresh-click',
         event: 'click',
         handler:refreshTimelineByClick
-    }
-    ];
+    },{
+        element: '#ourView .open-send-popup',
+        event: 'click',
+        handler:VM.module('postView').openSendPopup
+    }];
 
     function init(){
         VM.module('timelineView').init({
@@ -28,9 +27,6 @@ define(['utils/appFunc','utils/xhr','view/module'],function(appFunc,xhr,VM){
 
     function getTimeline(){
         xhr.simpleCall({
-            query:{
-                callback:'?'
-            },
             func:'timeline'
         },function(response){
             VM.module('timelineView').getTimeline(response['data']);
@@ -39,9 +35,6 @@ define(['utils/appFunc','utils/xhr','view/module'],function(appFunc,xhr,VM){
 
     function refreshTimeline(){
         xhr.simpleCall({
-            query:{
-                callback:'?'
-            },
             func:'refresh_timeline'
         },function(response){
             VM.module('timelineView').refreshTimeline(response['data']);
@@ -57,9 +50,6 @@ define(['utils/appFunc','utils/xhr','view/module'],function(appFunc,xhr,VM){
     function infiniteTimeline(){
         var $dom = $$(this);
         xhr.simpleCall({
-            query:{
-                callback:'?'
-            },
             func:'more_timeline'
         },function(response){
             VM.module('timelineView').infiniteTimeline({

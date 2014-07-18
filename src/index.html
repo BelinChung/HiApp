@@ -37,22 +37,22 @@
   <body>
         <div class="statusbar-overlay"></div>
         <div class="panel-overlay"></div>
-    
+
         <div class="views tabs toolbar-through">
             <div id="ourView" class="view view-main tab active">
                <div class="navbar">
                  <div class="navbar-inner">
-                   
+
                    <div class="left">
                        <a href="#"  class="refresh-click link">
                            <i class="icon ios7-reload"></i>
                        </a>
                    </div>
-                   
-                   <div class="center sliding">HiApp</div>
-                   
+
+                   <div class="center sliding i18n" data-i18n="app.name">{{i}}</div>
+
                    <div class="right">
-                       <a href="#" data-popup=".send-popup" class="open-popup link icon-only">
+                       <a href="#" class="open-send-popup link icon-only">
                            <i class="icon ios7-compose-outline"></i>
                        </a>
                    </div>
@@ -68,13 +68,13 @@
                      </div>
                      <div class="list-block media-list">
                        <ul class="time-line-content">
-                         
+
                        </ul>
-                       
+
                      </div>
                    </div>
                  </div>
-               </div> 
+               </div>
             </div>
 
             <div id="contatcView" class="view tab">
@@ -82,7 +82,7 @@
                 <div class="navbar">
                     <div class="navbar-inner">
 
-                        <div class="center sliding">HiApp</div>
+                        <div class="center sliding i18n" data-i18n="app.name"></div>
 
                     </div>
                 </div>
@@ -92,10 +92,10 @@
                         <!-- Search bar -->
                         <form class="searchbar" data-search-list=".contacts-list" data-search-in=".item-title">
                             <div class="searchbar-input">
-                                <input type="search" placeholder="Search">
+                                <input type="search" class="i18n" data-i18n="[placeholder]global.search">
                                 <a href="#" class="searchbar-clear"></a>
                             </div>
-                            <a href="#" class="searchbar-cancel">Cancel</a>
+                            <a href="#" class="searchbar-cancel i18n" data-i18n="global.cancel"></a>
                         </form>
 
                         <!-- Search bar overlay-->
@@ -107,8 +107,7 @@
                                     <ul></ul>
                                 </div>
                             </div>
-                            <div class="content-block searchbar-not-found">
-                                Nothing found
+                            <div class="content-block searchbar-not-found i18n" data-i18n="index.nothing_found" >
                             </div>
                         </div>
                     </div>
@@ -119,75 +118,35 @@
                 <div class="navbar">
                     <div class="navbar-inner">
 
-                    <div class="center sliding">HiApp</div>
+                    <div class="center sliding i18n" data-i18n="app.name"></div>
 
                     </div>
                 </div>
                 <div class="pages navbar-through">
                     <div data-page="setting" class="page">
-                        <div class="page-content">
-                            <div class="setting-page list-block">
-                                <ul>
-                                    <li id="userInfo">
-                                        
-                                    </li>
-                                    <li>
-                                        <a href="page/feedback.html" class="item-link">
-                                            <div class="item-content">
-                                                <div class="item-media feedback spring"></div>
-                                                <div class="item-inner">
-                                                    <div class="item-title">意见反馈</div>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="update-button item-link">
-                                            <div class="item-content">
-                                                <div class="item-media update spring"></div>
-                                                <div class="item-inner">
-                                                    <div class="item-title">检测更新</div>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="page/about.html" class="item-link">
-                                            <div class="item-content">
-                                                <div class="item-media about spring"></div>
-                                                <div class="item-inner">
-                                                    <div class="item-title">关于HiApp</div>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                </ul>
-                                <a href="#" class="button button-big button-cancel logout-button">退出登录</a>
-                            </div>
-                        </div>
                     </div>
                 </div>
-   
+
             </div>
-            
+
             <!-- toolbar start -->
             <div class="toolbar tabbar tabbar-labels">
                 <div class="toolbar-inner">
                     <a href="#ourView" class="tab-link active">
                         <i class="icon ios7-home-outline"></i>
-                        <span class="tabbar-label">动态</span>
+                        <span class="tabbar-label i18n" data-i18n="index.tweet"></span>
                     </a>
 
                     <a href="#contatcView" class="tab-link">
                         <i class="icon ios7-chatbubble-outline"></i>
-                        <span class="tabbar-label">联系人</span>
+                        <span class="tabbar-label i18n" data-i18n="index.contacts"></span>
                     </a>
 
                     <a href="#settingView" class="tab-link">
                         <i class="icon ios7-gear-outline">
                             <!-- <span class="badge badge-red">4</span> -->
                         </i>
-                        <span class="tabbar-label">设置</span>
+                        <span class="tabbar-label i18n" data-i18n="index.setting"></span>
                     </a>
                 </div>
             </div>
@@ -195,51 +154,6 @@
         </div>
 
 
-        <div class="send-popup popup">
-            <div class="view navbar-fixed">
-                <div class="page">
-                      <div class="navbar">
-                        <div class="navbar-inner">
-                          <div class="left"><a href="#" class="link close-popup">取消</a></div>
-                          <div class="center">发动态</div>
-                          <div class="right"><a id="sendWeiboBtn" href="#" class="link orange">发送</a></div>
-                        </div>
-                      </div>
-                      <div class="page-content message-content">
-                        
-                        <div class="message-input">
-                            <textarea id="messageText" placeholder="呃，说点什么吧..."></textarea>  
-                        </div>
-
-                        <div class="message-tools">
-                            <ul>
-                                <li><i class="icon ios7-camera-outline"></i></li>
-                                <li class="upload-file">
-                                    <i class="icon ios7-pic"></i>
-                                    <input type="file" id="fileInput" name="upfile" class="file-input"/>
-                                </li>
-                                <li><i class="icon ios7-emotion"></i></li>
-                                <li><i class="icon ios7-at-outline"></i></li>
-                                <li class="get-position"><i class="icon ios7-dingxiang"></i></li>
-                            </ul>
-                        </div>
-
-                        <div id="geoInfo" class="geo-info">
-                            <div class="location"><i class="icon icon-load-a"></i> 正在获取您所在的位置...</div>
-                            <div class="close"><i class="icon ios7-close"></i></div>
-                        </div>
-
-                        <div id="uploadPicPreview" class="upload-pic-preview">
-                            <img src="" alt="" />
-                        </div>
-
-                      </div>
-                </div>
-            </div>
-        </div>
-
-
-        
         <!--(if target dev)><!-->
         <script data-main="script/main" src="vendors/require/require.js"></script>
         <!--<!(endif)-->

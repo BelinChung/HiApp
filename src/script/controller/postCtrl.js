@@ -1,19 +1,15 @@
 define(['utils/appFunc','utils/xhr','view/module'],function(appFunc,xhr,VM){
 
     var bindings = [{
-        element: '#sendWeiboBtn',
-        event: 'click',
-        handler: postMsg
+        element: '.send-popup',
+        event: 'open',
+        handler: VM.module('postView').clearSendPopup
     }];
 
     function init(){
         VM.module('postView').init({
             bindings:bindings
         });
-    }
-
-    function postMsg(){
-        VM.module('postView').postMsg();
     }
 
     return{

@@ -10,7 +10,7 @@ define(['GS','controller/module'],function(GS,CM) {
         if(!GS.isLogin()){
             mainView.loadPage('page/login.html');
         }else{
-            mainView.loadPage('index.html');
+            mainView.loadPage('index.html')
         }
     }
 
@@ -40,13 +40,53 @@ define(['GS','controller/module'],function(GS,CM) {
                 CM.module('itemCtrl').init(query);
                 CM.module('commentCtrl').init();
                 break;
-            case 'chat':
-                CM.module('chatCtrl').init(query);
+            case 'message':
+                CM.module('messageCtrl').init(query);
+                break;
+            case 'language':
+                CM.module('languageCtrl').init();
                 break;
         }
 	}
 
+    function preprocess(content,url){
+        if(!url) return false;
+
+        url = url.split('?')[0] ;
+        console.log(url);
+
+        switch (url) {
+            case 'index.html':
+                var viewName = 'appView';
+                break;
+            case 'page/login.html':
+                var viewName = 'loginView';
+                break;
+            case 'page/about.html':
+                var viewName = 'aboutView';
+                break;
+            case 'page/feedback.html':
+                var viewName = 'feedbackView';
+                break;
+            case 'page/item.html':
+                var viewName = 'itemView';
+                break;
+            case 'page/message.html':
+                var viewName = 'messageView';
+                break;
+            case 'page/language.html':
+                var viewName = 'languageView';
+                break;
+            default :
+                return content;
+        }
+        var output = CM.module('appCtrl').i18next(viewName,content);
+        return output;
+
+    }
+
     return {
-        init: init
+        init: init,
+        preprocess:preprocess
     };
 });

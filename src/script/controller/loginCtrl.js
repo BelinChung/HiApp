@@ -1,4 +1,4 @@
-define(['utils/appFunc','utils/xhr','view/module','GS'],function(appFunc,xhr,VM,GS){
+define(['utils/appFunc','utils/xhr','view/module','GS','i18n!nls/lang'],function(appFunc,xhr,VM,GS,i18n){
 
     var bindings = [{
         element: '.login-submit',
@@ -16,16 +16,13 @@ define(['utils/appFunc','utils/xhr','view/module','GS'],function(appFunc,xhr,VM,
         var loginName = $$('input.login-name').val();
         var password = $$('input.password').val();
         if(loginName === "" || password === ""){
-            hiApp.alert("账户或密码不能为空！");
+            hiApp.alert(i18n.login.err_empty_input);
         }else if(!appFunc.isEmail(loginName)){
-            hiApp.alert("登录账户必须是Email");
+            hiApp.alert(i18n.login.err_illegal_email);
         }else{
-            hiApp.showPreloader('正在登录...');
+            hiApp.showPreloader(i18n.login.login);
 
             xhr.simpleCall({
-                query:{
-                    callback:'?'
-                },
                 func:'user_login',
                 data:{
                     loginname:loginName,

@@ -1,13 +1,13 @@
 define(['utils/appFunc','view/module'],function(appFunc,VM){
 
     var bindings = [{
-        element: '.back2setting',
+        element:'.set-language',
         event: 'click',
-        handler: VM.module('appView').showToolbar
+        handler:VM.module('languageView').switchLanguage
     }];
 
     function init(){
-        VM.module('aboutView').init({
+        VM.module('languageView').init({
             bindings:bindings
         });
     }

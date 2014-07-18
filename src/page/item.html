@@ -3,15 +3,15 @@
     
     <div class="left">
         <a href="#" class="back back2home link text-navbar">
-            返回
+            {{back}}
         </a>
     </div>
     
-    <div class="center sliding">微博正文</div>
+    <div class="center sliding">{{title}}</div>
     
     <div class="right">
         <a href="#" class="link item-comment-btn text-navbar orange">
-            评论
+            {{comment}}
         </a>
     </div>
 
@@ -26,7 +26,7 @@
       </div>
       <div class="comments-content">
           <div class="comment-title">
-              <span>转发&nbsp;&nbsp;|&nbsp;&nbsp;评论</span>
+              <span>{{forward}}&nbsp;&nbsp;|&nbsp;&nbsp;{{comment}}</span>
               <span class="tip"></span>
           </div>
           <ul id="commentContent" class="comments-list">

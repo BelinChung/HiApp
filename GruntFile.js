@@ -50,7 +50,8 @@ module.exports = function(grunt) {
                     mainConfigFile: 'src/script/main.js',
                     name: 'main',
                     out: 'build/script/<%=pkg.name%>.min.js',
-                    preserveLicenseComments:false
+                    preserveLicenseComments:false,
+                    locale:false
                 }
             }
         },
@@ -90,6 +91,12 @@ module.exports = function(grunt) {
                 cwd: 'src/page',
                 src: ['**.html'],
                 dest: 'build/page'
+            },
+            nls:{
+                expand: true,
+                cwd: 'src/script/nls',
+                src: ['**'],
+                dest: 'build/script/nls'
             }
         },
         // 发布html文件，去掉开发标记

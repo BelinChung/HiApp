@@ -1,4 +1,4 @@
-define(['utils/appFunc','utils/tplManager'],function(appFunc,TM){
+define(['utils/appFunc','i18n!nls/lang','utils/tplManager'],function(appFunc,i18n,TM){
 
     function init(params){
         appFunc.bindEvents(params.bindings);
@@ -6,12 +6,16 @@ define(['utils/appFunc','utils/tplManager'],function(appFunc,TM){
 
     function commentPopup(params){
         var renderData = [];
+        renderData['cancel'] = i18n.global.cancel;
+        renderData['comment'] = i18n.timeline.comment;
+        renderData['send'] = i18n.global.send;
+
         if(params.name){
-            renderData['title'] = '回复评论';
-            renderData['placeholder'] = '回复@' + params.name + ':';
+            renderData['title'] = i18n.comment.reply_comment;
+            renderData['placeholder'] = i18n.comment.reply + '@' + params.name + ':';
         }else {
-            renderData['title'] = '评论';
-            renderData['placeholder'] = 'Er,评论...';
+            renderData['title'] = i18n.timeline.comment;
+            renderData['placeholder'] = i18n.comment.placeholder;
         }
 
         var output = TM.renderTplById('commentPopupTemplate', renderData);
@@ -31,11 +35,11 @@ define(['utils/appFunc','utils/tplManager'],function(appFunc,TM){
         var text = $$('#commentText').val();
 
         if(appFunc.getCharLength(text) < 4){
-            hiApp.alert('评论内容有点少哦！');
+            hiApp.alert(i18n.index.err_text_too_short);
             return false;
         }
 
-        hiApp.showPreloader('评论中...');
+        hiApp.showPreloader(i18n.comment.commenting);
 
         setTimeout(function(){
             hiApp.hidePreloader();
@@ -50,6 +54,7 @@ define(['utils/appFunc','utils/tplManager'],function(appFunc,TM){
         setTimeout(function(){
             var renderData = {
                 comments:params.comments,
+                emptyComment:i18n.comment.empty_comment,
                 rtime:function(){
                     return appFunc.timeFormat(this.time);
                 }
@@ -72,20 +77,20 @@ define(['utils/appFunc','utils/tplManager'],function(appFunc,TM){
         var replyName = $$(this).find('.comment-detail .name').html();
         var buttons1 = [
             {
-                text: '回复评论',
+                text: i18n.comment.reply_comment,
                 bold: true,
                 onClick:function(){
                     commentPopup({name:replyName});
                 }
             },
             {
-                text: '复制评论',
+                text: i18n.comment.copy_comment ,
                 bold: true
             }
         ];
         var buttons2 = [
             {
-                text: '取消',
+                text: i18n.global.cancel,
                 red: true
             }
         ];

@@ -1,4 +1,4 @@
-define(['utils/appFunc','utils/tplManager'],function(appFunc,TM){
+define(['utils/appFunc','utils/tplManager','i18n!nls/lang'],function(appFunc,TM,i18n){
 
     function init(params){
         appFunc.showToolbar('.views');
@@ -23,7 +23,15 @@ define(['utils/appFunc','utils/tplManager'],function(appFunc,TM){
 
     function renderDataFunc(options){
         options = options || {};
+
+        var i18next = {
+            "forward":i18n.timeline.forward,
+            "comment":i18n.timeline.comment,
+            "like":i18n.timeline.like
+        };
+
         var renderData = {
+            i18n:i18next,
             weibo:options.data,
             image:function(){
                 var url = this.original_pic || "";
@@ -40,10 +48,6 @@ define(['utils/appFunc','utils/tplManager'],function(appFunc,TM){
             }
         };
         return renderData;
-    }
-
-    function clearSendPopup(){
-        $$('#messageText').val('');
     }
 
     function refreshItemTime(){
@@ -65,7 +69,7 @@ define(['utils/appFunc','utils/tplManager'],function(appFunc,TM){
             $$('#ourView .refresh-click').find('i').removeClass('ios7-reloading');
 
             if(newestId == 48) {
-                console.log('没有刷新到新动态！');
+                console.log('no new tweet');
                 hiApp.pullToRefreshDone();
                 return false;
             }
@@ -83,7 +87,7 @@ define(['utils/appFunc','utils/tplManager'],function(appFunc,TM){
                 var output = TM.renderTplById('timelineTemplate',renderData);
                 $$('#ourView').find('.time-line-content').prepend(output);
             }else{
-                console.log('没有刷新到新动态！');
+                console.log('no new tweet');
             }
 
             hiApp.pullToRefreshDone();
@@ -137,7 +141,6 @@ define(['utils/appFunc','utils/tplManager'],function(appFunc,TM){
     return{
         init:init,
         getTimeline:getTimeline,
-        clearSendPopup:clearSendPopup,
         refreshTimeline:refreshTimeline,
         infiniteTimeline:infiniteTimeline,
         beforeRefreshTimelineByClick:beforeRefreshTimelineByClick

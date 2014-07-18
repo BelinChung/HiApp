@@ -16,9 +16,6 @@ define(['utils/appFunc','utils/xhr','view/module'],function(appFunc,xhr,VM){
 
     function getComments(){
         xhr.simpleCall({
-            query: {
-                callback: '?'
-            },
             func: 'comments'
         }, function (response) {
             if (response['err_code'] === 0) {

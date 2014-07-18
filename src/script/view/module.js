@@ -1,4 +1,5 @@
-define(['view/loginView',
+define(['view/appView',
+        'view/loginView',
         'view/settingView',
         'view/aboutView',
         'view/feedbackView',
@@ -7,11 +8,15 @@ define(['view/loginView',
         'view/postView',
         'view/contactView',
         'view/commentView',
-        'view/chatView'],function(loginView,settingView,aboutView,feedbackView,timelineView,itemView,postView,contactView,commentView,chatView) {
+        'view/messageView',
+        'view/languageView'],function(appView,loginView,settingView,aboutView,feedbackView,timelineView,itemView,postView,contactView,commentView,messageView,languageView) {
 
     function module (name){
 
         switch (name){
+            case 'appView':
+                return appView;
+                break;
             case 'loginView':
                 return loginView;
                 break;
@@ -39,8 +44,11 @@ define(['view/loginView',
             case 'commentView':
                 return commentView;
                 break;
-            case 'chatView':
-                return chatView;
+            case 'messageView':
+                return messageView;
+                break;
+            case 'languageView':
+                return languageView;
                 break;
         }
     }

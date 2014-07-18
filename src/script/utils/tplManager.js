@@ -11,7 +11,7 @@ define(['text!GTPL','mustache'],function(GTPL,mustache){
 
     function renderRemoteTpl(tplName,renderData,callback){
         tplName = tplName || "";
-        $$.get('page/' + tplName + '.tpl.html?v=' +  (new Date()).getTime() ,function(markup){
+        $$.get('page/' + tplName + '.tpl.html' ,function(markup){
             var output = mustache.render(markup,renderData);
 
             typeof(callback === 'function') ? callback(output):null;

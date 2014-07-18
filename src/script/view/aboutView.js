@@ -1,4 +1,4 @@
-define(['utils/appFunc'],function(appFunc){
+define(['utils/appFunc','i18n!nls/lang','utils/tplManager'],function(appFunc,i18n,TM){
 
     function init(params){
         appFunc.bindEvents(params.bindings);
@@ -9,12 +9,18 @@ define(['utils/appFunc'],function(appFunc){
         appFunc.hideToolbar('.views');
     }
 
-    function showToolbar(){
-        appFunc.showToolbar('.views');
+    function i18next(content){
+        var renderData = [];
+        renderData['appName'] = i18n.app.name;
+        renderData['about'] = i18n.setting.about;
+
+        var output = TM.renderTpl(content,renderData);
+
+        return output;
     }
 
     return{
         init:init,
-        showToolbar:showToolbar
+        i18next:i18next
     }
 });

@@ -1,6 +1,6 @@
 define(['utils/appFunc'],function(appFunc) {
 
-    var apiServerHost = window.location.href;
+    //var apiServerHost = window.location.href;
 
     function search(code, array){
         for (var i=0;i< array.length; i++){
@@ -12,12 +12,12 @@ define(['utils/appFunc'],function(appFunc) {
     }
 
     function getRequestURL(options){
-        var host = apiServerHost || window.location.host;
+        //var host = apiServerHost || window.location.host;
         //var port = options.port || window.location.port;
         var query = options.query || {};
         var func = options.func || "";
 
-        var apiServer = host +"api/" + func + ".json"
+        var apiServer = "api/" + func + ".json"
                         + (appFunc.isEmpty(query) ? "" : "?");
 
         var name;
@@ -44,9 +44,9 @@ define(['utils/appFunc'],function(appFunc) {
                 data = data ? JSON.parse(data) : "";
 
                 var codes = [
-                    {code:10000, message:'系统发生未知错误，请稍候再尝试',path:'/'},
-                    {code:10001, message:'会话超时或无效，请重新登录',path:'tpl/login.html'},
-                    {code:20001, message:'账户和密码不匹配',path:'/'}
+                    {code:10000, message:'Your session is invalid, please login again',path:'/'},
+                    {code:10001, message:'Unknown error,please login again',path:'tpl/login.html'},
+                    {code:20001, message:'User name or password does not match',path:'/'}
                 ];
 
                 var codeLevel = search(data.err_code,codes);
@@ -57,7 +57,7 @@ define(['utils/appFunc'],function(appFunc) {
                                     
                 }else{
                         
-                    hiApp.alert(codeLevel.message,"系统消息",function(){
+                    hiApp.alert(codeLevel.message,function(){
                         if(codeLevel.path != "/")
                             mainView.loadPage(codeLevel.path);
 

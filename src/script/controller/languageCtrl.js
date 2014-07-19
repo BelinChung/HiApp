@@ -6,9 +6,10 @@ define(['utils/appFunc','view/module'],function(appFunc,VM){
         handler:VM.module('languageView').switchLanguage
     }];
 
-    function init(){
+    function init(query){
         VM.module('languageView').init({
-            bindings:bindings
+            bindings:bindings,
+            query:query
         });
     }
 

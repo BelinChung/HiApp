@@ -44,7 +44,7 @@ define(['GS','controller/module'],function(GS,CM) {
                 CM.module('messageCtrl').init(query);
                 break;
             case 'language':
-                CM.module('languageCtrl').init();
+                CM.module('languageCtrl').init(query);
                 break;
         }
 	}

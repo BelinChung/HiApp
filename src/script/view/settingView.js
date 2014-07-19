@@ -16,6 +16,7 @@ define(['utils/appFunc','utils/tplManager','GS','i18n!nls/lang'],function(appFun
         renderData['feedBack'] = i18n.setting.feed_back;
         renderData['checkUpdate'] = i18n.setting.check_update;
         renderData['about'] = i18n.setting.about;
+        renderData['language'] = i18n.global.language;
         renderData['loginOut'] = i18n.setting.login_out;
 
         var output = TM.renderTplById('settingTemplate', renderData);

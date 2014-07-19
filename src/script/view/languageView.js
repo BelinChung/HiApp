@@ -3,6 +3,17 @@ define(['utils/appFunc','i18n!nls/lang','utils/tplManager'],function(appFunc,i18
     function init(params){
         appFunc.bindEvents(params.bindings);
         setDefaultLanguage();
+        appFunc.hideToolbar('.views');
+
+        var from = params['query']['from'];
+        if(from === "setting"){
+            var bindings = [{
+                element: '.back2language',
+                    event: 'click',
+                handler: showToolbar
+            }];
+            appFunc.bindEvents(bindings);
+        }
     }
 
     function setDefaultLanguage(){
@@ -34,6 +45,10 @@ define(['utils/appFunc','i18n!nls/lang','utils/tplManager'],function(appFunc,i18
 
     function setLanguage(lang){
         localStorage.setItem('lang',lang);
+    }
+
+    function showToolbar(){
+        appFunc.showToolbar('.views');
     }
 
     return{

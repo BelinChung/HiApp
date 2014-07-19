@@ -3,69 +3,73 @@
     "err_msg": "success",
     "data": [
 
-            {
-                "date":"7月9号 12:58",
-                "text": "最近过的咋样？",
-                "from": "sent"
-            },
-            {
-                "text": "嗯",
-                "from": "received"
-            },
-            {
-                "text": "还好吧，你呢？",
-                "from": "received"
-            },
-            {
-                "text": "还算不错！",
-                "from": "sent"
-            },
-            {
-                "text": "我做了一个新的Logo,想让你帮我看看？",
-                "from": "sent"
-            },
-            {
-                "date":"7月12号 19:33",
-                "text": "嘿，怎么样？Logo还行吧",
-                "from": "sent"
-            },
-            {
-                "date":"7月13号 11:20",
-                "text": "额。。。",
-                "from": "sent"
-            },
-            {
-                "text": "你能收到我的消息吗?",
-                "from": "sent"
-            },
-            {
-                "text": "嗯,可以呢！",
-                "from": "received"
-            },
-            {
-                "text": "你的Logo挺不错的。",
-                "from": "received"
-            },
-            {
-                "text": "能让我一个人静一下吗？",
-                "from": "received"
-            },
-            {
-                "text": ":(",
-                "from": "sent"
-            },
-            {
-                "text": "看看，好可爱的猫咪呀!",
-                "from": "sent"
-            },
-            {
-                "text": "style/img/cat.jpg",
-                "image":true,
-                "from": "sent"
-            },
-            {
-                "text": "嗯",
-                "from": "received"
-            }
+        {
+            "date":"Sunday, Feb 9, 12:58",
+            "text": "Hi, Kate",
+            "from": "sent"
+        },
+        {
+            "text": "How are you?",
+            "from": "sent"
+        },
+        {
+            "text": "Hi, i am good",
+            "from": "received"
+        },
+        {
+            "text": "Hi there, I am also fine, thanks! And how are you?",
+            "from": "received"
+        },
+        {
+            "text": "Hey, Blue Ninja! Glad to see you ;)",
+            "from": "sent"
+        },
+        {
+            "text": "What do you think about my new logo?",
+            "from": "sent"
+        },
+        {
+            "date":"Wednesday, Feb 12, 19:33",
+            "text": "Hey? Any thoughts about my new logo?",
+            "from": "sent"
+        },
+        {
+            "date": "Thursday, Feb 13, 11:20",
+            "text": "Alo...",
+            "from": "sent"
+        },
+        {
+            "text": "Are you there?",
+            "from": "sent"
+        },
+        {
+            "text": "Hi, i am here",
+            "from": "received"
+        },
+        {
+            "text": "Your logo is great",
+            "from": "received"
+        },
+        {
+            "text": "Leave me alone!",
+            "from": "received"
+        },
+        {
+            "text": ":(",
+            "from": "sent"
+        },
+        {
+            "text": "Hey, look, cutest kitten ever!",
+            "from": "sent"
+        },
+        {
+            "text": "style/img/cat.jpg",
+            "image":true,
+            "from": "sent"
+        },
+        {
+            "text": "Er...",
+            "from": "received"
+        }
     ]
 }

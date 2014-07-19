@@ -2,14 +2,17 @@
     "err_code": 0,
     "err_msg": "success",
     "data": [
-        "不好意思，我吃饭去了，88",
-        "您好，我现在有事不在，一会再和您联系。",
-        "我要睡觉了，明天再聊！",
-        "先洗澡去，洗完澡回头聊",
-        "这话说的我不知道该怎么说好了",
-        "呵呵，我先去吹个头发！",
-        "我先去接个电话，等下哦",
-        "有事，先下了",
-        "我妈妈喊我吃饭,.等会聊."
+        "Yes!",
+        "No",
+        "Hm...",
+        "I am not sure",
+        "And what about you?",
+        "May be ;)",
+        "Lorem ipsum dolor sit amet, consectetur",
+        "What?",
+        "Are you sure?",
+        "Of course",
+        "Need to think about it",
+        "Amazing!!!"
     ]
 }

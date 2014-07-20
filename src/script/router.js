@@ -3,8 +3,13 @@ define(['GS','controller/module'],function(GS,CM) {
     function init() {
         $$(document).on('pageBeforeInit', function (e) {
             var page = e.detail.page;
-            console.log(page);
             pageBeforeInit(page);
+        });
+
+        $$(document).on('pageAfterAnimation', function (e) {
+            var page = e.detail.page;
+            console.log(page);
+            pageAfterAnimation(page);
         });
 
         if(!GS.isLogin()){
@@ -13,6 +18,19 @@ define(['GS','controller/module'],function(GS,CM) {
             mainView.loadPage('index.html')
         }
     }
+
+    function pageAfterAnimation(page){
+        var name = page.name;
+        var query = page.query;
+        var from = page.from;
+        switch (name) {
+            case 'login':
+                if (from === 'left') return;
+                CM.module('loginCtrl').setCopyRightPosition();
+                break;
+        }
+    }
+
 
 	function pageBeforeInit(page) {
         var name = page.name;
@@ -53,7 +71,6 @@ define(['GS','controller/module'],function(GS,CM) {
         if(!url) return false;
 
         url = url.split('?')[0] ;
-        console.log(url);
 
         switch (url) {
             case 'index.html':

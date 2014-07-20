@@ -2,8 +2,6 @@ define(['utils/appFunc','i18n!nls/lang','utils/tplManager'],function(appFunc,i18
 
 
     function init(params){
-        setCopyRightPosition();
-
         appFunc.hideToolbar('.views');
         appFunc.bindEvents(params.bindings);
     }
@@ -19,7 +17,7 @@ define(['utils/appFunc','i18n!nls/lang','utils/tplManager'],function(appFunc,i18
 
         var paddingTop = documentHeight - contentHeight - 140 - copyRightHeight;
 
-        $$('.page-content .copyright').css('top',paddingTop + 'px');
+        $$('.page-content .copyright').css('top',paddingTop + 'px').transition(300);
     }
 
     function i18next(content){
@@ -38,6 +36,7 @@ define(['utils/appFunc','i18n!nls/lang','utils/tplManager'],function(appFunc,i18
 
     return{
         init:init,
+        setCopyRightPosition:setCopyRightPosition,
         i18next:i18next
     }
 });

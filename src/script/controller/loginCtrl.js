@@ -43,7 +43,12 @@ define(['utils/appFunc','utils/xhr','view/module','GS','i18n!nls/lang'],function
         }
     }
 
+    function setCopyRightPosition(){
+        VM.module('loginView').setCopyRightPosition();
+    }
+
     return{
-        init:init
+        init:init,
+        setCopyRightPosition:setCopyRightPosition
     }
 });

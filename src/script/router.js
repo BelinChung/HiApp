@@ -4,7 +4,7 @@ define(['GS','controller/module'],function(GS,CM) {
         $$(document).on('pageBeforeInit', function (e) {
             var page = e.detail.page;
             console.log(page);
-            load(page);
+            pageBeforeInit(page);
         });
 
         if(!GS.isLogin()){
@@ -14,7 +14,7 @@ define(['GS','controller/module'],function(GS,CM) {
         }
     }
 
-	function load(page) {
+	function pageBeforeInit(page) {
         var name = page.name;
         var query = page.query;
         var from = page.from;

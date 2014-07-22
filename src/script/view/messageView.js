@@ -8,7 +8,7 @@ define(['utils/appFunc','i18n!nls/lang','utils/tplManager'],function(appFunc,i18
         answers = params.answers;
         appFunc.bindEvents(params.bindings);
 
-        var name = params['query']['nickname'];
+        var name = params.query.nickname;
         $$('.chat-name').html(name);
 
         hideToolbar();
@@ -64,9 +64,9 @@ define(['utils/appFunc','i18n!nls/lang','utils/tplManager'],function(appFunc,i18
 
     function i18next(content){
         var renderData = [];
-        renderData['chat'] = i18n.chat.title;
-        renderData['chatPlaceholder'] = i18n.chat.chatPlaceholder;
-        renderData['send'] = i18n.global.send;
+        renderData.chat = i18n.chat.title;
+        renderData.chatPlaceholder = i18n.chat.chatPlaceholder;
+        renderData.send = i18n.global.send;
 
         var output = TM.renderTpl(content,renderData);
 
@@ -83,5 +83,5 @@ define(['utils/appFunc','i18n!nls/lang','utils/tplManager'],function(appFunc,i18
         triggerSubmit:triggerSubmit,
         renderMessages:renderMessages,
         i18next:i18next
-    }
+    };
 });

@@ -20,15 +20,15 @@ define(['utils/appFunc','utils/xhr','view/module'],function(appFunc,xhr,VM){
         xhr.simpleCall({
             func:'user_login'
         },function(response) {
-            if (response['err_code'] === 0) {
-                var user = response['data']['user'];
+            if (response.err_code === 0) {
+                var user = response.data.user;
 
                 VM.module('settingView').renderSetting(user);
             }
-        })
+        });
     }
 
     return{
         init:init
-    }
+    };
 });

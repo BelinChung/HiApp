@@ -5,17 +5,17 @@ define(['text!GTPL','mustache'],function(GTPL,mustache){
     $$('body').append(GTPL);
 
     function loadTpl(id){
-        var tpl = $$("#"+id).html();
+        var tpl = $$('#' + id).html();
         return tpl;
     }
 
     function renderRemoteTpl(tplName,renderData,callback){
-        tplName = tplName || "";
+        tplName = tplName || '';
         $$.get('page/' + tplName + '.tpl.html' ,function(markup){
             var output = mustache.render(markup,renderData);
 
-            typeof(callback === 'function') ? callback(output):null;
-        })
+            typeof(callback === 'function') ? callback(output) : null;
+        });
         
     }
 
@@ -35,5 +35,5 @@ define(['text!GTPL','mustache'],function(GTPL,mustache){
         renderRemoteTpl:renderRemoteTpl,
         renderTpl:renderTpl,
         renderTplById:renderTplById
-    }
+    };
 });

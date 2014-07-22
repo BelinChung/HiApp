@@ -15,7 +15,7 @@ define(['GS','controller/module'],function(GS,CM) {
         if(!GS.isLogin()){
             mainView.loadPage('page/login.html');
         }else{
-            mainView.loadPage('index.html')
+            mainView.loadPage('index.html');
         }
     }
 
@@ -72,27 +72,29 @@ define(['GS','controller/module'],function(GS,CM) {
 
         url = url.split('?')[0] ;
 
+        var viewName;
+
         switch (url) {
             case 'index.html':
-                var viewName = 'appView';
+                viewName = 'appView';
                 break;
             case 'page/login.html':
-                var viewName = 'loginView';
+                viewName = 'loginView';
                 break;
             case 'page/about.html':
-                var viewName = 'aboutView';
+                viewName = 'aboutView';
                 break;
             case 'page/feedback.html':
-                var viewName = 'feedbackView';
+                viewName = 'feedbackView';
                 break;
             case 'page/item.html':
-                var viewName = 'itemView';
+                viewName = 'itemView';
                 break;
             case 'page/message.html':
-                var viewName = 'messageView';
+                viewName = 'messageView';
                 break;
             case 'page/language.html':
-                var viewName = 'languageView';
+                viewName = 'languageView';
                 break;
             default :
                 return content;

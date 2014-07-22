@@ -7,5 +7,5 @@ define(['utils/appFunc','view/module'],function(appFunc,VM){
 
     return{
         i18next:i18next
-    }
+    };
 });

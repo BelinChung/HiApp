@@ -24,16 +24,16 @@ define(['utils/appFunc','utils/xhr','view/module'],function(appFunc,xhr,VM){
                 },
                 func: 'contacts'
             }, function (response) {
-                if (response['err_code'] === 0) {
+                if (response.err_code === 0) {
                     VM.module('contactView').render({
-                        contacts: response['data']
+                        contacts: response.data
                     });
                 }
-            })
+            });
         }
     }
 
     return{
         init:init
-    }
+    };
 });

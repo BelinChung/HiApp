@@ -15,22 +15,22 @@ define(['utils/appFunc'],function(appFunc) {
         //var host = apiServerHost || window.location.host;
         //var port = options.port || window.location.port;
         var query = options.query || {};
-        var func = options.func || "";
+        var func = options.func || '';
 
-        var apiServer = "api/" + func + ".json"
-                        + (appFunc.isEmpty(query) ? "" : "?");
+        var apiServer = 'api/' + func + '.json' +
+                        (appFunc.isEmpty(query) ? '' : '?');
 
         var name;
         for (name in query) {
-            apiServer += name + "=" + query[name] + "&";
+            apiServer += name + '=' + query[name] + '&';
         }
 
-        return apiServer.replace(/&$/gi, "");
+        return apiServer.replace(/&$/gi, '');
     }
 
     function simpleCall(options,callback){
         options = options || {};
-        options.data = options.data ? options.data : "";
+        options.data = options.data ? options.data : '';
 
         //If you access your server api ,please user `post` method.
         options.method = options.method || 'GET';
@@ -41,7 +41,7 @@ define(['utils/appFunc'],function(appFunc) {
             method: options.method,
             data: options.data,
             success:function(data){
-                data = data ? JSON.parse(data) : "";
+                data = data ? JSON.parse(data) : '';
 
                 var codes = [
                     {code:10000, message:'Your session is invalid, please login again',path:'/'},
@@ -53,12 +53,12 @@ define(['utils/appFunc'],function(appFunc) {
 
                 if(!codeLevel){
                     
-                    (typeof(callback) === 'function') ? callback(data) : ""; 
+                    (typeof(callback) === 'function') ? callback(data) : '';
                                     
                 }else{
                         
                     hiApp.alert(codeLevel.message,function(){
-                        if(codeLevel.path != "/")
+                        if(codeLevel.path !== '/')
                             mainView.loadPage(codeLevel.path);
 
                         hiApp.hideIndicator();
@@ -66,10 +66,10 @@ define(['utils/appFunc'],function(appFunc) {
                     });
                 }
             }
-        })
+        });
         
     }
     return {
         simpleCall:simpleCall
-    }
-})
+    };
+});

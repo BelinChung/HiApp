@@ -18,19 +18,19 @@ define(['utils/appFunc','utils/xhr','view/module'],function(appFunc,xhr,VM){
         xhr.simpleCall({
             func: 'comments'
         }, function (response) {
-            if (response['err_code'] === 0) {
+            if (response.err_code === 0) {
                 var random = Math.floor(Math.random()*2);
                 if(!random)
-                    response['data'] = null;
+                    response.data = null;
 
                 VM.module('commentView').render({
-                    comments: response['data']
+                    comments: response.data
                 });
             }
-        })
+        });
     }
 
     return{
         init:init
-    }
+    };
 });

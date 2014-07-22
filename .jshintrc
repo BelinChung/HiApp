@@ -1,0 +1,30 @@
+{
+    "-W003"        : true,
+    "-W030"        : true,
+    "node"         : true,
+    "browser"      : true,
+    "esnext"       : true,
+    "bitwise"      : false,
+    "curly"        : false,
+    "eqeqeq"       : true,
+    "eqnull"       : true,
+    "immed"        : true,
+    "latedef"      : true,
+    "newcap"       : true,
+    "noarg"        : true,
+    "undef"        : true,
+    "strict"       : false,
+    "trailing"     : true,
+    "smarttabs"    : true,
+    "quotmark"     : "single",
+    "indent"       : 4,
+    "white"        : true,
+    "globals":{
+        "window": true,
+        "$$": true,
+        "Framework7": true,
+        "hiApp": true,
+        "define": true,
+        "mainView": true
+    }
+}

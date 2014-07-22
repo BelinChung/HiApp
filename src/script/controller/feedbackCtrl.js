@@ -22,5 +22,5 @@ define(['utils/appFunc','view/module'],function(appFunc,VM){
 
     return{
         init:init
-    }
+    };
 });

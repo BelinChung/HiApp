@@ -2,6 +2,6 @@ define({
     root:{
 
     },
-    "zh-cn":true,
-    "en-us":true
+    'zh-cn':true,
+    'en-us':true
 });

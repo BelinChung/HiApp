@@ -34,7 +34,7 @@ define(['utils/appFunc','utils/tplManager'],function(appFunc,TM){
             if($$(this).next('.contact-item').css('display') === 'none'){
                 $$(this).hide();
             }
-        })
+        });
     }
 
     return{
@@ -42,5 +42,5 @@ define(['utils/appFunc','utils/tplManager'],function(appFunc,TM){
         render:render,
         init:init,
         filterResult:filterResult
-    }
+    };
 });

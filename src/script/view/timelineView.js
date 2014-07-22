@@ -25,19 +25,19 @@ define(['utils/appFunc','utils/tplManager','i18n!nls/lang'],function(appFunc,TM,
         options = options || {};
 
         var i18next = {
-            "forward":i18n.timeline.forward,
-            "comment":i18n.timeline.comment,
-            "like":i18n.timeline.like
+            forward : i18n.timeline.forward,
+            comment : i18n.timeline.comment,
+            like : i18n.timeline.like
         };
 
         var renderData = {
             i18n:i18next,
             weibo:options.data,
             image:function(){
-                var url = this.original_pic || "";
+                var url = this.original_pic || '';
 
                 if(url.length > 2){
-                    var thumbnail = url.replace(/large/, "thumbnail");
+                    var thumbnail = url.replace(/large/, 'thumbnail');
                     return thumbnail;
                 }else{
                     return false;
@@ -54,7 +54,7 @@ define(['utils/appFunc','utils/tplManager','i18n!nls/lang'],function(appFunc,TM,
         $$('#ourView').find('.item-header .detail .create-time').each(function(){
             var nowTime = appFunc.timeFormat($$(this).data('time'));
             $$(this).html(nowTime);
-        })
+        });
     }
 
     function refreshTimeline(data){
@@ -68,7 +68,7 @@ define(['utils/appFunc','utils/tplManager','i18n!nls/lang'],function(appFunc,TM,
 
             $$('#ourView .refresh-click').find('i').removeClass('ios7-reloading');
 
-            if(newestId == 48) {
+            if(newestId === 48) {
                 showLoadResult(i18n.index.nothing_loaded);
                 hiApp.pullToRefreshDone();
                 return false;
@@ -80,11 +80,13 @@ define(['utils/appFunc','utils/tplManager','i18n!nls/lang'],function(appFunc,TM,
                 data:data
             });
 
+            var output;
+
             if(length >= 15){
-                var output = TM.renderTplById('timelineTemplate',renderData);
+                output = TM.renderTplById('timelineTemplate',renderData);
                 $$('#ourView').find('.time-line-content').html(output);
             }else if(length > 0){
-                var output = TM.renderTplById('timelineTemplate',renderData);
+                output = TM.renderTplById('timelineTemplate',renderData);
                 $$('#ourView').find('.time-line-content').prepend(output);
             }else{
                 showLoadResult(i18n.index.nothing_loaded);
@@ -92,7 +94,7 @@ define(['utils/appFunc','utils/tplManager','i18n!nls/lang'],function(appFunc,TM,
 
             hiApp.pullToRefreshDone();
 
-        },1500)
+        },1500);
     }
 
     function infiniteTimeline(options){
@@ -111,7 +113,7 @@ define(['utils/appFunc','utils/tplManager','i18n!nls/lang'],function(appFunc,TM,
         var length = items.length;
         var lastId = items.eq(length - 1).data('id');
 
-        if(lastId == 24){
+        if(lastId === 24){
             hiApp.detachInfiniteScroll($this);
             hiApp.hideIndicator();
         }else{
@@ -125,7 +127,7 @@ define(['utils/appFunc','utils/tplManager','i18n!nls/lang'],function(appFunc,TM,
                 $$('#ourView').find('.time-line-content').append(output);
 
                 hiApp.hideIndicator();
-            },1500)
+            },1500);
 
         }
     }
@@ -135,7 +137,7 @@ define(['utils/appFunc','utils/tplManager','i18n!nls/lang'],function(appFunc,TM,
             $$('#ourView .refresh-click ').find('i').addClass('ios7-reloading');
             var ptrContent = $$('#ourView').find('.pull-to-refresh-content');
             ptrContent.addClass('pull-up transitioning refreshing');
-        },350)
+        },350);
     }
 
     function showLoadResult(text){
@@ -154,5 +156,5 @@ define(['utils/appFunc','utils/tplManager','i18n!nls/lang'],function(appFunc,TM,
         refreshTimeline:refreshTimeline,
         infiniteTimeline:infiniteTimeline,
         beforeRefreshTimelineByClick:beforeRefreshTimelineByClick
-    }
+    };
 });

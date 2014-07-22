@@ -1,7 +1,7 @@
 module.exports = function(grunt) {
+    /*jshint -W014 */
     'use strict';
     
-    //配置本地测试服务器相关
     var cfg = {
         src: 'src/',
         // Change 'localhost' to '0.0.0.0' to access the server from outside.
@@ -39,11 +39,9 @@ module.exports = function(grunt) {
             + '           它是荒野中的尊贵象征,它是风中的舞者,优雅而孤傲            . : :.:::::::.: :.\n'
             + '-->\n',
 
-        // Task configuration
         clean: {
             build: ['build/*']
         },
-        // 合并js文件
         requirejs: {
             compile: {
                 options: {
@@ -56,7 +54,6 @@ module.exports = function(grunt) {
             }
         },
 
-        // 单独压缩require.js文件
         uglify: {
             options: {
                 compress: true
@@ -99,7 +96,7 @@ module.exports = function(grunt) {
                 dest: 'build/script/nls'
             }
         },
-        // 发布html文件，去掉开发标记
+
         targethtml: {
             options: {
                 curlyTags: {
@@ -116,12 +113,8 @@ module.exports = function(grunt) {
             }
         },
 
-        //======== 配置相关 ========
         cfg: cfg,
 
-        //======== 开发测试相关 ========
-
-        //开启服务
         connect: {
             server: {
                 options: {
@@ -131,21 +124,19 @@ module.exports = function(grunt) {
             }
         },
 
-        //打开浏览器
         open: {
           server: {
             url: 'http://localhost:' + cfg.serverPort
           }
         },
 
-        //监控文件变化
         watch: {
           options: {
             livereload: cfg.livereload
           },
           server: {
             files: [ cfg.src + '/**'],
-            tasks: ["less:development"]
+            tasks: ['less:development']
           },
           clean: {
                 files: ['src/style/less/**'],
@@ -153,14 +144,13 @@ module.exports = function(grunt) {
           }
         },
 
-        //less
         less: {
             development: {
                 options: {
                     strictImports:false
                 },
                 files: {
-                    "src/style/css/app.css": "src/style/less/app.less"
+                    'src/style/css/app.css' : 'src/style/less/app.less'
                 }
             },
             production:{
@@ -173,6 +163,14 @@ module.exports = function(grunt) {
                     'build/style/css/<%=pkg.name%>.min.css': 'src/style/less/app.less'
                 }
             }
+        },
+
+        jshint: {
+            options: {
+                jshintrc: '.jshintrc',
+                reporter: require('jshint-stylish')
+            },
+            all: ['Gruntfile.js', 'src/script/*']
         }
     });
 
@@ -180,7 +178,7 @@ module.exports = function(grunt) {
     require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
     grunt.registerTask('default', ['clean', 'requirejs','less:production', 'uglify', 'targethtml:dist', 'copy']);
-    grunt.registerTask('test','Test of <%= pkg.name %>', ['clean', 'requirejs','less:production', 'uglify', 'targethtml:dist']);
+    grunt.registerTask('test','Test of <%= pkg.name %>', ['clean', 'requirejs','less:production', 'uglify', 'targethtml:dist','jshint']);
     grunt.registerTask('server', ['connect:server', 'open:server', 'watch:server','less:development']);
 
 };  

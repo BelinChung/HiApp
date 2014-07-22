@@ -6,10 +6,10 @@ define(['utils/appFunc','i18n!nls/lang','utils/tplManager'],function(appFunc,i18
 
     function openSendPopup(){
         var renderData = [];
-        renderData['cancel'] = i18n.global.cancel;
-        renderData['send'] = i18n.global.send;
-        renderData['senTweet'] = i18n.index.sen_tweet;
-        renderData['sendPlaceholder'] = i18n.index.send_placeholder;
+        renderData.cancel = i18n.global.cancel;
+        renderData.send = i18n.global.send;
+        renderData.senTweet = i18n.index.sen_tweet;
+        renderData.sendPlaceholder = i18n.index.send_placeholder;
 
         var output = TM.renderTplById('sendPopupTemplate', renderData);
         hiApp.popup($$.trim(output));
@@ -41,7 +41,7 @@ define(['utils/appFunc','i18n!nls/lang','utils/tplManager'],function(appFunc,i18
             hiApp.hidePreloader();
             hiApp.closeModal('.send-popup');
             //Refresh Timeline
-        },1300)
+        },1300);
     }
 
     return{
@@ -49,5 +49,5 @@ define(['utils/appFunc','i18n!nls/lang','utils/tplManager'],function(appFunc,i18
         postMsg:postMsg,
         openSendPopup:openSendPopup,
         clearSendPopup:clearSendPopup
-    }
+    };
 });

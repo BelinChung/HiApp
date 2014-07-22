@@ -12,49 +12,53 @@ define(['view/appView',
         'view/languageView'],function(appView,loginView,settingView,aboutView,feedbackView,timelineView,itemView,postView,contactView,commentView,messageView,languageView) {
 
     function module (name){
-
+        
+        var view;
+        
         switch (name){
             case 'appView':
-                return appView;
+                view = appView;
                 break;
             case 'loginView':
-                return loginView;
+                view = loginView;
                 break;
             case 'settingView':
-                return settingView;
+                view = settingView;
                 break;
             case 'aboutView':
-                return aboutView;
+                view = aboutView;
                 break;
             case 'feedbackView':
-                return feedbackView;
+                view = feedbackView;
                 break;
             case 'timelineView':
-                return timelineView;
+                view = timelineView;
                 break;
             case 'itemView':
-                return itemView;
+                view = itemView;
                 break;
             case 'postView':
-                return postView;
+                view = postView;
                 break;
             case 'contactView':
-                return contactView;
+                view = contactView;
                 break;
             case 'commentView':
-                return commentView;
+                view = commentView;
                 break;
             case 'messageView':
-                return messageView;
+                view = messageView;
                 break;
             case 'languageView':
-                return languageView;
+                view = languageView;
                 break;
         }
+
+        return view;
     }
 
-    return{
+    return {
         module:module
-    }
+    };
 
 });

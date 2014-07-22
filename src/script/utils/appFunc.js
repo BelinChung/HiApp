@@ -6,7 +6,7 @@ define(['i18n!nls/lang'],function(i18n){
     }
 
     function getPageNameInUrl(url){
-        url = url || "";
+        url = url || '';
         var arr = url.split('.');
         return arr[0];
     }
@@ -23,15 +23,15 @@ define(['i18n!nls/lang'],function(i18n){
     function hideToolbar(viewContainer) {
         $$(viewContainer).addClass('hidden-toolbar');
         return true;
-    };
+    }
     
     function showToolbar(viewContainer) {
         var vc = $$(viewContainer);
-        vc.addClass('hiding-toolbar').removeClass('hidden-toolbar')
+        vc.addClass('hiding-toolbar').removeClass('hidden-toolbar');
         $$('.toolbar').transitionEnd(function () {
             vc.removeClass('hiding-toolbar');
         });
-    }; 
+    }
 
 
     function timeFormat(ms){
@@ -56,7 +56,7 @@ define(['i18n!nls/lang'],function(i18n){
         } else {
             var s = new Date();
             s.setTime(ms);
-            return (s.getFullYear() + "-" + f(s.getMonth() + 1) + "-" + f(s.getDate()) + " "+ f(s.getHours()) + ":"+ f(s.getMinutes()));
+            return (s.getFullYear() + '-' + f(s.getMonth() + 1) + '-' + f(s.getDate()) + ' '+ f(s.getHours()) + ':'+ f(s.getMinutes()));
         }
 
         function f(n){
@@ -98,5 +98,5 @@ define(['i18n!nls/lang'],function(i18n){
         timeFormat:timeFormat,
         getCharLength:getCharLength,
         bindEvents:bindEvents
-    }
-})
+    };
+});

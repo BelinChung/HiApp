@@ -18,7 +18,7 @@ define(['utils/appFunc','utils/xhr','view/module'],function(appFunc,xhr,VM){
         xhr.simpleCall({
             func:'answers'
         },function(response) {
-            if (response['err_code'] === 0) {
+            if (response.err_code === 0) {
                 VM.module('messageView').init({
                     bindings: bindings,
                     query: query,
@@ -28,7 +28,7 @@ define(['utils/appFunc','utils/xhr','view/module'],function(appFunc,xhr,VM){
                 renderMessages();
 
             }
-        })
+        });
 
     }
 
@@ -36,13 +36,13 @@ define(['utils/appFunc','utils/xhr','view/module'],function(appFunc,xhr,VM){
         xhr.simpleCall({
             func:'message'
         },function(response) {
-            if (response['err_code'] === 0) {
+            if (response.err_code === 0) {
                 VM.module('messageView').renderMessages(response.data);
             }
-        })
+        });
     }
 
     return{
         init:init
-    }
+    };
 });

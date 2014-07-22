@@ -6,7 +6,7 @@ define([], function() {
             CONFIG = {};
             CONFIG.currentUser = {};
             if (localStorage.getItem('sid')) {
-                CONFIG.currentUser['sid'] = localStorage.getItem('sid');
+                CONFIG.currentUser.sid = localStorage.getItem('sid');
             }
             if(localStorage.getItem('user')){
                 CONFIG.currentUser = JSON.parse(localStorage.getItem('user'));
@@ -21,8 +21,8 @@ define([], function() {
     }
 
     function getSid(){
-        var m = $$.parseUrlQuery(window.location.href || "");
-        return m['sid'] || localStorage.getItem('sid');
+        var m = $$.parseUrlQuery(window.location.href || '');
+        return m.sid || localStorage.getItem('sid');
     }
 
     function setCurrentUser(sid,user){
@@ -50,5 +50,5 @@ define([], function() {
         removeCurrentUser:removeCurrentUser,
         isLogin:isLogin,
         getSid:getSid
-    }
-})
+    };
+});

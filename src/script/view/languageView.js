@@ -5,8 +5,8 @@ define(['utils/appFunc','i18n!nls/lang','utils/tplManager'],function(appFunc,i18
         setDefaultLanguage();
         appFunc.hideToolbar('.views');
 
-        var from = params['query']['from'];
-        if(from === "setting"){
+        var from = params.query.from;
+        if(from === 'setting'){
             var bindings = [{
                 element: '.back2language',
                     event: 'click',
@@ -18,8 +18,8 @@ define(['utils/appFunc','i18n!nls/lang','utils/tplManager'],function(appFunc,i18
 
     function setDefaultLanguage(){
         var lang = getLanguage();
-        lang = lang || "en-us";
-        $$('.language-page .language-radio[data-lang="' + lang + '"]').attr('checked','checked')
+        lang = lang || 'en-us';
+        $$('.language-page .language-radio[data-lang="' + lang + '"]').attr('checked','checked');
     }
 
     function switchLanguage(){
@@ -30,9 +30,9 @@ define(['utils/appFunc','i18n!nls/lang','utils/tplManager'],function(appFunc,i18
 
     function i18next(content){
         var renderData = [];
-        renderData['back'] = i18n.global.back;
-        renderData['done'] = i18n.global.done;
-        renderData['switchLanguage'] = i18n.global.switch_language;
+        renderData.back = i18n.global.back;
+        renderData.done = i18n.global.done;
+        renderData.switchLanguage = i18n.global.switch_language;
 
         var output = TM.renderTpl(content,renderData);
 
@@ -56,5 +56,5 @@ define(['utils/appFunc','i18n!nls/lang','utils/tplManager'],function(appFunc,i18
         setDefaultLanguage:setDefaultLanguage,
         switchLanguage:switchLanguage,
         i18next:i18next
-    }
+    };
 });

@@ -14,5 +14,5 @@ define(['utils/appFunc','utils/xhr','view/module'],function(appFunc,xhr,VM){
 
     return{
         init:init
-    }
+    };
 });

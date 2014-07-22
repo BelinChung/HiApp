@@ -4,7 +4,7 @@ define(['utils/appFunc','i18n!nls/lang','utils/tplManager'],function(appFunc,i18
         appFunc.hideToolbar('.views');
         appFunc.bindEvents(params.bindings);
 
-        var id = params['query']['id'];
+        var id = params.query.id;
         getItem(id);
     }
 
@@ -13,14 +13,14 @@ define(['utils/appFunc','i18n!nls/lang','utils/tplManager'],function(appFunc,i18
         var $this = $$('.time-line-content .item-content[data-id="'+ id +'"]');
 
         var item = [];
-        item['id'] = $this.data('id');
-        item['nickname'] = $this.find('.item-header .detail .nickname').html();
-        item['avatar'] = $this.find('.item-header .avatar>img').data('avatarid');
-        item['time'] = appFunc.timeFormat($this.find('.item-header .detail .create-time').data('time'));
-        item['text'] = $this.find('.item-subtitle').html();
+        item.id = $this.data('id');
+        item.nickname = $this.find('.item-header .detail .nickname').html();
+        item.avatar = $this.find('.item-header .avatar>img').data('avatarid');
+        item.time = appFunc.timeFormat($this.find('.item-header .detail .create-time').data('time'));
+        item.text = $this.find('.item-subtitle').html();
 
         if($this.find('.item-image img')[0])
-            item['image'] = $this.find('.item-image img').attr('src');
+            item.image = $this.find('.item-image img').attr('src');
 
         var output = TM.renderTplById('itemTemplate',item);
 
@@ -29,10 +29,10 @@ define(['utils/appFunc','i18n!nls/lang','utils/tplManager'],function(appFunc,i18
 
     function i18next(content){
         var renderData = [];
-        renderData['back'] = i18n.global.back;
-        renderData['title'] = i18n.item.title;
-        renderData['comment'] = i18n.timeline.comment;
-        renderData['forward'] = i18n.timeline.forward;
+        renderData.back = i18n.global.back;
+        renderData.title = i18n.item.title;
+        renderData.comment = i18n.timeline.comment;
+        renderData.forward = i18n.timeline.forward;
 
         var output = TM.renderTpl(content,renderData);
 
@@ -42,5 +42,5 @@ define(['utils/appFunc','i18n!nls/lang','utils/tplManager'],function(appFunc,i18
     return{
         init:init,
         i18next:i18next
-    }
+    };
 });

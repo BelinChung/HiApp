@@ -19,7 +19,10 @@
         "grunt-open": "latest",
         "matchdep": "latest",
         "grunt-contrib-connect": "latest",
-        "grunt-contrib-less":"latest"
+        "grunt-contrib-less":"latest",
+        "jshint": "latest",
+        "grunt-contrib-jshint": "latest",
+        "jshint-stylish": "latest"
     },
     "scripts": {
         "test": "grunt test"

@@ -16,8 +16,8 @@ define(['utils/appFunc','i18n!nls/lang','utils/tplManager'],function(appFunc,i18
 
     function i18next(content){
         var renderData = [];
-        renderData['feedBack'] = i18n.setting.feed_back;
-        renderData['feedBackPlaceholder'] = i18n.setting.feed_back_placeholder;
+        renderData.feedBack = i18n.setting.feed_back;
+        renderData.feedBackPlaceholder = i18n.setting.feed_back_placeholder;
 
         var output = TM.renderTpl(content,renderData);
 
@@ -28,5 +28,5 @@ define(['utils/appFunc','i18n!nls/lang','utils/tplManager'],function(appFunc,i18
         init:init,
         sendFeedback:sendFeedback,
         i18next:i18next
-    }
+    };
 });

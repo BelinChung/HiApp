@@ -29,16 +29,16 @@ define(['utils/appFunc','utils/xhr','view/module'],function(appFunc,xhr,VM){
         xhr.simpleCall({
             func:'timeline'
         },function(response){
-            VM.module('timelineView').getTimeline(response['data']);
-        })
+            VM.module('timelineView').getTimeline(response.data);
+        });
     }
 
     function refreshTimeline(){
         xhr.simpleCall({
             func:'refresh_timeline'
         },function(response){
-            VM.module('timelineView').refreshTimeline(response['data']);
-        })
+            VM.module('timelineView').refreshTimeline(response.data);
+        });
     }
 
     function refreshTimelineByClick(){
@@ -53,13 +53,13 @@ define(['utils/appFunc','utils/xhr','view/module'],function(appFunc,xhr,VM){
             func:'more_timeline'
         },function(response){
             VM.module('timelineView').infiniteTimeline({
-                data:response['data'],
+                data:response.data,
                 $dom:$dom
             });
-        })
+        });
     }
 
     return{
         init:init
-    }
+    };
 });

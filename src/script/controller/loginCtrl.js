@@ -15,7 +15,7 @@ define(['utils/appFunc','utils/xhr','view/module','GS','i18n!nls/lang'],function
     function loginSubmit(){
         var loginName = $$('input.login-name').val();
         var password = $$('input.password').val();
-        if(loginName === "" || password === ""){
+        if(loginName === '' || password === ''){
             hiApp.alert(i18n.login.err_empty_input);
         }else if(!appFunc.isEmail(loginName)){
             hiApp.alert(i18n.login.err_illegal_email);
@@ -29,15 +29,15 @@ define(['utils/appFunc','utils/xhr','view/module','GS','i18n!nls/lang'],function
                     password:password
                 }
             },function(response){
-                if(response['err_code'] === 0){
+                if(response.err_code === 0){
 
-                    var login = response['data'];
-                    GS.setCurrentUser(login['sid'],login['user']);
+                    var login = response.data;
+                    GS.setCurrentUser(login.sid,login.user);
                     mainView.loadPage('index.html');
                     hiApp.hidePreloader();
                 }else{
                     hiApp.hidePreloader();
-                    hiApp.alert(response['err_msg']);
+                    hiApp.alert(response.err_msg);
                 }
             });
         }
@@ -50,5 +50,5 @@ define(['utils/appFunc','utils/xhr','view/module','GS','i18n!nls/lang'],function
     return{
         init:init,
         setCopyRightPosition:setCopyRightPosition
-    }
+    };
 });

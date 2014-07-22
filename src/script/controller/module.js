@@ -13,48 +13,52 @@ define(['controller/appCtrl',
 
      function module (name){
 
+        var controller;
+
         switch (name){
             case 'appCtrl':
-                return appCtrl;
+                controller = appCtrl;
                 break;
             case 'loginCtrl':
-                return loginCtrl;
+                controller = loginCtrl;
                 break;
             case 'settingCtrl':
-                return settingCtrl;
+                controller = settingCtrl;
                 break;
             case 'aboutCtrl':
-                return aboutCtrl;
+                controller = aboutCtrl;
                 break;
             case 'feedbackCtrl':
-                return feedbackCtrl;
+                controller = feedbackCtrl;
                 break;
             case 'timelineCtrl':
-                return timelineCtrl;
+                controller = timelineCtrl;
                 break;
             case 'itemCtrl':
-                return itemCtrl;
+                controller = itemCtrl;
                 break;
             case 'postCtrl':
-                return postCtrl;
+                controller = postCtrl;
                 break;
             case 'contactCtrl':
-                return contactCtrl;
+                controller = contactCtrl;
                 break;
             case 'commentCtrl':
-                return commentCtrl;
+                controller = commentCtrl;
                 break;
             case 'messageCtrl':
-                return messageCtrl;
+                controller = messageCtrl;
                 break;
             case 'languageCtrl':
-                return languageCtrl;
+                controller = languageCtrl;
                 break;
         }
+
+        return controller;
     }
 
     return{
         module:module
-    }
+    };
 
 });

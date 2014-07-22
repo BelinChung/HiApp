@@ -68,7 +68,7 @@ define(['utils/appFunc','utils/tplManager','i18n!nls/lang'],function(appFunc,TM,
 
             $$('#ourView .refresh-click').find('i').removeClass('ios7-reloading');
 
-            if(newestId === 48) {
+            if(parseInt(newestId) === 48) {
                 showLoadResult(i18n.index.nothing_loaded);
                 hiApp.pullToRefreshDone();
                 return false;
@@ -112,8 +112,9 @@ define(['utils/appFunc','utils/tplManager','i18n!nls/lang'],function(appFunc,TM,
         var items = $this.find('.time-line-content .item-content');
         var length = items.length;
         var lastId = items.eq(length - 1).data('id');
+        if(parseInt(lastId) === 24){
 
-        if(lastId === 24){
+            //I can't hide indicator by javascript, why?
             hiApp.detachInfiniteScroll($this);
             hiApp.hideIndicator();
         }else{

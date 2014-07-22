@@ -19,6 +19,7 @@ define({
     },
     "index": {
         "nothing_found": "No matching results",
+        "nothing_loaded":"Nothing loaded",
         "tweet": "Tweet",
         "contacts": "Contacts",
         "setting": "Setting",

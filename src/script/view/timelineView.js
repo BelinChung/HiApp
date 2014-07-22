@@ -69,7 +69,7 @@ define(['utils/appFunc','utils/tplManager','i18n!nls/lang'],function(appFunc,TM,
             $$('#ourView .refresh-click').find('i').removeClass('ios7-reloading');
 
             if(newestId == 48) {
-                console.log('no new tweet');
+                showLoadResult(i18n.index.nothing_loaded);
                 hiApp.pullToRefreshDone();
                 return false;
             }
@@ -87,7 +87,7 @@ define(['utils/appFunc','utils/tplManager','i18n!nls/lang'],function(appFunc,TM,
                 var output = TM.renderTplById('timelineTemplate',renderData);
                 $$('#ourView').find('.time-line-content').prepend(output);
             }else{
-                console.log('no new tweet');
+                showLoadResult(i18n.index.nothing_loaded);
             }
 
             hiApp.pullToRefreshDone();
@@ -136,6 +136,16 @@ define(['utils/appFunc','utils/tplManager','i18n!nls/lang'],function(appFunc,TM,
             var ptrContent = $$('#ourView').find('.pull-to-refresh-content');
             ptrContent.addClass('pull-up transitioning refreshing');
         },350)
+    }
+
+    function showLoadResult(text){
+        setTimeout(function(){
+            $$('#ourView .load-result').html(text).css('opacity','1').transition(1000);
+
+            setTimeout(function(){
+                $$('#ourView .load-result').css('opacity','0').transition(1000);
+            },2100);
+        },400);
     }
 
     return{

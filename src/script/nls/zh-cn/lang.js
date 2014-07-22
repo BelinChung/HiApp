@@ -19,6 +19,7 @@ define({
     },
     "index": {
         "nothing_found": "未有匹配结果",
+        "nothing_loaded":"没有加载到新动态",
         "tweet": "动态",
         "contacts": "联系人",
         "setting": "设置",

@@ -4,6 +4,8 @@ define(['utils/appFunc','utils/tplManager','i18n!nls/lang'],function(appFunc,TM,
         appFunc.showToolbar('.views');
         appFunc.bindEvents(params.bindings);
 
+        $$('#ourView .pull-to-refresh-layer').show();
+
         hiApp.showIndicator();
     }
 

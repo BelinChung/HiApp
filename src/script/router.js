@@ -17,6 +17,9 @@ define(['GS','controller/module'],function(GS,CM) {
         }else{
             mainView.loadPage('index.html');
         }
+
+        //remove 'hidden-navbar' class
+        $$('div.views').removeClass('hidden-navbar');
     }
 
     function pageAfterAnimation(page){

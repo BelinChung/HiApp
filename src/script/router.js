@@ -15,7 +15,7 @@ define(['GS','controller/module'],function(GS,CM) {
         if(!GS.isLogin()){
             mainView.loadPage('page/login.html');
         }else{
-            mainView.loadPage('index.html');
+            mainView.loadPage('index.html',false);
         }
 
         //remove 'hidden-navbar' class

@@ -87,5 +87,3 @@ node_modules
 .lock-wscript
 
 build/
-
-src/style/css/*.css

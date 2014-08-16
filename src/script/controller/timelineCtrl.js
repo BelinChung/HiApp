@@ -15,7 +15,7 @@ define(['utils/appFunc','utils/xhr','view/module'],function(appFunc,xhr,VM){
             },{
                 element: '#ourView .refresh-click',
                 event: 'click',
-                handler: timelineCtrl.refreshTimelineByClick
+                handler: VM.module('timelineView').refreshTimelineByClick
             },{
                 element: '#ourView .open-send-popup',
                 event: 'click',
@@ -43,12 +43,6 @@ define(['utils/appFunc','utils/xhr','view/module'],function(appFunc,xhr,VM){
             },function(response){
                 VM.module('timelineView').refreshTimeline(response.data);
             });
-        },
-
-        refreshTimelineByClick: function(){
-            VM.module('timelineView').beforeRefreshTimelineByClick();
-            $$('#ourView .pull-to-refresh-content').scrollTop(0,300);
-            timelineCtrl.refreshTimeline();
         },
 
         infiniteTimeline: function(){

@@ -137,12 +137,14 @@ define(['utils/appFunc','utils/tplManager','i18n!nls/lang'],function(appFunc,TM,
             }
         },
 
-        beforeRefreshTimelineByClick: function(){
+        refreshTimelineByClick: function(){
             setTimeout(function(){
                 $$('#ourView .refresh-click ').find('i').addClass('ios7-reloading');
-                var ptrContent = $$('#ourView').find('.pull-to-refresh-content');
-                ptrContent.addClass('pull-up transitioning refreshing');
             },350);
+
+            $$('#ourView .pull-to-refresh-content').scrollTop(0,300);
+
+            hiApp.pullToRefreshTrigger('#ourview');
         },
 
         showLoadResult: function(text){

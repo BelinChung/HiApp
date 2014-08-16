@@ -21,6 +21,7 @@
     "white"        : true,
     "globals":{
         "window": true,
+        "Dom7": true,
         "$$": true,
         "Framework7": true,
         "hiApp": true,

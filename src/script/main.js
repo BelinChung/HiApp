@@ -7,7 +7,6 @@
             i18n:'../vendors/require/i18n',
             Framework7:'../vendors/framework7/framework7',
             mustache:'../vendors/mustache/mustache',
-            fileUpload:'../vendors/plugin/fileupload',
             GTPL:'../page/global.tpl.html',
             GS:'services/globalService'
         },
@@ -18,7 +17,7 @@
 
     require(['Framework7','router','i18n!nls/lang'], function(Framework7,router,i18n) {
 
-        window.$$ = Framework7.$;
+        window.$$ = Dom7;
 
         window.hiApp = new Framework7({
             pushState: false,

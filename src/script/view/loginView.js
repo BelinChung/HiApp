@@ -7,20 +7,6 @@ define(['utils/appFunc','i18n!nls/lang','utils/tplManager'],function(appFunc,i18
             appFunc.bindEvents(params.bindings);
         },
 
-        setCopyRightPosition: function(){
-            var documentHeight = $$('html').height() - 44;
-            var contentHeight = 0;
-            $$('.page-content .content-block').each(function(){
-                contentHeight += $$(this).outerHeight();
-            });
-
-            var copyRightHeight = $$('.page-content .copyright').outerHeight(true);
-
-            var paddingTop = documentHeight - contentHeight - 140 - copyRightHeight;
-
-            $$('.page-content .copyright').css('top',paddingTop + 'px').transition(300);
-        },
-
         i18next: function(content){
             var renderData = [];
             renderData.appName = i18n.app.name;

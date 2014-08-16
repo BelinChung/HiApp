@@ -32,22 +32,21 @@ define(['utils/appFunc','utils/xhr','view/module','GS','i18n!nls/lang'],function
                         password:password
                     }
                 },function(response){
-                    if(response.err_code === 0){
+                    setTimeout(function(){
+                        if(response.err_code === 0){
 
-                        var login = response.data;
-                        GS.setCurrentUser(login.sid,login.user);
-                        mainView.loadPage('index.html');
-                        hiApp.hidePreloader();
-                    }else{
-                        hiApp.hidePreloader();
-                        hiApp.alert(response.err_msg);
-                    }
+                            var login = response.data;
+                            GS.setCurrentUser(login.sid,login.user);
+                            mainView.loadPage('index.html');
+                            hiApp.hidePreloader();
+                        }else{
+                            hiApp.hidePreloader();
+                            hiApp.alert(response.err_msg);
+                        }
+                    },500);
+
                 });
             }
-        },
-
-        setCopyRightPosition: function(){
-            VM.module('loginView').setCopyRightPosition();
         }
 
     };

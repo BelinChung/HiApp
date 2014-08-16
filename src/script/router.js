@@ -28,12 +28,10 @@ define(['GS','controller/module'],function(GS,CM) {
             var name = page.name;
             var query = page.query;
             var from = page.from;
-            switch (name) {
-                case 'login':
-                    if (from === 'left') return;
-                    CM.module('loginCtrl').setCopyRightPosition();
-                    break;
-            }
+//            switch (name) {
+//                case 'login':
+//                    break;
+//            }
         },
 
         pageBeforeInit: function(page) {

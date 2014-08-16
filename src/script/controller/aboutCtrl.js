@@ -1,18 +1,21 @@
 define(['utils/appFunc','view/module'],function(appFunc,VM){
 
-    var bindings = [{
-        element: '.back2setting',
-        event: 'click',
-        handler: VM.module('appView').showToolbar
-    }];
+    var aboutCtrl = {
 
-    function init(){
-        VM.module('aboutView').init({
-            bindings:bindings
-        });
-    }
+        init: function(){
 
-    return{
-        init:init
+            var bindings = [{
+                element: '.back2setting',
+                event: 'click',
+                handler: VM.module('appView').showToolbar
+            }];
+
+            VM.module('aboutView').init({
+                bindings:bindings
+            });
+        }
+
     };
+
+    return aboutCtrl;
 });

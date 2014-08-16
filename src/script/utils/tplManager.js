@@ -1,39 +1,42 @@
 define(['text!GTPL','mustache'],function(GTPL,mustache){
 
-    var $$ = Framework7.$;
+    var $$ = Dom7;
 
-    $$('body').append(GTPL);
+    var tplManager = {
 
-    function loadTpl(id){
-        var tpl = $$('#' + id).html();
-        return tpl;
-    }
+        init: function(){
+            $$('body').append(GTPL);
+        },
 
-    function renderRemoteTpl(tplName,renderData,callback){
-        tplName = tplName || '';
-        $$.get('page/' + tplName + '.tpl.html' ,function(markup){
+        loadTpl: function(id){
+            var tpl = $$('#' + id).html();
+            return tpl;
+        },
+
+        renderRemoteTpl: function(tplName,renderData,callback){
+            tplName = tplName || '';
+            $$.get('page/' + tplName + '.tpl.html' ,function(markup){
+                var output = mustache.render(markup,renderData);
+
+                typeof(callback === 'function') ? callback(output) : null;
+            });
+
+        },
+
+        renderTpl: function(markup,renderData){
             var output = mustache.render(markup,renderData);
+            return output;
+        },
 
-            typeof(callback === 'function') ? callback(output) : null;
-        });
-        
-    }
+        renderTplById: function(tplId,renderData){
+            var markup = this.loadTpl(tplId);
+            var output = mustache.render(markup,renderData);
+            return output;
+        }
 
-    function renderTpl(markup,renderData){
-        var output = mustache.render(markup,renderData);
-        return output;
-    }
-
-    function renderTplById(tplId,renderData){
-        var markup = loadTpl(tplId);
-        var output = mustache.render(markup,renderData);
-        return output;
-    }
-    
-    return {
-        loadTpl:loadTpl,
-        renderRemoteTpl:renderRemoteTpl,
-        renderTpl:renderTpl,
-        renderTplById:renderTplById
     };
+
+    tplManager.init();
+
+    return tplManager;
 });

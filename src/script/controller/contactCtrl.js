@@ -1,39 +1,42 @@
 define(['utils/appFunc','utils/xhr','view/module'],function(appFunc,xhr,VM){
 
-    var bindings = [{
-        element:'#contatcView',
-        event: 'show',
-        handler:loadContacts
-    },{
-        element:'#contatcView .contact-page',
-        event: 'search',
-        handler:VM.module('contactView').filterResult
-    }];
+    var contactCtrl = {
 
-    function init(){
-        VM.module('contactView').init({
-            bindings:bindings
-        });
-    }
+        init: function(){
 
-    function loadContacts() {
-        if(VM.module('contactView').beforeLoadContacts()) {
-            xhr.simpleCall({
-                query: {
-                    callback: '?'
-                },
-                func: 'contacts'
-            }, function (response) {
-                if (response.err_code === 0) {
-                    VM.module('contactView').render({
-                        contacts: response.data
-                    });
-                }
+            var bindings = [{
+                element:'#contatcView',
+                event: 'show',
+                handler:contactCtrl.loadContacts
+            },{
+                element:'#contatcView .contact-page',
+                event: 'search',
+                handler:VM.module('contactView').filterResult
+            }];
+
+            VM.module('contactView').init({
+                bindings:bindings
             });
-        }
-    }
+        },
 
-    return{
-        init:init
+        loadContacts: function() {
+            if(VM.module('contactView').beforeLoadContacts()) {
+                xhr.simpleCall({
+                    query: {
+                        callback: '?'
+                    },
+                    func: 'contacts'
+                }, function (response) {
+                    if (response.err_code === 0) {
+                        VM.module('contactView').render({
+                            contacts: response.data
+                        });
+                    }
+                });
+            }
+        }
+
     };
+
+    return contactCtrl;
 });

@@ -1,26 +1,27 @@
 define(['utils/appFunc','view/module'],function(appFunc,VM){
 
-    var bindings = [{
-        element: '.back2setting',
-        event: 'click',
-        handler: VM.module('appView').showToolbar
-    },{
-        element: '.send-feedback',
-        event: 'click',
-        handler: sendFeedback
-    }];
+    var feedBackCtrl = {
 
-    function init(){
-        VM.module('feedbackView').init({
-            bindings:bindings
-        });
-    }
+        init:function(){
+            var bindings = [{
+                element: '.back2setting',
+                event: 'click',
+                handler: VM.module('appView').showToolbar
+            },{
+                element: '.send-feedback',
+                event: 'click',
+                handler: feedBackCtrl.sendFeedback
+            }];
+            VM.module('feedbackView').init({
+                bindings:bindings
+            });
+        },
 
-    function sendFeedback(){
-        VM.module('feedbackView').sendFeedback();
-    }
+        sendFeedback: function(){
+            VM.module('feedbackView').sendFeedback();
+        }
 
-    return{
-        init:init
     };
+
+    return feedBackCtrl;
 });

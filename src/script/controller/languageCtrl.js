@@ -1,19 +1,22 @@
 define(['utils/appFunc','view/module'],function(appFunc,VM){
 
-    var bindings = [{
-        element:'.set-language',
-        event: 'click',
-        handler:VM.module('languageView').switchLanguage
-    }];
+    var langyageCtrl = {
 
-    function init(query){
-        VM.module('languageView').init({
-            bindings:bindings,
-            query:query
-        });
-    }
+        init: function(query){
 
-    return{
-        init:init
+            var bindings = [{
+                element:'.set-language',
+                event: 'click',
+                handler:VM.module('languageView').switchLanguage
+            }];
+
+            VM.module('languageView').init({
+                bindings:bindings,
+                query:query
+            });
+        }
+
     };
+
+    return langyageCtrl;
 });

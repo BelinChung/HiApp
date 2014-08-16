@@ -1,65 +1,68 @@
 define(['utils/appFunc','utils/xhr','view/module'],function(appFunc,xhr,VM){
 
-    var bindings = [{
-        element: '#ourView .pull-to-refresh-content',
-        event: 'refresh',
-        handler:refreshTimeline
-    },{
-        element: '#ourView .pull-to-refresh-content',
-        event: 'infinite',
-        handler:infiniteTimeline
-    },{
-        element: '#ourView .refresh-click',
-        event: 'click',
-        handler:refreshTimelineByClick
-    },{
-        element: '#ourView .open-send-popup',
-        event: 'click',
-        handler:VM.module('postView').openSendPopup
-    }];
+    var timelineCtrl = {
 
-    function init(){
-        VM.module('timelineView').init({
-            bindings:bindings
-        });
-        getTimeline();
-    }
+        init: function(){
 
-    function getTimeline(){
-        xhr.simpleCall({
-            func:'timeline'
-        },function(response){
-            VM.module('timelineView').getTimeline(response.data);
-        });
-    }
+            var bindings = [{
+                element: '#ourView .pull-to-refresh-content',
+                event: 'refresh',
+                handler: timelineCtrl.refreshTimeline
+            },{
+                element: '#ourView .pull-to-refresh-content',
+                event: 'infinite',
+                handler: timelineCtrl.infiniteTimeline
+            },{
+                element: '#ourView .refresh-click',
+                event: 'click',
+                handler: timelineCtrl.refreshTimelineByClick
+            },{
+                element: '#ourView .open-send-popup',
+                event: 'click',
+                handler:VM.module('postView').openSendPopup
+            }];
 
-    function refreshTimeline(){
-        xhr.simpleCall({
-            func:'refresh_timeline'
-        },function(response){
-            VM.module('timelineView').refreshTimeline(response.data);
-        });
-    }
-
-    function refreshTimelineByClick(){
-        VM.module('timelineView').beforeRefreshTimelineByClick();
-        $$('#ourView .pull-to-refresh-content').scrollTop(0,300);
-        refreshTimeline();
-    }
-
-    function infiniteTimeline(){
-        var $dom = $$(this);
-        xhr.simpleCall({
-            func:'more_timeline'
-        },function(response){
-            VM.module('timelineView').infiniteTimeline({
-                data:response.data,
-                $dom:$dom
+            VM.module('timelineView').init({
+                bindings:bindings
             });
-        });
-    }
 
-    return{
-        init:init
+            this.getTimeline();
+        },
+
+        getTimeline: function(){
+            xhr.simpleCall({
+                func:'timeline'
+            },function(response){
+                VM.module('timelineView').getTimeline(response.data);
+            });
+        },
+
+        refreshTimeline: function(){
+            xhr.simpleCall({
+                func:'refresh_timeline'
+            },function(response){
+                VM.module('timelineView').refreshTimeline(response.data);
+            });
+        },
+
+        refreshTimelineByClick: function(){
+            VM.module('timelineView').beforeRefreshTimelineByClick();
+            $$('#ourView .pull-to-refresh-content').scrollTop(0,300);
+            timelineCtrl.refreshTimeline();
+        },
+
+        infiniteTimeline: function(){
+            var $dom = $$(this);
+            xhr.simpleCall({
+                func:'more_timeline'
+            },function(response){
+                VM.module('timelineView').infiniteTimeline({
+                    data:response.data,
+                    $dom:$dom
+                });
+            });
+        }
     };
+
+    return timelineCtrl;
 });

@@ -1,46 +1,47 @@
 define(['utils/appFunc','i18n!nls/lang','utils/tplManager'],function(appFunc,i18n,TM){
 
-    function init(params){
-        appFunc.hideToolbar('.views');
-        appFunc.bindEvents(params.bindings);
+    var itemView = {
 
-        var id = params.query.id;
-        getItem(id);
-    }
+        init: function(params){
+            appFunc.hideToolbar('.views');
+            appFunc.bindEvents(params.bindings);
 
-    function getItem(id){
+            var id = params.query.id;
+            this.getItem(id);
+        },
 
-        var $this = $$('.time-line-content .item-content[data-id="'+ id +'"]');
+        getItem: function(id){
 
-        var item = [];
-        item.id = $this.data('id');
-        item.nickname = $this.find('.item-header .detail .nickname').html();
-        item.avatar = $this.find('.item-header .avatar>img').data('avatarid');
-        item.time = appFunc.timeFormat($this.find('.item-header .detail .create-time').data('time'));
-        item.text = $this.find('.item-subtitle').html();
+            var $this = $$('.time-line-content .item-content[data-id="'+ id +'"]');
 
-        if($this.find('.item-image img')[0])
-            item.image = $this.find('.item-image img').attr('src');
+            var item = [];
+            item.id = $this.data('id');
+            item.nickname = $this.find('.item-header .detail .nickname').html();
+            item.avatar = $this.find('.item-header .avatar>img').data('avatarid');
+            item.time = appFunc.timeFormat($this.find('.item-header .detail .create-time').data('time'));
+            item.text = $this.find('.item-subtitle').html();
 
-        var output = TM.renderTplById('itemTemplate',item);
+            if($this.find('.item-image img')[0])
+                item.image = $this.find('.item-image img').attr('src');
 
-        $$('#itemContent').html(output);
-    }
+            var output = TM.renderTplById('itemTemplate',item);
 
-    function i18next(content){
-        var renderData = [];
-        renderData.back = i18n.global.back;
-        renderData.title = i18n.item.title;
-        renderData.comment = i18n.timeline.comment;
-        renderData.forward = i18n.timeline.forward;
+            $$('#itemContent').html(output);
+        },
 
-        var output = TM.renderTpl(content,renderData);
+        i18next: function(content){
+            var renderData = [];
+            renderData.back = i18n.global.back;
+            renderData.title = i18n.item.title;
+            renderData.comment = i18n.timeline.comment;
+            renderData.forward = i18n.timeline.forward;
 
-        return output;
-    }
+            var output = TM.renderTpl(content,renderData);
 
-    return{
-        init:init,
-        i18next:i18next
+            return output;
+        }
+
     };
+
+    return itemView;
 });

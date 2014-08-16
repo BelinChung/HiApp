@@ -1,27 +1,28 @@
 define(['utils/appFunc','i18n!nls/lang','utils/tplManager'],function(appFunc,i18n,TM){
     /* global $CONFIG */
 
-    function init(params){
-        appFunc.bindEvents(params.bindings);
+    var aboutView = {
 
-        var version = $CONFIG.version;
+        init: function(params){
+            appFunc.bindEvents(params.bindings);
 
-        $$('.my-product .version').html('V' + version + ' For Web');
-        appFunc.hideToolbar('.views');
-    }
+            var version = $CONFIG.version;
 
-    function i18next(content){
-        var renderData = [];
-        renderData.appName = i18n.app.name;
-        renderData.about = i18n.setting.about;
+            $$('.my-product .version').html('V' + version + ' For Love');
+            appFunc.hideToolbar('.views');
+        },
 
-        var output = TM.renderTpl(content,renderData);
+        i18next: function(content){
+            var renderData = [];
+            renderData.appName = i18n.app.name;
+            renderData.about = i18n.setting.about;
 
-        return output;
-    }
+            var output = TM.renderTpl(content,renderData);
 
-    return{
-        init:init,
-        i18next:i18next
+            return output;
+        }
+
     };
+
+    return aboutView;
 });

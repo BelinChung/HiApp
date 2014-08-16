@@ -2,61 +2,61 @@ define(['utils/appFunc','utils/tplManager','GS','i18n!nls/lang'],function(appFun
 
     /* global $CONFIG */
 
-    function init(params){
-        appFunc.bindEvents(params.bindings);
-    }
+    var settingView = {
 
-    function renderSetting(user){
-        var renderData = [];
-        renderData.avatarUrl = user.avatarUrl;
-        renderData.nickName = user.nickName;
-        renderData.points = user.points;
+        init: function(params){
+            appFunc.bindEvents(params.bindings);
+        },
 
-        //i18n
-        renderData.i18nNickName = i18n.setting.nickname;
-        renderData.i18nPoints = i18n.setting.points;
-        renderData.feedBack = i18n.setting.feed_back;
-        renderData.checkUpdate = i18n.setting.check_update;
-        renderData.about = i18n.setting.about;
-        renderData.language = i18n.global.language;
-        renderData.loginOut = i18n.setting.login_out;
+        renderSetting: function(user){
+            var renderData = [];
+            renderData.avatarUrl = user.avatarUrl;
+            renderData.nickName = user.nickName;
+            renderData.points = user.points;
 
-        var output = TM.renderTplById('settingTemplate', renderData);
-        $$('#settingView .page[data-page="setting"]').html(output);
+            //i18n
+            renderData.i18nNickName = i18n.setting.nickname;
+            renderData.i18nPoints = i18n.setting.points;
+            renderData.feedBack = i18n.setting.feed_back;
+            renderData.checkUpdate = i18n.setting.check_update;
+            renderData.about = i18n.setting.about;
+            renderData.language = i18n.global.language;
+            renderData.loginOut = i18n.setting.login_out;
 
-        var bindings = [{
-            element: '.logout-button',
-            event: 'click',
-            handler: logOut
-        },{
-            element: '#settingView .update-button',
-            event: 'click',
-            handler: checkVersion
-        }];
+            var output = TM.renderTplById('settingTemplate', renderData);
+            $$('#settingView .page[data-page="setting"]').html(output);
 
-        appFunc.bindEvents(bindings);
+            var bindings = [{
+                element: '.logout-button',
+                event: 'click',
+                handler: settingView.logOut
+            },{
+                element: '#settingView .update-button',
+                event: 'click',
+                handler: settingView.checkVersion
+            }];
 
-        hiApp.hideIndicator();
-    }
+            appFunc.bindEvents(bindings);
 
-    function logOut(){
-        hiApp.confirm(i18n.setting.confirm_logout,function(){
-            GS.removeCurrentUser();
+            hiApp.hideIndicator();
+        },
 
-            mainView.loadPage('page/login.html');
-            hiApp.showTab('#ourView');
-        });
-    }
+        logOut: function(){
+            hiApp.confirm(i18n.setting.confirm_logout,function(){
+                GS.removeCurrentUser();
 
-    function checkVersion(){
-        var version = $CONFIG.version;
-        var releaseTime = $CONFIG.release_time;
-        hiApp.alert(i18n.setting.current_version + ' V' + version + '<br/>[ ' + releaseTime + ' ]');
-    }
+                mainView.loadPage('page/login.html');
+                hiApp.showTab('#ourView');
+            });
+        },
 
-    return{
-        init:init,
-        logOut:logOut,
-        renderSetting:renderSetting
+        checkVersion: function(){
+            var version = $CONFIG.version;
+            var releaseTime = $CONFIG.release_time;
+            hiApp.alert(i18n.setting.current_version + ' V' + version + '<br/>[ ' + releaseTime + ' ]');
+        }
+
     };
+
+    return settingView;
 });

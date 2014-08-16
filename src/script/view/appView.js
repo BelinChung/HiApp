@@ -1,57 +1,61 @@
 define(['utils/appFunc','i18n!nls/lang','utils/tplManager'],function(appFunc,i18n,TM){
 
-    function i18next(content){
-        var renderData = [];
-        renderData.i = i18n.app.name;
+    var appView = {
 
-        var output = TM.renderTpl(content,renderData);
+        i18next: function(content){
+            var renderData = [];
+            renderData.i = i18n.app.name;
 
-        $$('.views .i18n').each(function(){
+            var output = TM.renderTpl(content,renderData);
+
+            $$('.views .i18n').each(function(){
+                var value;
+                var i18nKey = $$(this).data('i18n');
+                var handle = i18nKey.split(']');
+                if(handle.length > 1 ){
+                    var attr = handle[0].replace('[','');
+                    value = appView.i18nValue(handle[1]);
+                    $$(this).attr(attr,value);
+                }else{
+                    value = appView.i18nValue(i18nKey);
+                    $$(this).html(value);
+                }
+            });
+
+            return output;
+        },
+
+        i18nValue: function(key){
+
+            var keys = key.split('.');
+
             var value;
-            var i18nKey = $$(this).data('i18n');
-            var handle = i18nKey.split(']');
-            if(handle.length > 1 ){
-                var attr = handle[0].replace('[','');
-                value = i18nValue(handle[1]);
-                $$(this).attr(attr,value);
-            }else{
-                value = i18nValue(i18nKey);
-                $$(this).html(value);
-            }
-        });
-
-        return output;
-    }
-
-    function i18nValue(key){
-
-        var keys = key.split('.');
-
-        var value;
-        for (var idx = 0, size = keys.length; idx < size; idx++)
-        {
-            if (value != null)
+            for (var idx = 0, size = keys.length; idx < size; idx++)
             {
-                value = value[keys[idx]];
-            } else {
-                value = i18n[keys[idx]];
+                if (value != null)
+                {
+                    value = value[keys[idx]];
+                } else {
+                    value = i18n[keys[idx]];
+                }
+
             }
+            return value;
+        },
 
+        showToolbar: function(){
+            appFunc.showToolbar('.views');
+        },
+
+        hideToolbar: function(){
+            appFunc.hideToolbar('.views');
         }
-        return value;
-    }
 
-    function showToolbar(){
-        appFunc.showToolbar('.views');
-    }
-
-    function hideToolbar(){
-        appFunc.hideToolbar('.views');
-    }
-
-    return{
-        i18next:i18next,
-        showToolbar:showToolbar,
-        hideToolbar:hideToolbar
     };
+
+
+
+
+
+    return appView;
 });

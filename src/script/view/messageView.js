@@ -4,84 +4,81 @@ define(['utils/appFunc','i18n!nls/lang','utils/tplManager'],function(appFunc,i18
     var answers = [];
     var answerTimeout;
 
-    function init(params){
-        answers = params.answers;
-        appFunc.bindEvents(params.bindings);
+    var messageView = {
 
-        var name = params.query.nickname;
-        $$('.chat-name').html(name);
+        init: function(params){
+            answers = params.answers;
+            appFunc.bindEvents(params.bindings);
 
-        hideToolbar();
+            var name = params.query.nickname;
+            $$('.chat-name').html(name);
 
-        hiApp.showIndicator();
-    }
+            this.hideToolbar();
 
-    function submitMessage(e){
+            hiApp.showIndicator();
+        },
 
-        e.preventDefault();
-        var input = $$(this).find('.ks-messages-input');
-        var messageText = input.val();
-        if (messageText.length === 0) return;
+        submitMessage: function(e){
 
-        // Empty input
-        input.val('');
+            e.preventDefault();
+            var input = $$(this).find('.ks-messages-input');
+            var messageText = input.val();
+            if (messageText.length === 0) return;
 
-        // Add Message
-        hiApp.addMessage({
-            text: messageText,
-            type: 'sent',
-            day: !conversationStarted ? 'Today' : false,
-            time: !conversationStarted ? (new Date()).getHours() + ':' + (new Date()).getMinutes() : false
-        });
-        conversationStarted = true;
+            // Empty input
+            input.val('');
 
-        // Add answer after timeout
-        if (answerTimeout) clearTimeout(answerTimeout);
-        answerTimeout = setTimeout(function () {
+            // Add Message
             hiApp.addMessage({
-                text: answers[Math.floor(Math.random() * answers.length)],
-                type: 'received'
+                text: messageText,
+                type: 'sent',
+                day: !conversationStarted ? 'Today' : false,
+                time: !conversationStarted ? (new Date()).getHours() + ':' + (new Date()).getMinutes() : false
             });
-        }, 1000);
-    }
+            conversationStarted = true;
 
-    function triggerSubmit(){
-        $$('.ks-messages-form').trigger('submit');
-    }
+            // Add answer after timeout
+            if (answerTimeout) clearTimeout(answerTimeout);
+            answerTimeout = setTimeout(function () {
+                hiApp.addMessage({
+                    text: answers[Math.floor(Math.random() * answers.length)],
+                    type: 'received'
+                });
+            }, 1000);
+        },
 
-    function renderMessages(message){
-        setTimeout(function(){
-            var renderData = {
-                message:message
-            };
-            var output = TM.renderTplById('messageTemplate',renderData);
-            $$('.page[data-page="message"] .messages').html(output);
+        triggerSubmit: function(){
+            $$('.ks-messages-form').trigger('submit');
+        },
 
-            hiApp.hideIndicator();
+        renderMessages: function(message){
+            setTimeout(function(){
+                var renderData = {
+                    message:message
+                };
+                var output = TM.renderTplById('messageTemplate',renderData);
+                $$('.page[data-page="message"] .messages').html(output);
 
-        },600);
-    }
+                hiApp.hideIndicator();
 
-    function i18next(content){
-        var renderData = [];
-        renderData.chat = i18n.chat.title;
-        renderData.chatPlaceholder = i18n.chat.chatPlaceholder;
-        renderData.send = i18n.global.send;
+            },600);
+        },
 
-        var output = TM.renderTpl(content,renderData);
+        i18next: function(content){
+            var renderData = [];
+            renderData.chat = i18n.chat.title;
+            renderData.chatPlaceholder = i18n.chat.chatPlaceholder;
+            renderData.send = i18n.global.send;
 
-        return output;
-    }
+            var output = TM.renderTpl(content,renderData);
 
-    function hideToolbar(){
-        appFunc.hideToolbar('.views');
-    }
+            return output;
+        },
 
-    return{
-        init:init,
-        submitMessage:submitMessage,
-        triggerSubmit:triggerSubmit,
-        renderMessages:renderMessages,
-        i18next:i18next
+        hideToolbar: function(){
+            appFunc.hideToolbar('.views');
+        }
     };
+
+    return messageView;
 });

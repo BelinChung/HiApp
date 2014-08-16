@@ -1,53 +1,51 @@
 define(['utils/appFunc','i18n!nls/lang','utils/tplManager'],function(appFunc,i18n,TM){
 
-    function init(params){
-        appFunc.bindEvents(params.bindings);
-    }
+    var postView = {
 
-    function openSendPopup(){
-        var renderData = [];
-        renderData.cancel = i18n.global.cancel;
-        renderData.send = i18n.global.send;
-        renderData.senTweet = i18n.index.sen_tweet;
-        renderData.sendPlaceholder = i18n.index.send_placeholder;
+        init: function(params){
+            appFunc.bindEvents(params.bindings);
+        },
 
-        var output = TM.renderTplById('sendPopupTemplate', renderData);
-        hiApp.popup($$.trim(output));
+        openSendPopup: function(){
+            var renderData = [];
+            renderData.cancel = i18n.global.cancel;
+            renderData.send = i18n.global.send;
+            renderData.senTweet = i18n.index.sen_tweet;
+            renderData.sendPlaceholder = i18n.index.send_placeholder;
 
-        var bindings = [{
-            element: '#sendWeiboBtn',
-            event: 'click',
-            handler: postMsg
-        }];
+            var output = TM.renderTplById('sendPopupTemplate', renderData);
+            hiApp.popup($$.trim(output));
 
-        appFunc.bindEvents(bindings);
-    }
+            var bindings = [{
+                element: '#sendWeiboBtn',
+                event: 'click',
+                handler: postView.postMsg
+            }];
 
-    function clearSendPopup(){
-        $$('#messageText').val('');
-    }
+            appFunc.bindEvents(bindings);
+        },
 
-    function postMsg(){
-        var text = $$('#messageText').val();
+        clearSendPopup: function(){
+            $$('#messageText').val('');
+        },
 
-        if(appFunc.getCharLength(text) < 4){
-            hiApp.alert(i18n.index.err_text_too_short);
-            return;
+        postMsg: function(){
+            var text = $$('#messageText').val();
+
+            if(appFunc.getCharLength(text) < 4){
+                hiApp.alert(i18n.index.err_text_too_short);
+                return;
+            }
+
+            hiApp.showPreloader(i18n.index.sending);
+
+            setTimeout(function(){
+                hiApp.hidePreloader();
+                hiApp.closeModal('.send-popup');
+                //Refresh Timeline
+            },1300);
         }
-
-        hiApp.showPreloader(i18n.index.sending);
-
-        setTimeout(function(){
-            hiApp.hidePreloader();
-            hiApp.closeModal('.send-popup');
-            //Refresh Timeline
-        },1300);
-    }
-
-    return{
-        init:init,
-        postMsg:postMsg,
-        openSendPopup:openSendPopup,
-        clearSendPopup:clearSendPopup
     };
+
+    return postView;
 });

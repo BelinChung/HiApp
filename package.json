@@ -1,7 +1,7 @@
 {
     "name": "hiapp",
     "description": "A web app made with Framework7.With PhoneGap you can easily convert it to native iOS 7 app.",
-    "version": "1.2",
+    "version": "1.2.0",
     "repository": {
         "type": "git",
         "url": "git@github.com:BelinChung/HiApp.git"

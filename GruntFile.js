@@ -40,14 +40,14 @@ module.exports = function(grunt) {
             + '-->\n',
 
         clean: {
-            build: ['build/*']
+            build: ['www/*','!www/cordova.js','!www/cordova_plugins.js']
         },
         requirejs: {
             compile: {
                 options: {
                     mainConfigFile: 'src/script/main.js',
                     name: 'main',
-                    out: 'build/script/<%=pkg.name%>.min.js',
+                    out: 'www/script/<%=pkg.name%>.min.js',
                     preserveLicenseComments:false,
                     locale:false
                 }
@@ -60,40 +60,56 @@ module.exports = function(grunt) {
             },
             build: {
                 src: 'src/vendors/require/require.js',
-                dest: 'build/script/require.min.js'
+                dest: 'www/script/require.min.js'
             }
         },
         
         copy: {
-            api:{
-                expand: true,
-                cwd: 'src/api',
-                src: ['**'],
-                dest: 'build/api'
+            build: {
+                files:[
+                    {
+                        expand: true,
+                        cwd: 'src/api',
+                        src: ['**'],
+                        dest: 'www/api'
+                    },
+                    {
+                        expand: true,
+                        cwd: 'src/style/img',
+                        src: ['**'],
+                        dest: 'www/style/img'
+                    },
+                    {
+                        expand: true,
+                        cwd: 'src/style/fonts',
+                        src: ['**'],
+                        dest: 'www/style/fonts'
+                    },
+                    {
+                        expand: true,
+                        cwd: 'src/page',
+                        src: ['**.html'],
+                        dest: 'www/page'
+                    },
+                    {
+                        expand: true,
+                        cwd: 'src/script/nls',
+                        src: ['**'],
+                        dest: 'www/script/nls'
+                    },
+                    {
+                        expand: true,
+                        cwd: 'src/res',
+                        src: ['**'],
+                        dest: 'www/res'
+                    }
+                ]
             },
-            images: {
+            development:{
                 expand: true,
-                cwd: 'src/style/img',
+                cwd: 'src/',
                 src: ['**'],
-                dest: 'build/style/img'
-            },
-            fonts:{
-                expand: true,
-                cwd: 'src/style/fonts',
-                src: ['**'],
-                dest: 'build/style/fonts'
-            },
-            html: {
-                expand: true,
-                cwd: 'src/page',
-                src: ['**.html'],
-                dest: 'build/page'
-            },
-            nls:{
-                expand: true,
-                cwd: 'src/script/nls',
-                src: ['**'],
-                dest: 'build/script/nls'
+                dest: 'www/'
             }
         },
 
@@ -108,7 +124,7 @@ module.exports = function(grunt) {
             },
             dist: {
                 files: {
-                    'build/index.html': 'src/index.html'
+                    'www/index.html': 'src/index.html'
                 }
             }
         },
@@ -160,7 +176,7 @@ module.exports = function(grunt) {
                     report: 'min'
                 },
                 files: {
-                    'build/style/css/<%=pkg.name%>.min.css': 'src/style/less/app.less'
+                    'www/style/css/<%=pkg.name%>.min.css': 'src/style/less/app.less'
                 }
             }
         },
@@ -177,7 +193,8 @@ module.exports = function(grunt) {
     //load all grunt tasks
     require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
-    grunt.registerTask('default', ['clean', 'requirejs','less:production', 'uglify', 'targethtml:dist', 'copy']);
+    grunt.registerTask('default', ['clean', 'requirejs','less:production', 'uglify', 'targethtml:dist', 'copy:build']);
+    grunt.registerTask('phonegap',['clean','less:development','copy:development']);
     grunt.registerTask('test','Test of <%= pkg.name %>', ['clean', 'requirejs','less:production', 'uglify', 'targethtml:dist','jshint']);
     grunt.registerTask('server', ['connect:server', 'open:server', 'watch:server','less:development']);
 

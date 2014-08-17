@@ -86,4 +86,10 @@ node_modules
 # Users Environment Variables
 .lock-wscript
 
-build/
+# project
+build
+www
+plugins
+hooks
+cordova
+platforms

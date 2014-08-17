@@ -2,9 +2,8 @@ define(['utils/appFunc','utils/tplManager','i18n!nls/lang'],function(appFunc,TM,
 
     var timelineView = {
 
-        init: function(params){
+        init: function(){
             appFunc.showToolbar('.views');
-            appFunc.bindEvents(params.bindings);
 
             $$('#ourView .pull-to-refresh-layer').show();
 
@@ -155,6 +154,14 @@ define(['utils/appFunc','utils/tplManager','i18n!nls/lang'],function(appFunc,TM,
                     $$('#ourView .load-result').css('opacity','0').transition(1000);
                 },2100);
             },400);
+        },
+
+        openItemPage: function(e){
+            if(e.target.nodeName !== 'DIV'){
+                return false;
+            }
+            var itemId = $$(this).parents('.item-content').data('id');
+            mainView.loadPage('page/item.html?id=' + itemId);
         }
 
     };

@@ -4,29 +4,42 @@ define(['utils/appFunc','utils/xhr','view/module'],function(appFunc,xhr,VM){
 
         init: function(){
 
+            VM.module('timelineView').init();
+
+            this.getTimeline();
+        },
+
+        bindEvent: function(){
+
             var bindings = [{
-                element: '#ourView .pull-to-refresh-content',
+                element: '#ourView',
+                selector: '.pull-to-refresh-content',
                 event: 'refresh',
                 handler: timelineCtrl.refreshTimeline
             },{
-                element: '#ourView .pull-to-refresh-content',
+                element: '#ourView',
+                selector: '.pull-to-refresh-content',
                 event: 'infinite',
                 handler: timelineCtrl.infiniteTimeline
             },{
-                element: '#ourView .refresh-click',
+                element: '#ourView',
+                selector: '.refresh-click',
                 event: 'click',
                 handler: VM.module('timelineView').refreshTimelineByClick
             },{
-                element: '#ourView .open-send-popup',
+                element: document,
+                selector: 'a.open-send-popup',
                 event: 'click',
                 handler:VM.module('postView').openSendPopup
+            },{
+                element: '#ourView',
+                selector: '.time-line-content .item-content .click-content',
+                event: 'click',
+                handler: VM.module('timelineView').openItemPage
             }];
 
-            VM.module('timelineView').init({
-                bindings:bindings
-            });
+            appFunc.bindEvents(bindings);
 
-            this.getTimeline();
         },
 
         getTimeline: function(){
@@ -57,6 +70,8 @@ define(['utils/appFunc','utils/xhr','view/module'],function(appFunc,xhr,VM){
             });
         }
     };
+
+    timelineCtrl.bindEvent();
 
     return timelineCtrl;
 });

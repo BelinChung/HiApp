@@ -1,5 +1,7 @@
 define(['i18n!nls/lang'],function(i18n){
 
+    var $$ = Dom7;
+
     var appFunc = {
 
         isEmail: function(str){
@@ -86,7 +88,13 @@ define(['i18n!nls/lang'],function(i18n){
 
         bindEvents: function(bindings) {
             for (var i in bindings) {
-                $$(bindings[i].element).on(bindings[i].event, bindings[i].handler);
+                if(bindings[i].selector) {
+                    $$(bindings[i].element)
+                        .on(bindings[i].event,bindings[i].selector , bindings[i].handler);
+                }else{
+                    $$(bindings[i].element)
+                        .on(bindings[i].event, bindings[i].handler);
+                }
             }
         }
     };

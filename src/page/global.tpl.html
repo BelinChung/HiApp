@@ -1,8 +1,7 @@
 <script id="timelineTemplate" type="text/template" >
 {{#weibo}}
 <li data-id="{{id}}" data-mid="{{mid}}" class="item-content card-content">
-  <a href="page/item.html?id={{id}}">
-      <div class="item-inner">
+    <div class="item-inner">
         <div class="item-header">
             <div class="avatar">
                 <img data-avatarid="{{avatar}}" src="style/img/avatar/avatar{{avatar}}.jpg">
@@ -13,28 +12,32 @@
             </div>
         </div>
 
-        <div class="item-subtitle">
-              {{text}}
+        <div class="click-content">
+
+            <div class="item-subtitle">
+                {{text}}
+            </div>
+
+            {{#image}}
+            <div class="item-image">
+                <img src="{{.}}" alt="">
+            </div>
+            {{/image}}
+
         </div>
 
-        {{#image}}
-        <div class="item-image">
-            <img src="{{.}}" alt="">
-        </div>
-        {{/image}}
 
         <div class="item-tools">
             <ul>
-                <li><a href="javascript:"><i class="icon ios7-redo-outline"></i><span class="text">{{i18n.forward}}</span></a></li>
+                <li><a href="#"><i class="icon ios7-redo-outline"></i><span class="text">{{i18n.forward}}</span></a></li>
                 <li class="tool-line"></li>
                 <li><a href="page/item.html?id={{id}}"><i class="icon ios7-chatbubble-outline"></i><span class="text">{{i18n.comment}}</span></a></li>
                 <li class="tool-line"></li>
-                <li><a href="javascript:"><i class="icon ios7-heart-outline"></i><span class="text">{{i18n.like}}</span></a></li>
+                <li><a href="#"><i class="icon ios7-heart-outline"></i><span class="text">{{i18n.like}}</span></a></li>
             </ul>
         </div>
 
-      </div>
-  </a>
+    </div>
 </li>
 {{/weibo}}
 </script>

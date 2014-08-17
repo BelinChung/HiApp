@@ -4,6 +4,10 @@ define(['i18n!nls/lang'],function(i18n){
 
     var appFunc = {
 
+        isPhonegap: function() {
+            return (typeof(cordova) !== 'undefined' || typeof(phonegap) !== 'undefined');
+        },
+
         isEmail: function(str){
             var reg = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$/;
             return reg.test(str);

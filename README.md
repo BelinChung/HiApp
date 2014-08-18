@@ -52,8 +52,11 @@ $ cordova create hiapp com.hiapp.hiapp HiApp
 Because the PhoneGap app directory should not already exist, so check out the HiApp source code in this step.
 
 ```
-$ cd hiapp   
-$ git clone git@github.com:BelinChung/HiApp.git .
+$ cd hiapp  
+$ git init   
+$ git remote add origin git@github.com:BelinChung/HiApp.git  
+$ git pull origin master  
+$ git reset --hard origin/master  
 ```
 
 ### Add Platforms

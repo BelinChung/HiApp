@@ -1,4 +1,7 @@
-define(['utils/appFunc','i18n!nls/lang','utils/tplManager'],function(appFunc,i18n,TM){
+define(['utils/appFunc',
+        'i18n!nls/lang',
+        'utils/tplManager',
+        'components/geolocation'],function(appFunc,i18n,TM,geo){
 
     var postView = {
 
@@ -8,6 +11,7 @@ define(['utils/appFunc','i18n!nls/lang','utils/tplManager'],function(appFunc,i18
             renderData.send = i18n.global.send;
             renderData.senTweet = i18n.index.sen_tweet;
             renderData.sendPlaceholder = i18n.index.send_placeholder;
+            renderData.loadingGeo = i18n.geo.loading_geo;
 
             var output = TM.renderTplById('sendPopupTemplate', renderData);
             hiApp.popup($$.trim(output));
@@ -16,6 +20,14 @@ define(['utils/appFunc','i18n!nls/lang','utils/tplManager'],function(appFunc,i18
                 element: '#sendWeiboBtn',
                 event: 'click',
                 handler: postView.postMsg
+            },{
+                element: 'div.message-tools .get-position',
+                event: 'click',
+                handler: geo.catchGeoInfo
+            },{
+                element: '#geoInfo',
+                event: 'click',
+                handler: geo.cleanGeo
             }];
 
             appFunc.bindEvents(bindings);

@@ -84,13 +84,18 @@
     display: none;
     position: relative;
 
-    .icon-load-a{
-      font-size: 18px;
-      vertical-align: inherit;
-      -webkit-transform-origin: 50%;
-      transform-origin: 50%;
-      -webkit-animation: spin 1s step-end infinite;
-      animation: spin 1s step-end infinite;
+    .info{
+      margin-left: 3px;
+      vertical-align: middle;
+
+    }
+
+    .icon{
+      &.preloader{
+        width: 17px;
+        height:17px;
+      }
+      vertical-align: middle;
     }
 
     .ios7-location-outline{

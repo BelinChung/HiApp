@@ -69,5 +69,15 @@ define({
     chat:{
         title:'Message',
         chatPlaceholder:'Message'
+    },
+    geo:{
+        loading_geo:'Getting your geo info...',
+        permission_denied:'Permission denied',
+        position_unavailable:'Position unavailable',
+        timeout:'Getting timeout',
+        confirm_clean_geo:'You will clear geo info'
+    },
+    error:{
+        unknown_error:'Unknown error'
     }
 });

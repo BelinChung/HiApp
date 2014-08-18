@@ -69,5 +69,15 @@ define({
     chat:{
         title:'聊天',
         chatPlaceholder:'说点什么'
+    },
+    geo:{
+        loading_geo:'正在获取您所在的位置...',
+        permission_denied:'您拒绝了系统定位的权限申请',
+        position_unavailable:'无法获取到您所在的地理位置信息',
+        timeout:'获取地理位置信息超时',
+        confirm_clean_geo:'您将清除定位的地理信息'
+    },
+    error:{
+        unknown_error:'未知错误'
     }
 });

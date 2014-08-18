@@ -77,6 +77,15 @@ define({
         timeout:'Getting timeout',
         confirm_clean_geo:'You will clear geo info'
     },
+    camera:{
+        image_uploading: 'Uploading pictures',
+        confirm_clear_image: 'Are you sure clear the selected pictures？',
+        file_not_found_err: 'Upload file not found',
+        invalid_url_err: 'Invalid url',
+        connection_err: 'Connection error',
+        abort_err: 'Abort upload',
+        not_modified_err: 'Not modified'
+    },
     error:{
         unknown_error:'Unknown error',
         no_network:'No network connection'

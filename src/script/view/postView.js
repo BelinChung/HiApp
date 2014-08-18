@@ -1,7 +1,8 @@
 define(['utils/appFunc',
         'i18n!nls/lang',
         'utils/tplManager',
-        'components/geolocation'],function(appFunc,i18n,TM,geo){
+        'components/geolocation',
+        'components/camera'],function(appFunc,i18n,TM,geo,camera){
 
     var postView = {
 
@@ -28,6 +29,10 @@ define(['utils/appFunc',
                 element: '#geoInfo',
                 event: 'click',
                 handler: geo.cleanGeo
+            },{
+                element: 'div.message-tools .image-upload',
+                event: 'click',
+                handler: camera.getPicture
             }];
 
             appFunc.bindEvents(bindings);
@@ -35,6 +40,8 @@ define(['utils/appFunc',
 
         clearSendPopup: function(){
             $$('#messageText').val('');
+            $$('#uploadPicPreview>img').attr('src','');
+            $$('#uploadPicPreview').hide();
         },
 
         postMsg: function(){
@@ -45,13 +52,20 @@ define(['utils/appFunc',
                 return;
             }
 
-            hiApp.showPreloader(i18n.index.sending);
+            var imgSrc = $$('#uploadPicPreview>img').attr('src');
 
-            setTimeout(function(){
-                hiApp.hidePreloader();
-                hiApp.closeModal('.send-popup');
-                //Refresh Timeline
-            },1300);
+            if(imgSrc.length > 4){
+                camera.startUpload(imgSrc);
+            }else {
+
+                hiApp.showPreloader(i18n.index.sending);
+
+                setTimeout(function () {
+                    hiApp.hidePreloader();
+                    hiApp.closeModal('.send-popup');
+                    //Refresh Timeline
+                }, 1300);
+            }
         }
     };
 

@@ -77,6 +77,15 @@ define({
         timeout:'获取地理位置信息超时',
         confirm_clean_geo:'您将清除定位的地理信息'
     },
+    camera:{
+        image_uploading: '正在上传图片...',
+        confirm_clear_image: '你确定要取消选择的图片吗？',
+        file_not_found_err: '未找到需要上传的文件',
+        invalid_url_err: '无效的上传服务器指向',
+        connection_err: '与网络断开或请求超时',
+        abort_err: '已经取消图片的上传',
+        not_modified_err: '没有修改'
+    },
     error:{
         unknown_error:'未知错误',
         no_network:'无网络连接'

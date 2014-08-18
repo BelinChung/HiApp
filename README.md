@@ -36,7 +36,7 @@ $ npm install
 Install the cordova module using npm utility of Node.js.
 
 ```
-$ sudo npm install -g cordova
+$ npm install -g cordova
 ```
 
 ### Create App
@@ -64,7 +64,17 @@ $ git reset --hard origin/master
 Before you can build the project, you need to specify a set of target platforms.
 
 ```
+$ npm install
+$ grunt phonegap
 $ cordova platform add ios
+```
+
+### Add Plugins
+
+You need to add plugins that provide access to core Cordova APIs.
+
+```
+$ cordova plugin add org.apache.cordova.camera org.apache.cordova.geolocation org.apache.cordova.file-transfer org.apache.cordova.inappbrowser org.apache.cordova.network-information
 ```
 
 ### Build the App

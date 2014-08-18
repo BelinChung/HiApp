@@ -90,6 +90,21 @@ define(['i18n!nls/lang'],function(i18n){
             return iLength;
         },
 
+        matchUrl: function(string){
+            var reg = /((http|ftp|https):\/\/)?[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&;:\/~\+#]*[\w\-\@?^=%&;\/~\+#])?/g;
+
+            string = string.replace(reg,function(a){
+                if(a.indexOf('http') !== -1 || a.indexOf('ftp') !== -1){
+                    return '<a href=\"#\" onclick=\"event.stopPropagation();window.open(\'' + a + '\',\'_blank\')\">' + a + '</a>';
+                }
+                else
+                {
+                    return '<a href=\"#\" onclick=\"event.stopPropagation();window.open(\'http://' + a + '\',\'_blank\')\">' + a + '</a>';
+                }
+            });
+            return string;
+        },
+
         bindEvents: function(bindings) {
             for (var i in bindings) {
                 if(bindings[i].selector) {

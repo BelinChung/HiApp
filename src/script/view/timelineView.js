@@ -36,6 +36,9 @@ define(['utils/appFunc','utils/tplManager','i18n!nls/lang'],function(appFunc,TM,
             var renderData = {
                 i18n:i18next,
                 weibo:options.data,
+                finalText:function(){
+                    return appFunc.matchUrl(this.text);
+                },
                 image:function(){
                     var url = this.original_pic || '';
 

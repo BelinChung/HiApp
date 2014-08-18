@@ -1,4 +1,6 @@
-define(['utils/appFunc'],function(appFunc) {
+define(['utils/appFunc',
+        'i18n!nls/lang',
+        'components/networkStatus'],function(appFunc,i18n,networkStatus) {
 
     //var apiServerHost = window.location.href;
 
@@ -36,7 +38,21 @@ define(['utils/appFunc'],function(appFunc) {
 
             //If you access your server api ,please user `post` method.
             options.method = options.method || 'GET';
-//        options.method = options.method || 'POST';
+            //options.method = options.method || 'POST';
+
+            if(appFunc.isPhonegap()){
+                //Check network connection
+                var network = networkStatus.checkConnection();
+                if(network === 'NoNetwork'){
+
+                    hiApp.alert(i18n.error.no_network,function(){
+                        hiApp.hideIndicator();
+                        hiApp.hidePreloader();
+                    });
+
+                    return false;
+                }
+            }
 
             $$.ajax({
                 url: xhr.getRequestURL(options) ,

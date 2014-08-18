@@ -78,6 +78,7 @@ define({
         confirm_clean_geo:'您将清除定位的地理信息'
     },
     error:{
-        unknown_error:'未知错误'
+        unknown_error:'未知错误',
+        no_network:'无网络连接'
     }
 });

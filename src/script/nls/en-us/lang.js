@@ -78,6 +78,7 @@ define({
         confirm_clean_geo:'You will clear geo info'
     },
     error:{
-        unknown_error:'Unknown error'
+        unknown_error:'Unknown error',
+        no_network:'No network connection'
     }
 });

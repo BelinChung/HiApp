@@ -2,10 +2,6 @@ define(['utils/appFunc','i18n!nls/lang','utils/tplManager'],function(appFunc,i18
 
     var postView = {
 
-        init: function(params){
-            appFunc.bindEvents(params.bindings);
-        },
-
         openSendPopup: function(){
             var renderData = [];
             renderData.cancel = i18n.global.cancel;

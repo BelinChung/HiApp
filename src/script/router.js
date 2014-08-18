@@ -46,7 +46,6 @@ define(['GS','controller/module'],function(GS,CM) {
                 case 'ourView':
                     if(from === 'left') return;
                     CM.module('timelineCtrl').init();
-                    CM.module('postCtrl').init();
                     CM.module('contactCtrl').init();
                     CM.module('settingCtrl').init();
                     break;

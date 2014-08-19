@@ -26,6 +26,9 @@
         "Framework7": true,
         "hiApp": true,
         "define": true,
-        "mainView": true
+        "mainView": true,
+        "Connection": true,
+        "Camera": true,
+        "FileTransfer": true
     }
 }

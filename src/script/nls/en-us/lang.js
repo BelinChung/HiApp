@@ -88,6 +88,7 @@ define({
     },
     error:{
         unknown_error:'Unknown error',
-        no_network:'No network connection'
+        no_network:'No network connection',
+        phonegap_only:'PhoneGap Only'
     }
 });

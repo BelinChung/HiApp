@@ -88,6 +88,7 @@ define({
     },
     error:{
         unknown_error:'未知错误',
-        no_network:'无网络连接'
+        no_network:'无网络连接',
+        phonegap_only:'该模块只支持在PhoneGap中使用'
     }
 });

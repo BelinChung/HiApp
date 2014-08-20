@@ -8,6 +8,11 @@ define([
     var camera = {
         getPicture: function(){
 
+            if(!appFunc.isPhonegap()){
+                hiApp.alert(i18n.error.phonegap_only);
+                return false;
+            }
+
             var $this = $$(this);
 
             var netStatus = networkStatus.checkConnection();

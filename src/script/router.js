@@ -10,7 +10,6 @@ define(['GS','controller/module'],function(GS,CM) {
 
             $$(document).on('pageAfterAnimation', function (e) {
                 var page = e.detail.page;
-                console.log(page);
                 router.pageAfterAnimation(page);
             });
 
@@ -26,12 +25,14 @@ define(['GS','controller/module'],function(GS,CM) {
 
         pageAfterAnimation: function(page){
             var name = page.name;
-            var query = page.query;
             var from = page.from;
-//            switch (name) {
-//                case 'login':
-//                    break;
-//            }
+            var swipeBack = page.swipeBack;
+
+            if(name === 'ourView' || name === 'contatcView' || name === 'setting' ){
+                if(from === 'left' && swipeBack){
+                    CM.module('appCtrl').showToolbar();
+                }
+            }
         },
 
         pageBeforeInit: function(page) {

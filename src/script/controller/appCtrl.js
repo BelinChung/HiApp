@@ -16,6 +16,9 @@ define(['utils/appFunc','view/module'],function(appFunc,VM){
             }];
 
             appFunc.bindEvents(bindings);
+        },
+        showToolbar: function(){
+            appFunc.showToolbar('.views');
         }
 
     };

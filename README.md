@@ -6,15 +6,6 @@ HiApp
 
 A simple and interesting Framework7 hybrid app.With PhoneGap you can easily convert it to native iOS 7 app.
 
-## Libraries
-
-HiApp are developed using these libraries.     
-├── Framework: [Framework7]   
-├── Task Runner: [Grunt]   
-├── Module Loader: [Require.js]  
-├── Templating Library: [mustache]  
-└── Stylesheet Language: [LESS]  
-
 ## Dependencies
 
 HiApp uses `grunt` to build a production versions.
@@ -136,12 +127,6 @@ The result is available in `www/` folder.
 
 Copyright (c) 2014 Belin Chung. MIT Licensed, see [LICENSE] for details.
 
-
-[Framework7]:http://www.idangero.us/framework7/  
-[Grunt]:http://gruntjs.com/  
-[Require.js]:http://requirejs.org/
-[mustache]:https://github.com/janl/mustache.js  
-[LESS]:http://lesscss.net/ 
 [http://dearb.me/hi/]:http://dearb.me/hi/
 [LICENSE]:https://github.com/BelinChung/HiApp/blob/master/LICENSE.md
 [@philipshurpik]:https://github.com/philipshurpik/Framework7-Contacts7-MVC

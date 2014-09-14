@@ -23,6 +23,7 @@
         "window": true,
         "Dom7": true,
         "$$": true,
+        "Template7": true,
         "Framework7": true,
         "hiApp": true,
         "define": true,

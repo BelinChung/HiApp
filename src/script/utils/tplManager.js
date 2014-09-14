@@ -1,6 +1,7 @@
-define(['text!GTPL','mustache'],function(GTPL,mustache){
+define(['text!GTPL'],function(GTPL){
 
     var $$ = Dom7;
+    var t7 = Template7;
 
     var tplManager = {
 
@@ -16,7 +17,8 @@ define(['text!GTPL','mustache'],function(GTPL,mustache){
         renderRemoteTpl: function(tplName,renderData,callback){
             tplName = tplName || '';
             $$.get('page/' + tplName + '.tpl.html' ,function(markup){
-                var output = mustache.render(markup,renderData);
+                var compiledTemplate = t7.compile(markup);
+                var output = compiledTemplate(renderData);
 
                 typeof(callback === 'function') ? callback(output) : null;
             });
@@ -24,13 +26,15 @@ define(['text!GTPL','mustache'],function(GTPL,mustache){
         },
 
         renderTpl: function(markup,renderData){
-            var output = mustache.render(markup,renderData);
+            var compiledTemplate = t7.compile(markup);
+            var output = compiledTemplate(renderData);
             return output;
         },
 
         renderTplById: function(tplId,renderData){
             var markup = this.loadTpl(tplId);
-            var output = mustache.render(markup,renderData);
+            var compiledTemplate = t7.compile(markup);
+            var output = compiledTemplate(renderData);
             return output;
         }
 

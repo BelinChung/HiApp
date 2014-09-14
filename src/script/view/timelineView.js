@@ -39,16 +39,6 @@ define(['utils/appFunc','utils/tplManager','i18n!nls/lang'],function(appFunc,TM,
                 finalText:function(){
                     return appFunc.matchUrl(this.text);
                 },
-                image:function(){
-                    var url = this.original_pic || '';
-
-                    if(url.length > 2){
-                        var thumbnail = url.replace(/large/, 'thumbnail');
-                        return thumbnail;
-                    }else{
-                        return false;
-                    }
-                },
                 time:function(){
                     return appFunc.timeFormat(this.created_at);
                 }

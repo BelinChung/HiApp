@@ -55,7 +55,22 @@
   display: -webkit-flex;
   display: flex;
 }
-.flex-wrap(@fw) {
+.flex-wrap(@fw) when (@fw = nowrap) {
+  -webkit-box-lines: single;
+  -moz-box-lines: single;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: none;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+}
+.flex-wrap(@fw) when (@fw = wrap) {
+  -webkit-box-lines: multiple;
+  -moz-box-lines: multiple;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.flex-wrap(@fw) when not (@fw = wrap) and not (@fw = nowrap) {
   -webkit-flex-wrap: @fw;
   -ms-flex-wrap: @fw;
   flex-wrap: @fw;
@@ -190,6 +205,7 @@ p {
   .flexbox();
   .justify-content(space-between);
   .flex-wrap(wrap);
+  .align-items(flex-start);
   > [class*="col-"] {
     .border-box();
   }
@@ -476,7 +492,7 @@ html.android {
     .justify-content(flex-start);
     .align-items(center);
     .transition(300ms);
-    &:active{
+    html:not(.watch-active-state) &:active, &.active-state {
       opacity: 0.3;
       .transition(0ms);
     }
@@ -583,6 +599,9 @@ html.android {
     -webkit-flex-direction: column;
     flex-direction: column;
   }
+  i.icon {
+    height: 30px;
+  }
 }
 .tabbar-labels {
   height: 50px;
@@ -613,7 +632,7 @@ html.android {
     }
   }
   .tabbar-labels {
-    height: 55px;
+    height: 56px;
     span.tabbar-label {
       font-size: 14px;
     }
@@ -719,21 +738,23 @@ html.android {
     position: absolute;
   }
 }
-.navbar-through {
+.navbar-through, .navbar-fixed {
   .page-content {
     padding-top: 44px;
   }
 }
-.toolbar-through {
+.toolbar-through, .toolbar-fixed, .tabbar-through, .tabbar-fixed {
   .page-content {
     padding-bottom: 44px;
   }
 }
-.navbar-fixed .page-content {
-  padding-top: 44px;
-}
-.toolbar-fixed .page-content {
-  padding-bottom: 44px;
+.tabbar-labels-fixed, .tabbar-labels-through {
+  .page-content {
+    padding-bottom: 50px;
+    @media all and (min-width:768px) {
+      padding-bottom: 56px;
+    }
+  }
 }
 // Page Hidden Navbar
 .hidden-navbar {
@@ -1088,7 +1109,7 @@ i.icon {
       background-image: url("data:image/svg+xml;charset=utf-8,<svg viewBox='0 0 60 120' xmlns='http://www.w3.org/2000/svg'><path d='m60 61.5-38.25 38.25-9.75-9.75 29.25-28.5-29.25-28.5 9.75-9.75z' fill='%23c7c7cc'/></svg>");
       background-size: 10px 20px;
     }
-    &:active {
+    html:not(.watch-active-state) &:active, &.active-state {
       .transition(0ms);
       background-color: #d9d9d9;
       .item-inner {
@@ -1121,50 +1142,73 @@ i.icon {
   }
 
   // Swipe outs
-  .swipeout.deleting {
+  .swipeout {
     overflow: hidden;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+  }
+  .swipeout.deleting {
     .transition(300ms);
     .swipeout-content {
       .translate3d(-100%);
     }
   }
   .swipeout.transitioning {
-    .swipeout-content {
-      .transition(300ms);
+    .swipeout-content, .swipeout-actions-right a, .swipeout-actions-left a, .swipeout-overswipe {
+      -webkit-transition: 300ms;
+      transition: 300ms;
     }
   }
   .swipeout-content {
     position: relative;
     z-index: 10;
-    background: #fff;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
   }
-  .swipeout-actions {
-    border-bottom: 1px solid @listBlockBorderColor;
-    position: absolute;
-    z-index: 0;
-    right: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    .border-box();
+  .swipeout-overswipe {
+    -webkit-transition: 200ms left;
+    transition: 200ms left;
   }
-  .swipeout-actions-inner {
+  .swipeout-actions-left, .swipeout-actions-right {
     position: absolute;
-    right: 0;
     top: 0;
     height: 100%;
     .flexbox();
+    .translate3d(0%,0,0);
     a {
       padding: 0 30px;
       color:#fff;
       background: #c7c7cc;
       .flexbox();
       .align-items(center);
+      position: relative;
+      left: 0;
+      &:after {
+        content:'';
+        position: absolute;
+        top: 0;
+        width: 600%;
+        height: 100%;
+        background: inherit;
+        z-index: -1;
+      }
     }
     a.swipeout-delete {
       background: @red;
+    }
+  }
+  .swipeout-actions-right {
+    right: 0%;
+    .translate3d(100%,0,0);
+    a:after {
+      left: 100%;
+      margin-left: -1px;
+    }
+  }
+  .swipeout-actions-left {
+    left: 0%;
+    .translate3d(-100%,0,0);
+    a:after {
+      right: 100%;
+      margin-right: -1px;
     }
   }
   .item-subtitle {
@@ -1305,12 +1349,12 @@ i.icon {
       }
     }
     &:last-child, &:last-child li:last-child {
-      .item-inner, .swipeout-actions {
+      .item-inner {
         border-bottom: none;
       }
     }
     li:last-child, &:last-child li {
-      .item-inner, .swipeout-actions {
+      .item-inner {
         border-bottom: 1px solid @listBlockBorderColor;
       }
     }
@@ -1327,9 +1371,6 @@ html.retina.ios-gt-7 {
         border-bottom-width: 0.5px;
       }
     }
-  }
-  .swipeout-actions {
-    border-bottom-width: 0.5px;
   }
   .item-divider {
     border-top-width: 0.5px;
@@ -1514,7 +1555,7 @@ html.android {
     width: 100%;
   }
 
-  &:active {
+  html:not(.watch-active-state) &:active, &.active-state {
     background: rgba(red(@blue), green(@blue), blue(@blue), .15);
   }
   &.button-round {
@@ -1533,7 +1574,7 @@ html.android {
     color:#fff;
     background: @blue;
     border: none;
-    &:active {
+    html:not(.watch-active-state) &:active, &.active-state {
       opacity: 0.8;
     }
   }
@@ -1697,7 +1738,7 @@ label.label-radio {
 }
 label.label-checkbox, label.label-radio {
   .transition(300ms);
-  &:active {
+  html:not(.watch-active-state) &:active, &.active-state {
     .transition(0ms);
     background-color: #d9d9d9;
     .item-inner {
@@ -1902,6 +1943,9 @@ html.with-statusbar-overlay body{
   &.modal-overlay-visible {
     visibility: visible;
     opacity: 1;
+    html.ios & {
+      .scrollable();
+    }
   }
 }
 .popup-overlay {
@@ -1989,7 +2033,7 @@ html.with-statusbar-overlay body{
   &.modal-button-bold {
     font-weight: 500;
   }
-  &:active {
+  html:not(.watch-active-state) &:active, &.active-state {
     background: @modalButonActiveBg;
   }
 }
@@ -2061,7 +2105,7 @@ html.with-statusbar-overlay body{
   line-height: 43px;
   font-size: 20px;
   color: @blue;
-  &:active {
+  html:not(.watch-active-state) &:active, &.active-state {
     background: @actionsModalActiveButtonBg;
   }
 }
@@ -2128,6 +2172,38 @@ input.modal-text-input {
     .transition(@actionsModalDuration);
     opacity: 1;
   }
+  .list-block {
+    margin: 0;
+    ul {
+      background: none;
+    }
+    &:first-child {
+      ul {
+        border-top: none;
+        border-radius: 7px 7px 0 0;
+      }
+      li:first-child a{
+        border-radius: 7px 7px 0 0;
+      }
+    }
+    &:last-child {
+      ul {
+        border-bottom: none;
+        border-radius: 0 0 7px 7px;
+      }
+      li:last-child a{
+        border-radius: 0 0 7px 7px;
+      }
+    }
+    &:first-child:last-child {
+      li:first-child:last-child a, ul:first-child:last-child {
+        border-radius: 7px;
+      }
+    }
+    + .list-block {
+      margin-top: 35px;
+    }
+  }
 }
 .popover-angle {
   width: 26px;
@@ -2181,24 +2257,26 @@ input.modal-text-input {
 }
 .popover-inner {
   .scrollable();
-  >.list-block {
-    margin: 0;
-    ul {
-      border: none;
-      background: none;
-    }
-    li:first-child a{
-      border-radius: 7px 7px 0 0;
-    }
-    li:last-child a{
-      border-radius: 0 0 7px 7px;
-    }
-    li:first-child:last-child a {
-      border-radius: 7px;
-    }
+}
+.actions-popover {
+  .list-block + .list-block {
+    margin-top: 20px;
+  }
+  .list-block ul {
+    background: #fff;
   }
 }
-
+.actions-popover-label {
+  padding: 8px 10px;
+  color:#8a8a8a;
+  font-size: 13px;
+  line-height: 1.3;
+  text-align: center;
+  border-bottom: 1px solid #d2d2d6;
+  &:last-child {
+    border-bottom: none;
+  }
+}
 // Popup
 .popup, .login-screen {
   position: absolute;
@@ -2303,9 +2381,13 @@ html.retina.ios-gt-7 {
   .actions-modal-button, .actions-modal-label {
     border-bottom-width: 0.5px;
   }
+  .actions-popover-label {
+    border-bottom-width: 0.5px;
+  }
   input.modal-text-input {
     border-width: 0.5px;
   }
+
 }
 /* === Pull To Refresh === */
 .pull-to-refresh-layer {
@@ -2706,7 +2788,7 @@ html.retina.ios-gt-7 {
       margin-left: 8px;
       opacity: 1;
       pointer-events: auto;
-      &:active{
+      html:not(.watch-active-state) &:active, &.active-state {
         opacity: 0.3;
         .transition(0ms);
       }
@@ -3031,6 +3113,7 @@ html.retina.ios-6 {
   -webkit-transition-property: -webkit-transform;
   -moz-transition-property: -moz-transform;
   transition-property: transform;
+  .transform(translate3d(0,0,0));
   .slider-container-vertical > & {
     -webkit-box-orient: vertical;
     -moz-box-orient: vertical;
@@ -3131,7 +3214,7 @@ html.retina.ios-6 {
   //Buttons
   .color-@{colorName}.button:not(.button-fill), .color-@{colorName}.buttons-row .button, .theme-@{colorName} .button:not(.button-fill) {
     border-color: @color;
-    &:active {
+    html:not(.watch-active-state) &:active, &.active-state {
       background-color: rgba(red(@color), green(@color), blue(@color), 0.15);
     }
     &.active {
@@ -3190,7 +3273,7 @@ html.retina.ios-6 {
     }
   }
   // Bg rule
-  .bg-@{colorName}, .button.button-fill.bg-@{colorName}, a.bg-@{colorName}, .swipeout-actions a.bg-@{colorName} {
+  .bg-@{colorName}, .button.button-fill.bg-@{colorName}, a.bg-@{colorName}, .list-block .swipeout-actions-left a.bg-@{colorName}, .list-block .swipeout-actions-right a.bg-@{colorName} {
     background-color: @color;
   }
   // Border rule

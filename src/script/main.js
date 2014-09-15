@@ -6,7 +6,6 @@
             text:'../vendors/require/text',
             i18n:'../vendors/require/i18n',
             Framework7:'../vendors/framework7/framework7',
-            mustache:'../vendors/mustache/mustache',
             GTPL:'../page/global.tpl.html',
             GS:'services/globalService'
         },

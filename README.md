@@ -118,10 +118,9 @@ The result is available in `www/` folder.
 
 [http://dearb.me/hi/]
 
-![hiapp qrcode](http://dearb.u.qiniudn.com/hiapp_qrcode_small.png)
+[![App Store](http://dearb.u.qiniudn.com/appstore-button.png)](https://itunes.apple.com/us/app/hi-liao-gao-xiao-shu-dong/id917320045?mt=8)
 
-## Thanks
-[@philipshurpik]
+![hiapp qrcode](http://dearb.u.qiniudn.com/hiapp_qrcode_small.png)
 
 ## License
 
@@ -129,4 +128,3 @@ Copyright (c) 2014 Belin Chung. MIT Licensed, see [LICENSE] for details.
 
 [http://dearb.me/hi/]:http://dearb.me/hi/
 [LICENSE]:https://github.com/BelinChung/HiApp/blob/master/LICENSE.md
-[@philipshurpik]:https://github.com/philipshurpik/Framework7-Contacts7-MVC

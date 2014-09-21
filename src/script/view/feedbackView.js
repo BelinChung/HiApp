@@ -17,9 +17,10 @@ define(['utils/appFunc','i18n!nls/lang','utils/tplManager'],function(appFunc,i18
         },
 
         i18next: function(content){
-            var renderData = [];
-            renderData.feedBack = i18n.setting.feed_back;
-            renderData.feedBackPlaceholder = i18n.setting.feed_back_placeholder;
+            var renderData = {
+                feedBack: i18n.setting.feed_back,
+                feedBackPlaceholder: i18n.setting.feed_back_placeholder
+            };
 
             var output = TM.renderTpl(content,renderData);
 

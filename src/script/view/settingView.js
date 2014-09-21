@@ -9,19 +9,18 @@ define(['utils/appFunc','utils/tplManager','GS','i18n!nls/lang'],function(appFun
         },
 
         renderSetting: function(user){
-            var renderData = [];
-            renderData.avatarUrl = user.avatarUrl;
-            renderData.nickName = user.nickName;
-            renderData.points = user.points;
-
-            //i18n
-            renderData.i18nNickName = i18n.setting.nickname;
-            renderData.i18nPoints = i18n.setting.points;
-            renderData.feedBack = i18n.setting.feed_back;
-            renderData.checkUpdate = i18n.setting.check_update;
-            renderData.about = i18n.setting.about;
-            renderData.language = i18n.global.language;
-            renderData.loginOut = i18n.setting.login_out;
+            var renderData = {
+                avatarUrl: user.avatarUrl,
+                nickName: user.nickName,
+                points: user.points,
+                i18nNickName: i18n.setting.nickname,
+                i18nPoints: i18n.setting.points,
+                feedBack: i18n.setting.feed_back,
+                checkUpdate: i18n.setting.check_update,
+                about: i18n.setting.about,
+                language: i18n.global.language,
+                loginOut: i18n.setting.login_out
+            };
 
             var output = TM.renderTplById('settingTemplate', renderData);
             $$('#settingView .page[data-page="setting"]').html(output);

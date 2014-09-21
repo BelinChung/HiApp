@@ -31,10 +31,11 @@ define(['utils/appFunc','i18n!nls/lang','utils/tplManager'],function(appFunc,i18
         },
 
         i18next: function(content){
-            var renderData = [];
-            renderData.back = i18n.global.back;
-            renderData.done = i18n.global.done;
-            renderData.switchLanguage = i18n.global.switch_language;
+            var renderData = {
+                back: i18n.global.back,
+                done: i18n.global.done,
+                switchLanguage: i18n.global.switch_language
+            };
 
             var output = TM.renderTpl(content,renderData);
 

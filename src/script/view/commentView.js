@@ -7,10 +7,11 @@ define(['utils/appFunc','i18n!nls/lang','utils/tplManager'],function(appFunc,i18
         },
 
         commentPopup: function(params){
-            var renderData = [];
-            renderData.cancel = i18n.global.cancel;
-            renderData.comment = i18n.timeline.comment;
-            renderData.send = i18n.global.send;
+            var renderData = {
+                cancel: i18n.global.cancel,
+                comment: i18n.timeline.comment,
+                send: i18n.global.send
+            };
 
             if(params.name){
                 renderData.title = i18n.comment.reply_comment;

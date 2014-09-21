@@ -13,9 +13,10 @@ define(['utils/appFunc','i18n!nls/lang','utils/tplManager'],function(appFunc,i18
         },
 
         i18next: function(content){
-            var renderData = [];
-            renderData.appName = i18n.app.name;
-            renderData.about = i18n.setting.about;
+            var renderData = {
+                appName: i18n.app.name,
+                about: i18n.setting.about
+            };
 
             var output = TM.renderTpl(content,renderData);
 

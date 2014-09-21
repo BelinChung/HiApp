@@ -1,7 +1,7 @@
 define(['utils/appFunc','i18n!nls/lang','utils/tplManager'],function(appFunc,i18n,TM){
 
     var conversationStarted = false;
-    var answers = [];
+    var answers = {};
     var answerTimeout;
 
     var messageView = {
@@ -65,10 +65,11 @@ define(['utils/appFunc','i18n!nls/lang','utils/tplManager'],function(appFunc,i18
         },
 
         i18next: function(content){
-            var renderData = [];
-            renderData.chat = i18n.chat.title;
-            renderData.chatPlaceholder = i18n.chat.chatPlaceholder;
-            renderData.send = i18n.global.send;
+            var renderData = {
+                chat: i18n.chat.title,
+                chatPlaceholder: i18n.chat.chatPlaceholder,
+                send: i18n.global.send
+            };
 
             var output = TM.renderTpl(content,renderData);
 

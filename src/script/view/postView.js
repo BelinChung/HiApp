@@ -7,12 +7,13 @@ define(['utils/appFunc',
     var postView = {
 
         openSendPopup: function(){
-            var renderData = [];
-            renderData.cancel = i18n.global.cancel;
-            renderData.send = i18n.global.send;
-            renderData.senTweet = i18n.index.sen_tweet;
-            renderData.sendPlaceholder = i18n.index.send_placeholder;
-            renderData.loadingGeo = i18n.geo.loading_geo;
+            var renderData = {
+                cancel: i18n.global.cancel,
+                send: i18n.global.send,
+                senTweet: i18n.index.sen_tweet,
+                sendPlaceholder: i18n.index.send_placeholder,
+                loadingGeo: i18n.geo.loading_geo
+            };
 
             var output = TM.renderTplById('sendPopupTemplate', renderData);
             hiApp.popup($$.trim(output));

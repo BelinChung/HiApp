@@ -14,12 +14,13 @@ define(['utils/appFunc','i18n!nls/lang','utils/tplManager'],function(appFunc,i18
 
             var $this = $$('.time-line-content .item-content[data-id="'+ id +'"]');
 
-            var item = [];
-            item.id = $this.data('id');
-            item.nickname = $this.find('.item-header .detail .nickname').html();
-            item.avatar = $this.find('.item-header .avatar>img').data('avatarid');
-            item.time = appFunc.timeFormat($this.find('.item-header .detail .create-time').data('time'));
-            item.text = $this.find('.item-subtitle').html();
+            var item = {
+                id: $this.data('id'),
+                nickname: $this.find('.item-header .detail .nickname').html(),
+                avatar: $this.find('.item-header .avatar>img').data('avatarid'),
+                time: appFunc.timeFormat($this.find('.item-header .detail .create-time').data('time')),
+                text: $this.find('.item-subtitle').html()
+            };
 
             if($this.find('.item-image img')[0])
                 item.image = $this.find('.item-image img').attr('src');
@@ -30,11 +31,12 @@ define(['utils/appFunc','i18n!nls/lang','utils/tplManager'],function(appFunc,i18
         },
 
         i18next: function(content){
-            var renderData = [];
-            renderData.back = i18n.global.back;
-            renderData.title = i18n.item.title;
-            renderData.comment = i18n.timeline.comment;
-            renderData.forward = i18n.timeline.forward;
+            var renderData = {
+                back: i18n.global.back,
+                title: i18n.item.title,
+                comment: i18n.timeline.comment,
+                forward: i18n.timeline.forward
+            };
 
             var output = TM.renderTpl(content,renderData);
 

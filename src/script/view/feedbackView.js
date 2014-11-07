@@ -5,7 +5,7 @@ define(['utils/appFunc','i18n!nls/lang','utils/tplManager'],function(appFunc,i18
         init: function(params){
             appFunc.bindEvents(params.bindings);
 
-            appFunc.hideToolbar('.views');
+            appFunc.hideToolbar();
         },
 
         sendFeedback: function(){

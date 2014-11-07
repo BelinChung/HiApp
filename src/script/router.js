@@ -20,7 +20,7 @@ define(['GS','controller/module'],function(GS,CM) {
             }
 
             //remove 'hidden-navbar' class
-            $$('div.views').removeClass('hidden-navbar');
+            $$('div.navbar').removeClass('navbar-hidden');
         },
 
         pageAfterAnimation: function(page){

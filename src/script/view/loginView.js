@@ -3,7 +3,7 @@ define(['utils/appFunc','i18n!nls/lang','utils/tplManager'],function(appFunc,i18
     var loginView = {
 
         init: function(params){
-            appFunc.hideToolbar('.views');
+            appFunc.hideToolbar();
             appFunc.bindEvents(params.bindings);
         },
 

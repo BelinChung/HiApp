@@ -9,7 +9,7 @@ define(['utils/appFunc','i18n!nls/lang','utils/tplManager'],function(appFunc,i18
             var version = $CONFIG.version;
 
             $$('.my-product .version').html('V' + version + ' For Love');
-            appFunc.hideToolbar('.views');
+            appFunc.hideToolbar();
         },
 
         i18next: function(content){

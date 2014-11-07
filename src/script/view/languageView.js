@@ -5,7 +5,7 @@ define(['utils/appFunc','i18n!nls/lang','utils/tplManager'],function(appFunc,i18
         init: function(params){
             appFunc.bindEvents(params.bindings);
             this.setDefaultLanguage();
-            appFunc.hideToolbar('.views');
+            appFunc.hideToolbar();
 
             var from = params.query.from;
             if(from === 'setting'){
@@ -51,7 +51,7 @@ define(['utils/appFunc','i18n!nls/lang','utils/tplManager'],function(appFunc,i18
         },
 
         showToolbar: function(){
-            appFunc.showToolbar('.views');
+            appFunc.showToolbar();
         }
 
     };

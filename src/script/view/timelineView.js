@@ -3,7 +3,7 @@ define(['utils/appFunc','utils/tplManager','i18n!nls/lang'],function(appFunc,TM,
     var timelineView = {
 
         init: function(){
-            appFunc.showToolbar('.views');
+            appFunc.showToolbar();
 
             $$('#ourView .pull-to-refresh-layer').show();
 

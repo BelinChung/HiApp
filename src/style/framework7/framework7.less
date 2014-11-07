@@ -469,7 +469,9 @@ html.android {
   .justify-content(space-between);
   .align-items(center);
 }
-
+.navbar-inner.cached {
+  display: none;
+}
 .navbar, .toolbar {
   height: 44px;
   width: 100%;
@@ -583,6 +585,9 @@ html.android {
   a.active {
     color: @tabbarActiveLinksColor;
   }
+  a.link {
+    line-height: 1.4;
+  }
   a.tab-link, a.link {
     height: 100%;
     width: 100%;
@@ -610,10 +615,14 @@ html.android {
     padding-bottom: 4px;
     height: 100%;
     .justify-content(space-between);
+    i + span {
+      margin: 0;
+    }
   }
   span.tabbar-label {
     line-height: 1;
     display: block;
+    margin: 0;
     letter-spacing: 0.01em;
     font-size: 10px;
     position: relative;
@@ -757,35 +766,31 @@ html.android {
   }
 }
 // Page Hidden Navbar
-.hidden-navbar {
-  .navbar {
-    .transition(400ms);
-    .translate3d(0,-100%,0);
-  }
-}
-.hiding-navbar {
-  .navbar {
+.navbar {
+  &.navbar-hiding {
     .transition(400ms);
     .translate3d(0,0,0);
+  }
+  &.navbar-hidden {
+    .transition(400ms);
+    .translate3d(0,-100%,0);
   }
 }
 .page.no-navbar .page-content {
   padding-top: 0;
 }
 // Page Hidden Toolbar
-.hidden-toolbar {
-  .toolbar {
+.toolbar, .tabbar {
+  &.toolbar-hiding, &.tabbar-hiding {
+    .transition(400ms);
+    .translate3d(0,0,0);
+  }
+  &.toolbar-hidden, &.tabbar-hidden {
     .transition(400ms);
     .translate3d(0,100%,0);
   }
 }
-.hiding-toolbar {
-  .toolbar {
-    .transition(400ms);
-    .translate3d(0,0,0);
-  }
-}
-.page.no-toolbar .page-content {
+.page.no-toolbar .page-content, .page.no-tabbar .page-content {
   padding-bottom: 0;
 }
 
@@ -807,6 +812,10 @@ i.icon {
     width: 21px;
     height: 13px;
     background-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 42 26'><path fill='%23007aff' d='M0,0h4v4H0V0z M8,1h34v2H8V1z M0,11h4v4H0V11z M8,12h34v2H8V12z M0,22h4v4H0V22z M8,23h34v2H8V23z'/></svg>");
+    @media all and (-webkit-max-device-pixel-ratio: 1), (max-resolution: 120dpi) {
+      height: 14px;
+      background-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 21 14'><path fill='%23007aff' d='M0,0h2v2H0V0z M4,0h17v1H4V0z M0,6h2v2H0V6z M4,6h17v1H4V6z M0,12h2v2H0V12z M4,12h17v1H4V12z'/></svg>");
+    }
   }
   &.icon-camera {
     width: 25px;
@@ -903,6 +912,7 @@ i.icon {
   margin-left: -10px;
   top: -2px;
   font-size: 10px;
+  line-height: 1.4;
   padding: 1px 5px;
 }
 /* === Content Block === */
@@ -1150,7 +1160,7 @@ i.icon {
   .swipeout.deleting {
     .transition(300ms);
     .swipeout-content {
-      .translate3d(-100%);
+      .transform(translateX(-100%));
     }
   }
   .swipeout.transitioning {
@@ -1172,7 +1182,6 @@ i.icon {
     top: 0;
     height: 100%;
     .flexbox();
-    .translate3d(0%,0,0);
     a {
       padding: 0 30px;
       color:#fff;
@@ -1197,7 +1206,7 @@ i.icon {
   }
   .swipeout-actions-right {
     right: 0%;
-    .translate3d(100%,0,0);
+    .transform(translateX(100%));
     a:after {
       left: 100%;
       margin-left: -1px;
@@ -1205,7 +1214,7 @@ i.icon {
   }
   .swipeout-actions-left {
     left: 0%;
-    .translate3d(-100%,0,0);
+    .transform(translateX(-100%));
     a:after {
       right: 100%;
       margin-right: -1px;
@@ -1405,7 +1414,7 @@ html.retina.ios-gt-7 {
 /* === Forms === */
 // Inputs
 .list-block {
-  input[type="text"], input[type="password"], input[type="email"], input[type="tel"], input[type="url"], input[type="date"], input[type="datetime-local"], input[type="number"], select, textarea {
+  input[type="text"], input[type="password"], input[type="email"], input[type="tel"], input[type="url"], input[type="date"], input[type="datetime-local"], input[type="time"], input[type="number"], select, textarea {
     -webkit-appearance: none;
     -moz-appearance: none;
     -ms-appearance: none;
@@ -1541,6 +1550,7 @@ html.android {
   -moz-appearance: none;
   -ms-appearance: none;
   appearance: none;
+  background: none;
   padding: 0 10px;
   margin: 0;
   height: 29px;
@@ -2426,6 +2436,15 @@ html.retina.ios-gt-7 {
 
 }
 .pull-to-refresh-content {
+  &.pull-to-refresh-no-navbar {
+    margin-top: -44px;
+    height: ~"-webkit-calc(100% + 44px)";
+    height: ~"-moz-calc(100% + 44px)";
+    height: ~"calc(100% + 44px)";
+    .pull-to-refresh-layer {
+      margin-top: 0;
+    }
+  }
   &.transitioning, &.refreshing {
     .transition(400ms);
   }
@@ -2451,6 +2470,7 @@ html.retina.ios-gt-7 {
   }
 
 }
+
 /* === Tabs === */
 .tabs {
   .tab {
@@ -2628,7 +2648,7 @@ html.retina.ios-gt-7 {
   &.transitioning {
     .transition(400ms);
   }
-  span {
+  span.photo-browser-zoom-container {
     width: 100%;
     text-align: center;
     display: none;
@@ -2641,16 +2661,31 @@ html.retina.ios-gt-7 {
     display: none;
   }
   &.slider-slide-active, &.slider-slide-next, &.slider-slide-prev {
-    span {
+    span.photo-browser-zoom-container {
       display: block;
     }
     img {
       display: inline;
     }
+    &.photo-browser-slide-lazy {
+      .preloader {
+        display: block;
+      }
+    }
   }
   iframe {
     width: 100%;
     height: 100%;
+  }
+  .preloader {
+    display: none;
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    margin-left: -21px;
+    margin-top: -21px;
+    left: 50%;
+    top: 50%;
   }
 }
 
@@ -2962,7 +2997,18 @@ html.retina.ios-gt-7 {
   color: #8e8e93;
   margin-bottom: 2px;
   margin-top: 7px;
-  display: none;
+  .message-hide-name & {
+    display: none;
+  }
+}
+.message-label {
+  font-size: 12px;
+  line-height: 1;
+  color: #8e8e93;
+  margin-top: 4px;
+  .message-hide-label & {
+    display: none;
+  }
 }
 .message-avatar {
   width: 29px;
@@ -2972,8 +3018,11 @@ html.retina.ios-gt-7 {
   position: relative;
   top: 1px;
   background-size: cover;
-  opacity: 0;
+  opacity: 1;
   .transition(400ms);
+  .message-hide-avatar & {
+    opacity: 0;
+  }
 }
 .message-sent {
   -ms-flex-item-align: end;
@@ -2983,6 +3032,9 @@ html.retina.ios-gt-7 {
   .message-name {
     margin-right: 16px;
   }
+  .message-label {
+    margin-right: 6px;
+  }
   &.message-with-avatar {
     .message-text {
       margin-right: 29px;
@@ -2990,18 +3042,21 @@ html.retina.ios-gt-7 {
     .message-name {
       margin-right: 45px;
     }
+    .message-label {
+      margin-right: 34px;
+    }
   }
   .message-text {
     padding-right: 22px;
     background-color: #00d449;
     color: white;
     margin-left: auto;
-    -webkit-mask-box-image: url("data:image/svg+xml;charset=utf-8,<svg height='35' viewBox='0 0 96 70' width='48' xmlns='http://www.w3.org/2000/svg'><path d='m84 35c1 7-5 37-42 35-37 2-43-28-42-35-1-7 5-37 42-35 37-2 43 28 42 35z'/></svg>") 50% 56% 49% 43%;
+    -webkit-mask-box-image: url("data:image/svg+xml;charset=utf-8,<svg height='35' viewBox='0 0 96 70' width='48' xmlns='http://www.w3.org/2000/svg'><path d='m84 35c1 7-5 37-42 35-37 2-43-28-42-35-1-7 5-37 42-35 37-2 43 28 42 35z'/></svg>") 50% 56% 46% 42%;
   }
-  &.message-last {
+  &.message-last, &.message-with-tail {
     .message-text {
       border-radius: 16px 16px 0 16px;
-      -webkit-mask-box-image: url("data:image/svg+xml;charset=utf-8,<svg height='35' viewBox='0 0 96 70' width='48' xmlns='http://www.w3.org/2000/svg'><path d='m84 35c1 7-5 37-42 35-37 2-43-28-42-35-1-7 5-37 42-35 37-2 43 28 42 35z'/><path d='m96 70c-6-2-12-10-12-19v-16l-14 27s8 8 26 8z'/></svg>") 50% 56% 49% 43%;
+      -webkit-mask-box-image: url("data:image/svg+xml;charset=utf-8,<svg height='35' viewBox='0 0 96 70' width='48' xmlns='http://www.w3.org/2000/svg'><path d='m84 35c1 7-5 37-42 35-37 2-43-28-42-35-1-7 5-37 42-35 37-2 43 28 42 35z'/><path d='m96 70c-6-2-12-10-12-19v-16l-14 27s8 8 26 8z'/></svg>") 50% 56% 46% 42%;
     }
     &.message-pic img{
       border-radius: 16px 16px 0 16px;
@@ -3017,10 +3072,13 @@ html.retina.ios-gt-7 {
     padding-left: 22px;
     background-color: #e5e5ea;
     color: #000;
-    -webkit-mask-box-image: url("data:image/svg+xml;charset=utf-8,<svg height='35' viewBox='0 0 96 70' width='48' xmlns='http://www.w3.org/2000/svg'><path d='m96 35c1 7-5 37-42 35-37 2-43-28-42-35-1-7 5-37 42-35 37-2 43 28 42 35z'/></svg>") 50% 43% 49% 56%;
+    -webkit-mask-box-image: url("data:image/svg+xml;charset=utf-8,<svg height='35' viewBox='0 0 96 70' width='48' xmlns='http://www.w3.org/2000/svg'><path d='m96 35c1 7-5 37-42 35-37 2-43-28-42-35-1-7 5-37 42-35 37-2 43 28 42 35z'/></svg>") 50% 42% 46% 56%;
   }
   .message-name {
     margin-left: 16px;
+  }
+  .message-label {
+    margin-left: 6px;
   }
   &.message-with-avatar {
     .message-text {
@@ -3029,27 +3087,22 @@ html.retina.ios-gt-7 {
     .message-name {
       margin-left: 45px;
     }
+    .message-label {
+      margin-left: 34px;
+    }
   }
-  &.message-last {
+  &.message-last, &.message-with-tail {
     .message-text {
       border-radius: 16px 16px 16px 0;
-      -webkit-mask-box-image: url("data:image/svg+xml;charset=utf-8,<svg height='35' viewBox='0 0 96 70' width='48' xmlns='http://www.w3.org/2000/svg'><path d='m96 35c1 7-5 37-42 35-37 2-43-28-42-35-1-7 5-37 42-35 37-2 43 28 42 35z'/><path d='m0 70c6-2 12-10 12-19v-16l14 27s-8 8-26 8z'/></svg>") 50% 43% 49% 56%;
+      -webkit-mask-box-image: url("data:image/svg+xml;charset=utf-8,<svg height='35' viewBox='0 0 96 70' width='48' xmlns='http://www.w3.org/2000/svg'><path d='m96 35c1 7-5 37-42 35-37 2-43-28-42-35-1-7 5-37 42-35 37-2 43 28 42 35z'/><path d='m0 70c6-2 12-10 12-19v-16l14 27s-8 8-26 8z'/></svg>") 50% 42% 46% 56%;
     }
     &.message-pic img{
       border-radius: 16px 16px 16px 0;
     }
   }
 }
-.message-first {
-  .message-name {
-    display: block;
-  }
-}
 .message-last {
   margin-bottom: 8px;
-  .message-avatar {
-    opacity: 1;
-  }
 }
 .message-appear {
   -webkit-animation: messageAppearFromBottom 400ms;
@@ -3058,6 +3111,27 @@ html.retina.ios-gt-7 {
 .new-messages-first .message-appear {
   -webkit-animation: messageAppearFromTop 400ms;
   animation: messageAppearFromTop 400ms;
+}
+.messages-auto-layout {
+  .message-name, .message-label {
+    display: none;
+  }
+  .message-avatar {
+    opacity: 0;
+  }
+  .message-first {
+    .message-name {
+      display: block;
+    }
+  }
+  .message-last {
+    .message-avatar {
+      opacity: 1;
+    }
+    .message-label {
+      display: block;
+    }
+  }
 }
 html.retina.ios-6 {
   .message, .message.message-pic img {
@@ -3243,6 +3317,9 @@ html.retina.ios-6 {
   }
   i.icon-bars.color-@{colorName}, i.icon-bars.theme-@{colorName}, .theme-@{colorName} i.icon-bars {
     background-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 42 26'><path fill='%23@{colorHex}' d='M0,0h4v4H0V0z M8,1h34v2H8V1z M0,11h4v4H0V11z M8,12h34v2H8V12z M0,22h4v4H0V22z M8,23h34v2H8V23z'/></svg>");
+    @media all and (-webkit-max-device-pixel-ratio: 1), (max-resolution: 120dpi) {
+      background-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 21 14'><path fill='%23@{colorHex}' d='M0,0h2v2H0V0z M4,0h17v1H4V0z M0,6h2v2H0V6z M4,6h17v1H4V6z M0,12h2v2H0V12z M4,12h17v1H4V12z'/></svg>");
+    }
   }
   // Theme
   .theme-@{colorName} {

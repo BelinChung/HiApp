@@ -44,7 +44,7 @@ define(['utils/appFunc','utils/tplManager','GS','i18n!nls/lang'],function(appFun
             hiApp.confirm(i18n.setting.confirm_logout,function(){
                 GS.removeCurrentUser();
 
-                mainView.loadPage('page/login.html');
+                mainView.router.loadPage('page/login.html');
                 hiApp.showTab('#ourView');
             });
         },

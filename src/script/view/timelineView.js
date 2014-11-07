@@ -154,7 +154,7 @@ define(['utils/appFunc','utils/tplManager','i18n!nls/lang'],function(appFunc,TM,
                 return false;
             }
             var itemId = $$(this).parents('.item-content').data('id');
-            mainView.loadPage('page/item.html?id=' + itemId);
+            mainView.router.loadPage('page/item.html?id=' + itemId);
         }
 
     };

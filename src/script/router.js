@@ -14,9 +14,9 @@ define(['GS','controller/module'],function(GS,CM) {
             });
 
             if(!GS.isLogin()){
-                mainView.loadPage('page/login.html');
+                mainView.router.loadPage('page/login.html');
             }else{
-                mainView.reloadPage('index.html');
+                mainView.router.reloadPage('index.html');
             }
 
             //remove 'hidden-navbar' class

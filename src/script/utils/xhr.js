@@ -77,7 +77,7 @@ define(['utils/appFunc',
 
                         hiApp.alert(codeLevel.message,function(){
                             if(codeLevel.path !== '/')
-                                mainView.loadPage(codeLevel.path);
+                                mainView.router.loadPage(codeLevel.path);
 
                             hiApp.hideIndicator();
                             hiApp.hidePreloader();

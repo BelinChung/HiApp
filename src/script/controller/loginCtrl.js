@@ -37,7 +37,7 @@ define(['utils/appFunc','utils/xhr','view/module','GS','i18n!nls/lang'],function
 
                             var login = response.data;
                             GS.setCurrentUser(login.sid,login.user);
-                            mainView.loadPage('index.html');
+                            mainView.router.loadPage('index.html');
                             hiApp.hidePreloader();
                         }else{
                             hiApp.hidePreloader();

@@ -28,17 +28,12 @@ define(['i18n!nls/lang'],function(i18n){
             return true;
         },
 
-        hideToolbar: function(viewContainer) {
-            $$(viewContainer).addClass('hidden-toolbar');
-            return true;
+        hideToolbar: function() {
+            hiApp.hideToolbar('.toolbar');
         },
 
-        showToolbar: function(viewContainer) {
-            var vc = $$(viewContainer);
-            vc.addClass('hiding-toolbar').removeClass('hidden-toolbar');
-            $$('.toolbar').transitionEnd(function () {
-                vc.removeClass('hiding-toolbar');
-            });
+        showToolbar: function() {
+            hiApp.showToolbar('.toolbar');
         },
 
         timeFormat: function(ms){

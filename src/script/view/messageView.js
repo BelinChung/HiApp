@@ -77,7 +77,7 @@ define(['utils/appFunc','i18n!nls/lang','utils/tplManager'],function(appFunc,i18
         },
 
         hideToolbar: function(){
-            appFunc.hideToolbar('.views');
+            appFunc.hideToolbar();
         }
     };
 

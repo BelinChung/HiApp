@@ -5,11 +5,11 @@ A simple and interesting Framework7 hybrid app.With PhoneGap you can easily conv
 
 ## Dependencies
 
-HiApp uses `gulp` and `webpack` to build a production versions,
+HiApp use `gulp` and `webpack` to build a production versions,
 
 First you need to have `gulp` and `webpack` which you should install globally.
 
-HiApp also user `bower` to manage third-party packages, global install it as same as `gulp` and `webpack`.
+HiApp also use `bower` to manage third-party packages, global install it as same as `gulp` and `webpack`.
 
 ```
 $ npm install -g gulp

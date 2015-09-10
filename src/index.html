@@ -1,170 +1,47 @@
 <!DOCTYPE html>
-<!--(if target dist)>
-{{banner}}
-<!(endif)-->
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <title>HiApp</title>
-    
-    <!--(if target dev)><!-->
-    <link rel="stylesheet" href="style/css/app.css">
-    <!--<!(endif)-->
-    
-    <!--(if target dist)>
-      <link rel="stylesheet" href="style/css/hiapp.min.css?v={{rlsdate}}">
-    <!(endif)-->
+    <link rel="stylesheet" href="app.css"/>
+</head>
+<body>
+<div class="statusbar-overlay"></div>
+<div class="panel-overlay"></div>
 
-    <!--(if target dev)><!-->
-      <script type="text/javascript">
-          var $CONFIG = {};
-          $CONFIG['version'] = 'Test';
-          $CONFIG['release_time'] = 'Test';
-      </script>
-    <!--<!(endif)-->
+<div class="views tabs toolbar-through">
+    <div id="ourView" class="view view-main tab active">
+        <div class="navbar">
+            <div class="navbar-inner">
 
-    <!--(if target dist)>
-    <script type="text/javascript">
-        var $CONFIG = {};
-        $CONFIG['version'] = '{{version}}';
-        $CONFIG['release_time'] = '{{rlsdate2}}';
-    </script>
-    <!(endif)-->
-  </head>
-  <body>
-        <div class="statusbar-overlay"></div>
-        <div class="panel-overlay"></div>
-
-        <div class="views tabs toolbar-through">
-            <div id="ourView" class="view view-main tab active">
-               <div class="navbar navbar-hidden">
-                 <div class="navbar-inner">
-
-                   <div class="left">
-                       <a href="#"  class="refresh-click link">
-                           <i class="icon ios7-reload"></i>
-                       </a>
-                   </div>
-
-                   <div class="center sliding i18n" data-i18n="app.name">{{i}}</div>
-
-                   <div class="right">
-                       <a href="#" class="open-send-popup link icon-only">
-                           <i class="icon ios7-compose-outline"></i>
-                       </a>
-                   </div>
-
-                 </div>
-               </div>
-               <div class="pages navbar-through">
-                 <div data-page="ourView" class="page no-swipeback">
-                   <div data-distance="50" class="page-content pull-to-refresh-content infinite-scroll">
-                     <div class="pull-to-refresh-layer">
-                       <div class="preloader"></div>
-                       <div class="pull-to-refresh-arrow"></div>
-                     </div>
-                     <div class="list-block media-list">
-                       <div class="load-result"></div>
-                       <ul class="time-line-content">
-
-                       </ul>
-
-                     </div>
-                   </div>
-                 </div>
-               </div>
-            </div>
-
-            <div id="contatcView" class="view tab">
-
-                <div class="navbar">
-                    <div class="navbar-inner">
-
-                        <div class="center sliding i18n" data-i18n="app.name"></div>
-
-                    </div>
-                </div>
-
-                <div class="pages navbar-through">
-                    <div data-page="contatcView" class="page contact-page">
-                        <!-- Search bar -->
-                        <form class="searchbar" data-search-list=".contacts-list" data-search-in=".item-title">
-                            <div class="searchbar-input">
-                                <input type="search" class="i18n" data-i18n="[placeholder]global.search">
-                                <a href="#" class="searchbar-clear"></a>
-                            </div>
-                            <a href="#" class="searchbar-cancel i18n" data-i18n="global.cancel"></a>
-                        </form>
-
-                        <!-- Search bar overlay-->
-                        <div class="searchbar-overlay"></div>
-
-                        <div class="page-content">
-                            <div class="list-block media-list contacts-list searchbar-found">
-                                <div class="list-group">
-                                    <ul></ul>
-                                </div>
-                            </div>
-                            <div class="content-block searchbar-not-found i18n" data-i18n="index.nothing_found" >
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div id="settingView" class="view tab">
-                <div class="navbar">
-                    <div class="navbar-inner">
-
-                    <div class="center sliding i18n" data-i18n="app.name"></div>
-
-                    </div>
-                </div>
-                <div class="pages navbar-through">
-                    <div data-page="setting" class="page">
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- toolbar start -->
-            <div class="toolbar tabbar tabbar-labels toolbar-hidden">
-                <div class="toolbar-inner">
-                    <a href="#ourView" class="tab-link active">
-                        <i class="icon ios7-home-outline"></i>
-                        <span class="tabbar-label i18n" data-i18n="index.tweet"></span>
-                    </a>
-
-                    <a href="#contatcView" class="tab-link">
-                        <i class="icon ios7-chatbubble-outline"></i>
-                        <span class="tabbar-label i18n" data-i18n="index.contacts"></span>
-                    </a>
-
-                    <a href="#settingView" class="tab-link">
-                        <i class="icon ios7-gear-outline">
-                            <!-- <span class="badge badge-red">4</span> -->
-                        </i>
-                        <span class="tabbar-label i18n" data-i18n="index.setting"></span>
+                <div class="left">
+                    <a href="#"  class="refresh-click link">
+                        <i class="icon ios7-reload"></i>
                     </a>
                 </div>
+
+                <div class="center sliding i18n" data-i18n="app.name">HiApp</div>
+
+                <div class="right">
+                    <a href="#" class="open-send-popup link icon-only">
+                        <i class="icon ios7-compose-outline"></i>
+                    </a>
+                </div>
+
             </div>
-            <!-- toolbar end -->
         </div>
+    </div>
+</div>
 
-        <!-- Please ignore the 404 error when you are not running under PhoneGap environment or delete it. -->
-        <script type="text/javascript" src="cordova.js"></script>
+<!-- Please ignore the 404 error when you are not running under PhoneGap environment or delete it. -->
+<script type="text/javascript" src="cordova.js"></script>
 
-        <!--(if target dev)><!-->
-        <script data-main="script/main" src="vendors/require/require.js"></script>
-        <!--<!(endif)-->
-        
-        <!--(if target dist)>
-          <script data-main="script/hiapp.min" src="script/require.min.js?v={{rlsdate}}"></script>
-        <!(endif)-->
+<script src="app.js"></script>
 
-  </body>
-  
+<script src="http://localhost:3000/webpack-dev-server.js"></script>
+
+</body>
+
 </html>

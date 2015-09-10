@@ -2,7 +2,7 @@
 <widget id="com.hiapp.hiapp" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>HiApp</name>
     <description>
-        A hybrid app made with Framework7.With PhoneGap you can easily convert it to native iOS 7 app.
+        A hybrid app made with Framework7.With PhoneGap you can easily convert it to native iOS app.
     </description>
     <author email="BelinChung@gmail.com" href="http://dearb.me/hi/">
         BelinChung

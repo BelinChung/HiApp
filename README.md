@@ -1,25 +1,27 @@
-[![Build Status](https://travis-ci.org/BelinChung/HiApp.svg?branch=master)](https://travis-ci.org/BelinChung/HiApp)
-[![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
-
 HiApp
 =====
 
-A simple and interesting Framework7 hybrid app.With PhoneGap you can easily convert it to native iOS 7 app.
+A simple and interesting Framework7 hybrid app.With PhoneGap you can easily convert it to native iOS app.
 
 ## Dependencies
 
-HiApp uses `grunt` to build a production versions.
+HiApp uses `gulp` and `webpack` to build a production versions,
 
-First you need to have `grunt-cli` which you should install globally.
+First you need to have `gulp` and `webpack` which you should install globally.
+
+HiApp also user `bower` to manage third-party packages, global install it as same as `gulp` and `webpack`.
 
 ```
-$ npm install -g grunt-cli
+$ npm install -g gulp
+$ npm install -g webpack
+$ npm install -g bower
 ```
 
 Then install all dependencies, in repo's root:
 
 ```
-$ npm install    
+$ npm install 
+$ bower install
 ```
 
 ## PhoneGap App Guides
@@ -55,8 +57,6 @@ $ git reset --hard origin/master
 Before you can build the project, you need to specify a set of target platforms.
 
 ```
-$ npm install
-$ grunt phonegap
 $ cordova platform add ios
 ```
 
@@ -80,43 +80,25 @@ $ cordova build ios
 
 Select an iOS simulator and click the `Run` button
 
-
-## PhoneGap App Browser Simulator
-
-HiApp use `Ripple` to simulate the test environment.
-
-You also need to have `ripple-emulator` which you should install globally.
-
-```
-$ npm install -g ripple-emulator
-```
-
-Run it in repo's root:
-
-```
-$ grunt phonegap
-$ ripple emulate
-```
-
 ## Web App Preview
 
-HiApp use Grunt's server to develop,Just run it in repo's root:
+HiApp use webpack dev server to develop, Just run it in repo's root:
 
 ```
-$ grunt server
+$ gulp build-dev
 ```
 
 ## Web App Release / PhoneGap App Release
 
 ```
-$ grunt
+$ gulp build
 ```
 
 The result is available in `www/` folder.
 
 ## Demo
 
-[http://dearb.me/hi/]
+[http://hi.dearb.me/]
 
 [![App Store](http://dearb.u.qiniudn.com/appstore-button.png)](https://itunes.apple.com/us/app/hi-liao-gao-xiao-shu-dong/id917320045?mt=8)
 
@@ -124,7 +106,7 @@ The result is available in `www/` folder.
 
 ## License
 
-Copyright (c) 2014 Belin Chung. MIT Licensed, see [LICENSE] for details.
+Copyright (c) 2014-2015 Belin Chung. MIT Licensed, see [LICENSE] for details.
 
-[http://dearb.me/hi/]:http://dearb.me/hi/
+[http://hi.dearb.me/]: http://hi.dearb.me/
 [LICENSE]:https://github.com/BelinChung/HiApp/blob/master/LICENSE.md

@@ -12,7 +12,7 @@
 <div class="panel-overlay"></div>
 
 <div class="views tabs toolbar-through">
-    <div id="ourView" class="view view-main tab active">
+    <div id="homeView" class="view view-main tab active">
         <div class="navbar">
             <div class="navbar-inner">
 
@@ -32,7 +32,46 @@
 
             </div>
         </div>
+
+        <div class="pages navbar-through">
+            <div data-page="homeView" class="page no-swipeback">
+                <div data-distance="50" class="page-content pull-to-refresh-content infinite-scroll">
+                    <div class="pull-to-refresh-layer">
+                        <div class="preloader"></div>
+                        <div class="pull-to-refresh-arrow"></div>
+                    </div>
+                    <div class="load-result"></div>
+                    <div class="home-timeline">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
+
+    <!-- toolbar start -->
+    <div class="toolbar tabbar tabbar-labels">
+        <div class="toolbar-inner">
+            <a href="#homeView" class="tab-link active">
+                <i class="icon ios7-home-outline"></i>
+                <span class="tabbar-label i18n" data-i18n="index.tweet"></span>
+            </a>
+
+            <a href="#contatcView" class="tab-link">
+                <i class="icon ios7-chatbubble-outline"></i>
+                <span class="tabbar-label i18n" data-i18n="index.contacts"></span>
+            </a>
+
+            <a href="#settingView" class="tab-link">
+                <i class="icon ios7-gear-outline">
+                    <!-- <span class="badge badge-red">4</span> -->
+                </i>
+                <span class="tabbar-label i18n" data-i18n="index.setting"></span>
+            </a>
+        </div>
+    </div>
+    <!-- toolbar end -->
 </div>
 
 <!-- Please ignore the 404 error when you are not running under PhoneGap environment or delete it. -->

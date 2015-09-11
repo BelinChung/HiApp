@@ -1,8 +1,11 @@
 require('framework7');
 require('framework7.ios.css');
+require('../style/less/app.less');
 
 var appFunc = require('./utils/appFunc'),
-    appService = require('./services/appService');
+    appService = require('./services/appService'),
+    router = require('./router'),
+    index = require('./app/app');
 
 var app = {
     initialize: function() {
@@ -73,12 +76,15 @@ var app = {
             modalTitle: i18n.global.modal_title,
             modalButtonOk: i18n.global.modal_button_ok,
             modalButtonCancel: i18n.global.cancel,
-            //preprocess: router.preprocess
+            preprocess: router.preprocess
         });
 
-        window.mainView = hiApp.addView('#ourView', {
+        window.mainView = hiApp.addView('#homeView', {
             dynamicNavbar: true
         });
+
+        // init app
+        index.init();
     }
 };
 

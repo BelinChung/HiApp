@@ -1,7 +1,14 @@
+require('framework7');
+
 module.exports = {
 
     isPhonegap: function() {
         return (typeof(cordova) !== 'undefined' || typeof(phonegap) !== 'undefined');
+    },
+
+    renderTpl: function(markup,renderData){
+        var compiledTemplate = Template7.compile(markup);
+        return compiledTemplate(renderData);
     },
 
     isEmail: function(str){

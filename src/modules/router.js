@@ -1,6 +1,8 @@
 var index = require('./app/app'),
     appFunc = require('./utils/appFunc'),
     tweetModule = require('./tweet/tweet'),
+    feedbackModule = require('./feedback/feedback'),
+    aboutModule = require('./about/about'),
     messageModule = require('./message/message');
 
 module.exports = {
@@ -20,7 +22,7 @@ module.exports = {
         var name = page.name;
         var from = page.from;
 
-        if(name === 'homeView' || name === 'contactView' || name === 'settingView' ){
+        if(name === 'homeView' || name === 'contactView' || name === 'setting' ){
             if(from === 'left'){
                 appFunc.showToolbar();
             }
@@ -33,10 +35,10 @@ module.exports = {
 
         switch (name) {
             case 'about':
-                //CM.module('aboutCtrl').init();
+                aboutModule.init();
                 break;
             case 'feedback':
-                //CM.module('feedbackCtrl').init();
+                feedbackModule.init();
                 break;
             case 'item':
                 tweetModule.init(query);

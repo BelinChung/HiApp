@@ -89,6 +89,14 @@ var app = {
                     chat: i18n.chat.title,
                     chatPlaceholder: i18n.chat.chatPlaceholder,
                     send: i18n.global.send
+                },
+                'page:feedback': {
+                    feedBack: i18n.setting.feed_back,
+                    feedBackPlaceholder: i18n.setting.feed_back_placeholder
+                },
+                'page:about': {
+                    appName: i18n.app.name,
+                    about: i18n.setting.about
                 }
             }
         });

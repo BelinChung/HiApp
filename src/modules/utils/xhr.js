@@ -1,4 +1,5 @@
-var appFunc = require('./appFunc');
+var appFunc = require('./appFunc'),
+    networkStatus = require('../components/networkStatus');
 
 module.exports = {
 
@@ -74,9 +75,6 @@ module.exports = {
                 }else{
 
                     hiApp.alert(codeLevel.message,function(){
-                        if(codeLevel.path !== '/')
-                            mainView.router.loadPage(codeLevel.path);
-
                         hiApp.hideIndicator();
                         hiApp.hidePreloader();
                     });

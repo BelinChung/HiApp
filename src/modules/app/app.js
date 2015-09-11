@@ -1,3 +1,5 @@
+require('./app.less');
+
 var appFunc = require('../utils/appFunc'),
     homeView = require('../home/home'),
     contactsView = require('../contacts/contacts'),

@@ -1,0 +1,178 @@
+.message-content{
+  .message-input {
+    text-align: center;
+    height: 150px;
+
+    > textarea {
+      width: 100%;
+      height: 150px;
+      font-size: 15px;
+      border: none;
+      color: #444;
+      margin: 0;
+      padding: 5px;
+      resize: none;
+      box-sizing: border-box;
+    }
+  }
+
+  .message-tools {
+    width: 100%;
+    height: 34px;
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #DADADA;
+    border-top: 1px solid #DADADA;
+
+    > ul {
+      list-style: none;
+      font-size: 24px;
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+      color: #777;
+
+      > li {
+        width: 20%;
+        float: left;
+        text-align: center;
+        position: relative;
+      }
+    }
+
+    .ios7-pic {
+      font-size: 24px;
+    }
+
+    .upload-file{
+      .file-input{
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 64px;
+        height: 35px;
+      }
+    }
+
+    .ios7-camera-outline{
+      font-size:25px ;
+    }
+
+    .ios7-emotion{
+      font-size:21px ;
+    }
+
+    .ios7-at-outline{
+      font-size:32px ;
+      line-height: 9px;
+    }
+
+    .ios7-dingxiang{
+      font-size:19px ;
+    }
+  }
+
+  .geo-info{
+    padding: 5px;
+    padding-left: 20px;
+    min-height: 25px;
+    color: #666;
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #DADADA;
+    border-top: 1px solid #DADADA;
+    margin-top: 5px;
+    display: none;
+    position: relative;
+
+    .info{
+      margin-left: 3px;
+      vertical-align: middle;
+
+    }
+
+    .icon{
+      &.preloader{
+        width: 17px;
+        height:17px;
+      }
+      vertical-align: middle;
+    }
+
+    .ios7-location-outline{
+      font-size: 18px;
+    }
+
+    .close{
+      position: absolute;
+      top: 3px;
+      right: 10px;
+
+      > i{
+        font-size: 22px;
+      }
+    }
+  }
+
+  .upload-pic-preview{
+    position:relative;
+    overflow: hidden;
+    width:120px;
+    padding:2px;
+    margin: 10px;
+    border:1px solid #ddd;
+    display: none;
+    border-radius:5px;
+    height: auto;
+
+    > img{
+      border-radius:5px;
+      height: auto;
+      display:block;
+      width:100%;
+    }
+
+    .mask{
+      position: absolute;
+      top: 100%;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(0,0,0,.6);
+      z-index: 100;
+    }
+
+    .progress{
+      font-size: 20px;
+      color: #ffffff;
+      width: 60px;
+      height: 28px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -14px;
+      margin-left: -30px;
+      text-align: center;
+      line-height: 28px;
+      z-index: 101;
+      display: none;
+    }
+  }
+
+}
+
+#progress{
+  width: 100%;
+  height: 5px;
+  border-radius: 2px;
+  margin: 20px 0 5px 0;
+  background-color: #ccc;
+  position: relative;
+  overflow: hidden;
+
+  .progress-bar{
+    width: 0;
+    height: 5px;
+    background-color: #ff9630;
+    display: block;
+  }
+}

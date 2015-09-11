@@ -24,7 +24,7 @@ module.exports = {
         contacts: 'Contacts',
         setting: 'Setting',
         sen_tweet: 'New Tweet',
-        send_placeholder: 'What\'s new with you.',
+        send_placeholder: 'What is new with you.',
         sending:'Submitting...',
         err_text_too_short:'Ah,Content is too short'
     },

@@ -2,7 +2,8 @@ require('./home.less');
 
 var service = require('./service'),
     appFunc = require('../utils/appFunc'),
-    template = require('./home.tpl.html');
+    template = require('./home.tpl.html'),
+    inputModule = require('../input/input');
 
 var home = {
     init: function(){
@@ -161,7 +162,7 @@ var home = {
             element: '#homeView',
             selector: 'a.open-send-popup',
             event: 'click',
-            //handler:VM.module('postView').openSendPopup
+            handler: inputModule.openSendPopup
         },{
             element: '#homeView',
             selector: '.time-line-content .item-content .click-content',

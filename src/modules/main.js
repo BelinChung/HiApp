@@ -79,11 +79,15 @@ var app = {
             preprocess: router.preprocess
         });
 
-        window.mainView = hiApp.addView('#homeView', {
+        hiApp.addView('#homeView', {
             dynamicNavbar: true
         });
 
-        window.contactView = hiApp.addView('#contactView', {
+        hiApp.addView('#contactView', {
+            dynamicNavbar: true
+        });
+
+        hiApp.addView('#settingView', {
             dynamicNavbar: true
         });
 

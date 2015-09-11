@@ -54,6 +54,7 @@ gulp.task('webpack:build', function(callback) {
         fse.copySync('src/index.html', 'www/index.html');
         fse.copySync('src/api', 'www/api');
         fse.copySync('src/res', 'www/res');
+        fse.copySync('src/page', 'www/page');
 
         fse.move('www/app.css', 'www/' + stats.hash + '.app.css', function (err) {
             if (err) return console.error('[webpack:build]: rename app.css failed');
@@ -97,6 +98,7 @@ gulp.task('webpack:build-dev', function(callback) {
         fse.copySync('src/index.html', 'www/index.html');
         fse.copySync('src/api', 'www/api');
         fse.copySync('src/res', 'www/res');
+        fse.copySync('src/page', 'www/page');
 
         callback();
     });

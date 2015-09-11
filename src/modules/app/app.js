@@ -1,12 +1,14 @@
 var appFunc = require('../utils/appFunc'),
-    home = require('../home/home'),
-    contacts = require('../contacts/contacts');
+    homeView = require('../home/home'),
+    contactsView = require('../contacts/contacts'),
+    settingView = require('../setting/setting');
 
 module.exports = {
     init: function(){
         this.i18next('');
-        home.init();
-        contacts.init();
+        homeView.init();
+        contactsView.init();
+        settingView.init();
     },
 
     i18next: function(content){

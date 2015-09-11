@@ -28,7 +28,6 @@
         "i18n": true,
         "hiApp": true,
         "define": true,
-        "mainView": true,
         "Connection": true,
         "Camera": true,
         "FileTransfer": true

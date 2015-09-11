@@ -3,6 +3,7 @@ var index = require('./app/app'),
     tweetModule = require('./tweet/tweet'),
     feedbackModule = require('./feedback/feedback'),
     aboutModule = require('./about/about'),
+    languageModule = require('./language/language'),
     messageModule = require('./message/message');
 
 module.exports = {
@@ -31,7 +32,6 @@ module.exports = {
     pageBeforeInit: function(page) {
         var name = page.name;
         var query = page.query;
-        var from = page.from;
 
         switch (name) {
             case 'about':
@@ -47,7 +47,7 @@ module.exports = {
                 messageModule.init(query);
                 break;
             case 'language':
-                //CM.module('languageCtrl').init(query);
+                languageModule.init();
                 break;
         }
     }

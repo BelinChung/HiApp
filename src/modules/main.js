@@ -97,6 +97,11 @@ var app = {
                 'page:about': {
                     appName: i18n.app.name,
                     about: i18n.setting.about
+                },
+                'page:language': {
+                    back: i18n.global.back,
+                    done: i18n.global.done,
+                    switchLanguage: i18n.global.switch_language
                 }
             }
         });

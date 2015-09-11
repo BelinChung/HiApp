@@ -84,6 +84,11 @@ var app = {
                     title: i18n.item.title,
                     comment: i18n.timeline.comment,
                     forward: i18n.timeline.forward
+                },
+                'page:message': {
+                    chat: i18n.chat.title,
+                    chatPlaceholder: i18n.chat.chatPlaceholder,
+                    send: i18n.global.send
                 }
             }
         });

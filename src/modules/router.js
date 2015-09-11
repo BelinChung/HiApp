@@ -1,6 +1,7 @@
 var index = require('./app/app'),
     appFunc = require('./utils/appFunc'),
-    tweetModule = require('./tweet/tweet');
+    tweetModule = require('./tweet/tweet'),
+    messageModule = require('./message/message');
 
 module.exports = {
     init: function() {
@@ -41,7 +42,7 @@ module.exports = {
                 tweetModule.init(query);
                 break;
             case 'message':
-                //CM.module('messageCtrl').init(query);
+                messageModule.init(query);
                 break;
             case 'language':
                 //CM.module('languageCtrl').init(query);

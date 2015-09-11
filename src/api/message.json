@@ -63,8 +63,8 @@
             "from": "sent"
         },
         {
-            "text": "style/img/cat.jpg",
-            "image":true,
+            "text": "http://lorempixel.com/1000/700/nature/5/",
+            "image": true,
             "from": "sent"
         },
         {

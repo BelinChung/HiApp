@@ -1,0 +1,108 @@
+.comments-content {
+  background: #f7f7f7;
+  border: 1px solid #EBE9E9;
+  color: #6d6d72;
+  margin: 10px;
+
+  .comment-title {
+    height: 30px;
+    background-color: #ffffff;
+    line-height: 30px;
+    font-size: 11px;
+    padding-left: 10px;
+    border-bottom: 1px solid #EBE9E9;
+    position: relative;
+
+    .tip {
+      position: absolute;
+      width: 0;
+      height: 0;
+      top: 13px;
+      left: 48px;
+      border: 9px solid rgba(255, 255, 255, 0);
+      border-bottom: 9px solid #f7f7f7;
+    }
+  }
+
+  .comments-list {
+    padding: 0 5px;
+    margin: 0;
+
+    .none-comment {
+      text-align: center;
+      margin-top: 10px;
+      color: #DBDBDB;
+
+      > i {
+        display: block;
+        font-size: 75px;
+        margin-left: -15px;
+
+      }
+    }
+
+    .loading {
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    > li {
+      overflow: hidden;
+      padding: 10px 0;
+      border-bottom: 1px solid #EBE9E9;
+      position: relative;
+
+      &:active{
+        transition-duration: 0ms;
+        background-color: #e9e9e9 !important;
+      }
+    }
+
+    .avatar{
+      float: left;
+      height: 35px;
+      width: 35px;
+      border-radius: 3px;
+
+      > img{
+        height: 35px;
+        width: 35px;
+        border-radius: 3px;
+      }
+    }
+
+    .comment-detail {
+      margin-left: 47px;
+
+      .name {
+        font-size: 12px;
+        margin-top: -2px;
+      }
+
+      .text {
+        word-break: break-all;
+        line-height: 14px;
+      }
+
+      .time {
+        color: #B6B6B6;
+        font-size: 10px;
+        margin-top: 5px;
+      }
+    }
+
+    .reply {
+      width: 18px;
+      height: 12px;
+      border: 1px solid #A3A0A0;
+      line-height: 13px;
+      text-align: center;
+      font-size: 20px;
+      color: #A3A0A0;
+      border-radius: 3px;
+      position: absolute;
+      top: 8px;
+      right: 2px;
+    }
+  }
+}

@@ -25,6 +25,7 @@
         "$$": true,
         "Template7": true,
         "Framework7": true,
+        "homeF7View": true,
         "i18n": true,
         "hiApp": true,
         "define": true,

@@ -1,39 +1,51 @@
-var index = require('./app/app');
+var index = require('./app/app'),
+    appFunc = require('./utils/appFunc'),
+    tweetModule = require('./tweet/tweet');
 
 module.exports = {
-    preprocess: function(content,url){
-        if(!url) return false;
+    init: function() {
+        var that = this;
+        $$(document).on('pageBeforeInit', function (e) {
+            var page = e.detail.page;
+            that.pageBeforeInit(page);
+        });
 
-        url = url.split('?')[0] ;
+        $$(document).on('pageAfterAnimation', function (e) {
+            var page = e.detail.page;
+            that.pageAfterAnimation(page);
+        });
+    },
+    pageAfterAnimation: function(page){
+        var name = page.name;
+        var from = page.from;
 
-        var viewName, output;
-
-        switch (url) {
-            case 'index.html':
-                viewName = 'appView';
-                output = index.i18next(content);
-                break;
-            case 'page/login.html':
-                viewName = 'loginView';
-                break;
-            case 'page/about.html':
-                viewName = 'aboutView';
-                break;
-            case 'page/feedback.html':
-                viewName = 'feedbackView';
-                break;
-            case 'page/item.html':
-                viewName = 'itemView';
-                break;
-            case 'page/message.html':
-                viewName = 'messageView';
-                break;
-            case 'page/language.html':
-                viewName = 'languageView';
-                break;
-            default :
-                return content;
+        if(name === 'homeView' || name === 'contactView' || name === 'settingView' ){
+            if(from === 'left'){
+                appFunc.showToolbar();
+            }
         }
-        return output;
+    },
+    pageBeforeInit: function(page) {
+        var name = page.name;
+        var query = page.query;
+        var from = page.from;
+
+        switch (name) {
+            case 'about':
+                //CM.module('aboutCtrl').init();
+                break;
+            case 'feedback':
+                //CM.module('feedbackCtrl').init();
+                break;
+            case 'item':
+                tweetModule.init(query);
+                break;
+            case 'message':
+                //CM.module('messageCtrl').init(query);
+                break;
+            case 'language':
+                //CM.module('languageCtrl').init(query);
+                break;
+        }
     }
 };

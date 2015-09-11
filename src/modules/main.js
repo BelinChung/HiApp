@@ -1,5 +1,6 @@
 require('framework7');
 require('framework7.ios.css');
+require('framework7.ios.colors.css');
 require('../style/less/app.less');
 
 var appFunc = require('./utils/appFunc'),
@@ -76,10 +77,18 @@ var app = {
             modalTitle: i18n.global.modal_title,
             modalButtonOk: i18n.global.modal_button_ok,
             modalButtonCancel: i18n.global.cancel,
-            preprocess: router.preprocess
+            template7Pages: true,
+            template7Data: {
+                'page:item': {
+                    back: i18n.global.back,
+                    title: i18n.item.title,
+                    comment: i18n.timeline.comment,
+                    forward: i18n.timeline.forward
+                }
+            }
         });
 
-        hiApp.addView('#homeView', {
+        window.homeF7View = hiApp.addView('#homeView', {
             dynamicNavbar: true
         });
 
@@ -92,6 +101,7 @@ var app = {
         });
 
         // init app
+        router.init();
         index.init();
     }
 };

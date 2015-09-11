@@ -141,6 +141,13 @@ var home = {
             $$('#homeView').find('.home-timeline').html(output);
         }
     },
+    openItemPage: function(e){
+        if(e.target.nodeName === 'A' || e.target.nodeName === 'IMG'){
+            return false;
+        }
+        var itemId = $$(this).data('id');
+        homeF7View.router.loadPage('page/tweet.html?id=' + itemId);
+    },
     bindEvent: function(){
 
         var bindings = [{
@@ -165,9 +172,9 @@ var home = {
             handler: inputModule.openSendPopup
         },{
             element: '#homeView',
-            selector: '.time-line-content .item-content .click-content',
+            selector: '.home-timeline .ks-facebook-card',
             event: 'click',
-            //handler: VM.module('timelineView').openItemPage
+            handler: this.openItemPage
         },{
             element: '#homeView',
             selector:'div.card-content .item-image>img',

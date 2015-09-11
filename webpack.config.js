@@ -59,5 +59,6 @@ var config = {
 
 config.addVendor('framework7', bower_dir + '/framework7/dist/js/framework7.js');
 config.addVendor('framework7.ios.css', bower_dir + '/framework7/dist/css/framework7.ios.css');
+config.addVendor('framework7.ios.colors.css', bower_dir + '/framework7/dist/css/framework7.ios.colors.css');
 
 module.exports = config;

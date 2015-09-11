@@ -1,3 +1,5 @@
+@import "mixins";
+
 .navbar{
   i{
     &.icon {
@@ -17,6 +19,9 @@
   a{
     &.link {
       color: #333;
+      &.color-orange{
+        color: @mainColor;
+      }
     }
   }
 

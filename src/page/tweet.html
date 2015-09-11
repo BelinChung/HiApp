@@ -1,0 +1,38 @@
+<div class="navbar">
+  <div class="navbar-inner">
+    
+    <div class="left">
+        <a href="#" class="back link text-navbar">
+            {{back}}
+        </a>
+    </div>
+    
+    <div class="center sliding">{{title}}</div>
+    
+    <div class="right">
+        <a href="#" class="link item-comment-btn text-navbar color-orange">
+            {{comment}}
+        </a>
+    </div>
+
+  </div>
+</div>
+
+<div class="pages navbar-through">
+  <div data-page="item" class="page no-toolbar">
+    <div class="page-content item-detail">
+      <div id="itemContent">
+
+      </div>
+      <div class="comments-content">
+          <div class="comment-title">
+              <span>{{forward}}&nbsp;&nbsp;|&nbsp;&nbsp;{{comment}}</span>
+              <span class="tip"></span>
+          </div>
+          <ul id="commentContent" class="comments-list">
+              <div class="loading"><i class="preloader"></i></div>
+          </ul>
+      </div>
+    </div>
+  </div>
+</div>

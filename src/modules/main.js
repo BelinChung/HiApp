@@ -83,6 +83,10 @@ var app = {
             dynamicNavbar: true
         });
 
+        window.contactView = hiApp.addView('#contactView', {
+            dynamicNavbar: true
+        });
+
         // init app
         index.init();
     }

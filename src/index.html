@@ -50,6 +50,41 @@
 
     </div>
 
+    <div id="contactView" class="view tab">
+
+        <div class="navbar">
+            <div class="navbar-inner">
+                <div class="center sliding i18n" data-i18n="app.name"></div>
+            </div>
+        </div>
+
+        <div class="pages navbar-through">
+            <div data-page="contactView" class="page contact-page">
+                <!-- Search bar -->
+                <form class="searchbar">
+                    <div class="searchbar-input">
+                        <input type="search" class="i18n" data-i18n="[placeholder]global.search">
+                        <a href="#" class="searchbar-clear"></a>
+                    </div>
+                    <a href="#" class="searchbar-cancel i18n" data-i18n="global.cancel"></a>
+                </form>
+
+                <!-- Search bar overlay-->
+                <div class="searchbar-overlay"></div>
+
+                <div class="page-content">
+                    <div class="list-block contacts-list searchbar-found">
+                        <div class="list-group">
+                            <ul></ul>
+                        </div>
+                    </div>
+                    <div class="content-block searchbar-not-found i18n" data-i18n="index.nothing_found" >
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- toolbar start -->
     <div class="toolbar tabbar tabbar-labels">
         <div class="toolbar-inner">
@@ -58,7 +93,7 @@
                 <span class="tabbar-label i18n" data-i18n="index.tweet"></span>
             </a>
 
-            <a href="#contatcView" class="tab-link">
+            <a href="#contactView" class="tab-link">
                 <i class="icon ios7-chatbubble-outline"></i>
                 <span class="tabbar-label i18n" data-i18n="index.contacts"></span>
             </a>

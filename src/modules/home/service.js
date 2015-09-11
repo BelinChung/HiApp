@@ -1,4 +1,5 @@
 var xhr = require('../utils/xhr');
+
 module.exports = {
     getTimeline: function(callback){
         xhr.simpleCall({

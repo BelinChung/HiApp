@@ -1,9 +1,7 @@
 HiApp
 =====
 
-A simple and interesting Framework7 hybrid app.With PhoneGap you can easily convert it to native iOS app.
-
-Other languages: [中文文档](https://github.com/BelinChung/HiApp/blob/fis3/README_CN.md)
+HiApp 是一个简单有趣的混合 APP，你可以通过 `PhoneGap/Cordova` 将它转化成原生的 iOS APP。
 
 ## Requirements
 
@@ -13,15 +11,15 @@ Other languages: [中文文档](https://github.com/BelinChung/HiApp/blob/fis3/RE
 
 ## Dependencies
 
-HiApp use `fis3` to build a production versions,
+HiApp 使用 `fis3` 来构建一个生产版本
 
-First you need to have `fis3` which you should install globally.
+首先你得确保全局安装了 `fis3`
 
 ```
 $ npm install -g fis3
 ```
 
-Then install all dependencies, in repo's root:
+在项目的根目录，通过以下命令可以安装项目的一些依赖:
 
 ```
 $ npm install 
@@ -30,7 +28,7 @@ $ fis3 install -r src
 
 ## PhoneGap App Guides
 
-Install the cordova module using npm utility of Node.js.
+使用 `npm` 全局安装好 `cordova` 
 
 ```
 $ npm install -g cordova
@@ -38,7 +36,7 @@ $ npm install -g cordova
 
 ### Create App
 
-Go to the directory where you maintain your source code, and run a command such as the following:
+在一个你想放置项目源码的目录，执行以下的命令：
 
 ```
 $ cordova create hiapp com.hiapp.hiapp HiApp
@@ -46,7 +44,7 @@ $ cordova create hiapp com.hiapp.hiapp HiApp
 
 ### Check out source code
 
-Because the PhoneGap app directory should not already exist, so check out the HiApp source code in this step.
+因为 `PhoneGap app` 不允许在一个已经存在的目录中创建 APP，你可以通过以下的命令来 checkout HiApp 的源码。
 
 ```
 $ cd hiapp  
@@ -58,7 +56,7 @@ $ git reset --hard origin/master
 
 ### Add Platforms
 
-Before you can build the project, you need to specify a set of target platforms.
+在开始构建项目的之前，你需要指定一个目标平台
 
 ```
 $ cordova platform add ios
@@ -66,7 +64,7 @@ $ cordova platform add ios
 
 ### Add Plugins
 
-You need to add plugins that provide access to core Cordova APIs.
+你需要安装如下的插件来访问一些原生的 API
 
 ```
 $ cordova plugin add cordova-plugin-whitelist cordova-plugin-camera cordova-plugin-geolocation cordova-plugin-file-transfer cordova-plugin-inappbrowser cordova-plugin-network-information
@@ -74,7 +72,7 @@ $ cordova plugin add cordova-plugin-whitelist cordova-plugin-camera cordova-plug
 
 ### Build the App
 
-Run the following command to iteratively build the project:
+通过运行以下的命令来构建一个可运行的项目
 
 ```
 $ cordova build ios
@@ -82,18 +80,18 @@ $ cordova build ios
 
 ### Test the App on an iOS Device with Xcode
 
-Select an iOS simulator and click the `Run` button
+双击 `platforms/ios` 下的 `HiApp.xcodeproj` 文件，在 Xcode 中打开 iOS 项目，选择一个模拟器点击运行按钮即可
 
 ## Web App Preview
 
-HiApp use FIS build-in server to develop, Just run it in repo's root:
+HiApp 使用 FIS 内置的服务器进行开发，在项目的根目录运行以下命令：
 
 ```
 $ fis3 server start -p 3000
 $ fis3 release -wL -r src/
 ```
 
-WebApp will be available on `http://localhost:3000/`
+可以通过 `http://localhost:3000/` 访问 WebApp
 
 ## Web App Release / PhoneGap App Release
 
@@ -101,7 +99,7 @@ WebApp will be available on `http://localhost:3000/`
 $ fis3 release prod -r src/ -d www/
 ```
 
-The result is available in `www/` folder.
+构建的生产版本代码将会放置在 `www/` 文件夹内
 
 ## Demo
 

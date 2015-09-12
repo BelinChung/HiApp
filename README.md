@@ -82,7 +82,7 @@ $ cordova build ios
 
 ### Test the App on an iOS Device with Xcode
 
-Double-click to open the `platforms/ios/hello.xcodeproj` file
+Double-click to open the `platforms/ios/HiApp.xcodeproj` file
 
 Press the `Run` button to deploy the application in the emulator
 

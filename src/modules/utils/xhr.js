@@ -1,5 +1,5 @@
-var appFunc = require('./appFunc'),
-    networkStatus = require('../components/networkStatus');
+var appFunc = require('utils/appFunc'),
+    networkStatus = require('components/networkStatus');
 
 module.exports = {
 

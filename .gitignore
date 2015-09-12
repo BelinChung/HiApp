@@ -83,12 +83,6 @@ node_modules
 # Users Environment Variables
 .lock-wscript
 
-# Bower
-bower_components
-.bower-cache
-.bower-registry
-.bower-tmp
-
 # project
 build
 www
@@ -96,4 +90,5 @@ plugins
 hooks
 cordova
 platforms
+src/components
 stats.json

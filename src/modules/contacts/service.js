@@ -1,4 +1,4 @@
-var xhr = require('../utils/xhr');
+var xhr = require('utils/xhr');
 
 module.exports = {
     loadContacts: function(callback) {

@@ -1,6 +1,6 @@
-var appFunc = require('../utils/appFunc'),
-    networkStatus = require('./networkStatus'),
-    fileTransfer = require('./fileTransfer');
+var appFunc = require('utils/appFunc'),
+    networkStatus = require('components/networkStatus'),
+    fileTransfer = require('components/fileTransfer');
 
 var camera = {
     getPicture: function(){

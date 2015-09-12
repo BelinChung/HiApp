@@ -1,7 +1,7 @@
-var appFunc = require('../utils/appFunc'),
-    service = require('./service'),
-    template = require('./comment.tpl.html'),
-    popupTpl = require('./commentPopup.tpl.html');
+var appFunc = require('utils/appFunc'),
+    service = require('comment/service'),
+    template = __inline('comment.tpl.html'),
+    popupTpl = __inline('commentPopup.tpl.html');
 
 var commentModule = {
     init: function(){

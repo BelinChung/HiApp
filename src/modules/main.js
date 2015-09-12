@@ -1,12 +1,14 @@
-require('framework7');
-require('framework7.ios.css');
-require('framework7.ios.colors.css');
-require('../style/less/app.less');
+/**
+ * @require 'lang/en-us'
+ * @require 'lang/zh-cn'
+ **/
 
-var appFunc = require('./utils/appFunc'),
-    appService = require('./services/appService'),
-    router = require('./router'),
-    index = require('./app/app');
+require('framework7');
+
+var appFunc = require('utils/appFunc'),
+    appService = require('services/appService'),
+    router = require('router'),
+    index = require('app');
 
 var app = {
     initialize: function() {
@@ -34,13 +36,13 @@ var app = {
 
         switch (lang){
             case 'en-us':
-                require(['./lang/en-us'], function(lang){
+                require.async('lang/en-us', function(lang){
                     window.i18n = lang;
                     app.initFramework7();
                 });
                 break;
             case 'zh-cn':
-                require(['./lang/zh-cn'], function(lang){
+                require.async('lang/zh-cn', function(lang){
                     window.i18n = lang;
                     app.initFramework7();
                 });

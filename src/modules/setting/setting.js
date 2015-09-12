@@ -1,7 +1,5 @@
-require('./setting.less');
-
-var appFunc = require('../utils/appFunc'),
-    template = require('./setting.tpl.html');
+var appFunc = require('utils/appFunc'),
+    template = __inline('setting.tpl.html');
 
 var settingView = {
     init: function(){

@@ -1,5 +1,3 @@
-require('framework7');
-
 module.exports = {
 
     isPhonegap: function() {

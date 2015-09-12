@@ -1,8 +1,6 @@
-require('./tweet.less');
-
-var appFunc = require('../utils/appFunc'),
-    commentModule = require('../comment/comment'),
-    template = require('./tweet.tpl.html');
+var appFunc = require('utils/appFunc'),
+    commentModule = require('comment'),
+    template = __inline('tweet.tpl.html');
 
 var id;
 

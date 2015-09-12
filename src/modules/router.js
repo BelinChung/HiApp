@@ -1,10 +1,10 @@
-var index = require('./app/app'),
-    appFunc = require('./utils/appFunc'),
-    tweetModule = require('./tweet/tweet'),
-    feedbackModule = require('./feedback/feedback'),
-    aboutModule = require('./about/about'),
-    languageModule = require('./language/language'),
-    messageModule = require('./message/message');
+var index = require('app'),
+    appFunc = require('utils/appFunc'),
+    tweetModule = require('tweet'),
+    feedbackModule = require('feedback'),
+    aboutModule = require('about'),
+    languageModule = require('language'),
+    messageModule = require('message');
 
 module.exports = {
     init: function() {

@@ -5,7 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <title>HiApp</title>
-    <link rel="stylesheet" href="app.css"/>
+    <!--
+        @require "framework7/framework7.ios.css"
+        @require "framework7/framework7.ios.colors.css"
+        @require "style/less/icon.less"
+        @require "style/less/navbar.less"
+        @require "style/less/toolbar.less"
+    -->
+
+    <!--STYLE_PLACEHOLDER-->
 </head>
 <body>
 <div class="statusbar-overlay"></div>
@@ -124,9 +132,14 @@
 <!-- Please ignore the 404 error when you are not running under PhoneGap environment or delete it. -->
 <script type="text/javascript" src="cordova.js"></script>
 
-<script src="app.js"></script>
+<script type="text/javascript" src="mod.js"></script>
 
-<script src="http://localhost:3000/webpack-dev-server.js"></script>
+<!--SCRIPT_PLACEHOLDER-->
+<!--RESOURCEMAP_PLACEHOLDER-->
+
+<script type="text/javascript">
+    require('main');
+</script>
 
 </body>
 

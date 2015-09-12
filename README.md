@@ -5,30 +5,25 @@ A simple and interesting Framework7 hybrid app.With PhoneGap you can easily conv
 
 ## Requirements
 
-* gulp `^3.9.0`
-* webpack `^1.10.1`
+* fis3 `^3.2.0`
 * cordova `^5.0.0`
 * framework7 `^1.2.0`
 
 ## Dependencies
 
-HiApp use `gulp` and `webpack` to build a production versions,
+HiApp use `fis3` to build a production versions,
 
-First you need to have `gulp` and `webpack` which you should install globally.
-
-HiApp also use `bower` to manage third-party packages, global install it as same as `gulp` and `webpack`.
+First you need to have `fis3` which you should install globally.
 
 ```
-$ npm install -g gulp
-$ npm install -g webpack
-$ npm install -g bower
+$ npm install -g fis3
 ```
 
 Then install all dependencies, in repo's root:
 
 ```
 $ npm install 
-$ bower install
+$ fis3 install -r src
 ```
 
 ## PhoneGap App Guides
@@ -89,10 +84,11 @@ Select an iOS simulator and click the `Run` button
 
 ## Web App Preview
 
-HiApp use webpack dev server to develop, Just run it in repo's root:
+HiApp use FIS build-in server to develop, Just run it in repo's root:
 
 ```
-$ gulp build-dev
+$ fis3 server start -p 3000
+$ fis3 release -wL -r src/
 ```
 
 WebApp will be available on `http://localhost:3000/`
@@ -100,7 +96,7 @@ WebApp will be available on `http://localhost:3000/`
 ## Web App Release / PhoneGap App Release
 
 ```
-$ gulp build
+$ fis3 release prod -r src/ -d www/
 ```
 
 The result is available in `www/` folder.

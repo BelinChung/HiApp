@@ -1,9 +1,7 @@
-require('./app.less');
-
-var appFunc = require('../utils/appFunc'),
-    homeView = require('../home/home'),
-    contactsView = require('../contacts/contacts'),
-    settingView = require('../setting/setting');
+var appFunc = require('utils/appFunc'),
+    homeView = require('home'),
+    contactsView = require('contacts'),
+    settingView = require('setting');
 
 module.exports = {
     init: function(){

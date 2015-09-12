@@ -1,9 +1,7 @@
-require('./home.less');
-
-var service = require('./service'),
-    appFunc = require('../utils/appFunc'),
-    template = require('./home.tpl.html'),
-    inputModule = require('../input/input');
+var service = require('home/service'),
+    appFunc = require('utils/appFunc'),
+    inputModule = require('input'),
+    template = __inline('home.tpl.html');
 
 var home = {
     init: function(){

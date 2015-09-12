@@ -1,8 +1,6 @@
-require('./message.less');
-
-var appFunc = require('../utils/appFunc'),
-    service = require('./service'),
-    template = require('./message.tpl.html');
+var appFunc = require('utils/appFunc'),
+    service = require('message/service'),
+    template = __inline('message.tpl.html');
 
 var conversationStarted = false,
     answers = {},

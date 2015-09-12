@@ -1,9 +1,7 @@
-require('./input.less');
-
-var appFunc = require('../utils/appFunc'),
-    template = require('./input.tpl.html'),
-    camera = require('../components/camera'),
-    geo = require('../components/geolocation');
+var appFunc = require('utils/appFunc'),
+    camera = require('components/camera'),
+    geo = require('components/geolocation'),
+    template = __inline('input.tpl.html');
 
 var inputModule = {
     openSendPopup: function(){

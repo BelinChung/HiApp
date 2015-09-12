@@ -1,0 +1,9 @@
+{
+  "protocol": "github",
+  "gihub": {
+    "author": "fis-components"
+  },
+  "dependencies": [
+    "framework7@~1.2.0"
+  ]
+}

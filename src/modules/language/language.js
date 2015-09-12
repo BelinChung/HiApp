@@ -1,7 +1,5 @@
-require('./language.less');
-
-var appFunc = require('../utils/appFunc'),
-    appService = require('../services/appService');
+var appFunc = require('utils/appFunc'),
+    appService = require('services/appService');
 
 module.exports = {
     init: function(){

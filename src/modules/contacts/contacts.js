@@ -1,8 +1,6 @@
-require('./contacts.less');
-
-var appFunc = require('../utils/appFunc'),
-    service = require('./service'),
-    template = require('./contacts.tpl.html');
+var appFunc = require('utils/appFunc'),
+    service = require('contacts/service'),
+    template = __inline('contacts.tpl.html');
 
 var contacts = {
     init: function(){

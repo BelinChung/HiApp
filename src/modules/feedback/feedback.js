@@ -1,4 +1,4 @@
-var appFunc = require('../utils/appFunc');
+var appFunc = require('utils/appFunc');
 
 module.exports = {
     init: function(){

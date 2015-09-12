@@ -3,6 +3,13 @@ HiApp
 
 A simple and interesting Framework7 hybrid app.With PhoneGap you can easily convert it to native iOS app.
 
+## Requirements
+
+* gulp `^3.9.0`
+* webpack `^1.10.1`
+* cordova `^5.0.0`
+* framework7 `^1.2.0`
+
 ## Dependencies
 
 HiApp use `gulp` and `webpack` to build a production versions,
@@ -65,7 +72,7 @@ $ cordova platform add ios
 You need to add plugins that provide access to core Cordova APIs.
 
 ```
-$ cordova plugin add org.apache.cordova.camera org.apache.cordova.geolocation org.apache.cordova.file-transfer org.apache.cordova.inappbrowser org.apache.cordova.network-information
+$ cordova plugin add cordova-plugin-whitelist cordova-plugin-camera cordova-plugin-geolocation cordova-plugin-file-transfer cordova-plugin-inappbrowser cordova-plugin-network-information
 ```
 
 ### Build the App
@@ -88,6 +95,8 @@ HiApp use webpack dev server to develop, Just run it in repo's root:
 $ gulp build-dev
 ```
 
+WebApp will be available on `http://localhost:3000/`
+
 ## Web App Release / PhoneGap App Release
 
 ```
@@ -101,8 +110,6 @@ The result is available in `www/` folder.
 [http://hi.dearb.me/]
 
 [![App Store](http://dearb.u.qiniudn.com/appstore-button.png)](https://itunes.apple.com/us/app/hi-liao-gao-xiao-shu-dong/id917320045?mt=8)
-
-![hiapp qrcode](http://dearb.u.qiniudn.com/hiapp_qrcode_small.png)
 
 ## License
 

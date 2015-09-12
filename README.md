@@ -3,6 +3,14 @@ HiApp
 
 A simple and interesting Framework7 hybrid app.With PhoneGap you can easily convert it to native iOS app.
 
+## Build Tools
+
+HiApp use different build tools to build the same project, Hope it will helps you select a suitable build tool.
+
+* `gulp & webpack` at origin/master
+* `fis3 & mod.js` at [origin/fis3](https://github.com/BelinChung/HiApp/tree/fis3)
+* `[DEPRECATED] grunt & requireJS` at [origin/gurnt](https://github.com/BelinChung/HiApp/tree/grunt)
+
 ## Requirements
 
 * gulp `^3.9.0`
@@ -85,7 +93,9 @@ $ cordova build ios
 
 ### Test the App on an iOS Device with Xcode
 
-Select an iOS simulator and click the `Run` button
+Double-click to open the `platforms/ios/hello.xcodeproj` file
+
+Press the `Run` button to deploy the application in the emulator
 
 ## Web App Preview
 

@@ -9,7 +9,7 @@ HiApp use different build tools to build the same project, Hope it will helps yo
 
 * `gulp & webpack` at origin/master
 * `fis3 & mod.js` at [origin/fis3](https://github.com/BelinChung/HiApp/tree/fis3)
-* `[DEPRECATED] grunt & requireJS` at [origin/gurnt](https://github.com/BelinChung/HiApp/tree/grunt)
+* `[DEPRECATED] grunt & requireJS` at [origin/grunt](https://github.com/BelinChung/HiApp/tree/grunt)
 
 ## Requirements
 

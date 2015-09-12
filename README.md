@@ -82,7 +82,9 @@ $ cordova build ios
 
 ### Test the App on an iOS Device with Xcode
 
-Select an iOS simulator and click the `Run` button
+Double-click to open the `platforms/ios/hello.xcodeproj` file
+
+Press the `Run` button to deploy the application in the emulator
 
 ## Web App Preview
 

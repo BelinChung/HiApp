@@ -8,7 +8,9 @@ var appFunc = require('../utils/appFunc'),
 var inputModule = {
     openSendPopup: function(){
 
-        var output = appFunc.renderTpl(template, {});
+        var output = appFunc.renderTpl(template, {
+            send_placeholder: i18n.index.send_placeholder
+        });
         hiApp.popup(output);
 
         var bindings = [{

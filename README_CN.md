@@ -50,8 +50,8 @@ $ cordova create hiapp com.hiapp.hiapp HiApp
 $ cd hiapp  
 $ git init   
 $ git remote add origin git@github.com:BelinChung/HiApp.git  
-$ git pull origin master  
-$ git reset --hard origin/master  
+$ git pull origin fis3  
+$ git reset --hard origin/fis3    
 ```
 
 ### Add Platforms

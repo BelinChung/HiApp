@@ -18,7 +18,7 @@ var app = {
         if(appFunc.isPhonegap()) {
             document.addEventListener('deviceready', this.onDeviceReady, false);
         }else{
-            window.onload = this.onDeviceReady();
+            this.onDeviceReady();
         }
     },
     onDeviceReady: function() {

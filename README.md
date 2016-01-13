@@ -14,29 +14,25 @@ HiApp use different build tools to build the same project, Hope it will helps yo
 ## Requirements
 
 * gulp `^3.9.0`
-* webpack `^1.10.1`
 * cordova `^5.0.0`
-* framework7 `^1.2.0`
+* framework7 `^1.4.0`
 
 ## Dependencies
 
-HiApp use `gulp` and `webpack` to build a production versions,
+HiApp use `gulp` to build a production versions,
 
-First you need to have `gulp` and `webpack` which you should install globally.
+First you need to have `gulp` which you should install globally.
 
-HiApp also use `bower` to manage third-party packages, global install it as same as `gulp` and `webpack`.
+HiApp use `npm` to manage third-party packages now.
 
 ```
 $ npm install -g gulp
-$ npm install -g webpack
-$ npm install -g bower
 ```
 
 Then install all dependencies, in repo's root:
 
 ```
 $ npm install 
-$ bower install
 ```
 
 ## PhoneGap App Guides

@@ -1,7 +1,7 @@
 var path = require('path');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var webpack = require('webpack');
-var bower_dir = __dirname + '/bower_components';
+var modulesDir = __dirname + '/node_modules';
 
 var config = {
     addVendor: function(name, path) {
@@ -10,7 +10,10 @@ var config = {
     entry: {
         app: ['./src/modules/main.js']
     },
-    resolve: {alias: {}},
+    resolve: {
+        alias: {},
+        modulesDirectories: ['node_modules']
+    },
     output: {
         path: path.join(__dirname, 'www'),
         contentBase: 'www/',
@@ -30,7 +33,7 @@ var config = {
             {test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=8192&mimetype=application/font-woff2'},
             {test: /\.woff(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=8192&mimetype=application/font-woff'},
             {test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=8192&mimetype=application/octet-stream'},
-            {test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file'},
+            {test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file'}
 
             // We just expose the global variable $ or jQuery, then file doesn't need to write require('jquery') every where
             //{test: /i18next\.js$/, loader: 'expose?i18n'}
@@ -57,8 +60,8 @@ var config = {
     ]
 };
 
-config.addVendor('framework7', bower_dir + '/framework7/dist/js/framework7.js');
-config.addVendor('framework7.ios.css', bower_dir + '/framework7/dist/css/framework7.ios.css');
-config.addVendor('framework7.ios.colors.css', bower_dir + '/framework7/dist/css/framework7.ios.colors.css');
+config.addVendor('framework7', modulesDir + '/framework7/dist/js/framework7.js');
+config.addVendor('framework7.ios.css', modulesDir + '/framework7/dist/css/framework7.ios.css');
+config.addVendor('framework7.ios.colors.css', modulesDir + '/framework7/dist/css/framework7.ios.colors.css');
 
 module.exports = config;

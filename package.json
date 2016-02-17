@@ -1,31 +1,33 @@
 {
   "name": "HiApp",
   "description": "A web app made with Framework7.With PhoneGap you can easily convert it to native iOS app.",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "author": "BelinChung",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git@github.com:BelinChung/HiApp.git"
   },
+  "scripts": {
+    "clean": "rm -fr ./www",
+    "dev": "webpack --config build/webpack/development.js --progress --watch",
+    "build": "NODE_ENV=production npm run clean && webpack --config build/webpack/production.js --progress",
+    "build_with_source_map": "npm run build --devtool source-map"
+  },
   "devDependencies": {
-    "autoprefixer-loader": "^3.1.0",
     "css-loader": "^0.23.1",
-    "expose-loader": "^0.7.1",
-    "extract-text-webpack-plugin": "^0.8.2",
+    "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.8.5",
-    "fs-extra": "^0.22.1",
-    "gulp": "^3.9.0",
-    "gulp-util": "^3.0.6",
     "html-loader": "^0.4.0",
-    "imports-loader": "^0.6.5",
+    "html-webpack-plugin": "^2.7.1",
+    "copy-webpack-plugin": "^1.1.1",
     "less": "^2.5.3",
     "less-loader": "^2.2.2",
-    "node-libs-browser": "^0.5.2",
     "style-loader": "^0.13.0",
     "url-loader": "^0.5.7",
     "webpack": "^1.12.11",
-    "webpack-dev-server": "^1.14.1"
+    "browser-sync": "^2.11.1",
+    "browser-sync-webpack-plugin": "^1.0.1"
   },
   "dependencies": {
     "framework7": "~1.4.0"

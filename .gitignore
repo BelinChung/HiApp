@@ -90,10 +90,8 @@ bower_components
 .bower-tmp
 
 # project
-build
-www
-plugins
-hooks
-cordova
-platforms
-stats.json
+www/
+plugins/
+hooks/
+cordova/
+platforms/

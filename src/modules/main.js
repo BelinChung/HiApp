@@ -1,6 +1,4 @@
 require('framework7');
-require('framework7.ios.css');
-require('framework7.ios.colors.css');
 require('../style/less/app.less');
 
 var appFunc = require('./utils/appFunc'),

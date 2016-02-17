@@ -7,27 +7,18 @@ A simple and interesting Framework7 hybrid app.With PhoneGap you can easily conv
 
 HiApp use different build tools to build the same project, Hope it will helps you select a suitable build tool.
 
-* `gulp & webpack` at origin/master
-* `fis3 & mod.js` at [origin/fis3](https://github.com/BelinChung/HiApp/tree/fis3)
-* `[DEPRECATED] grunt & requireJS` at [origin/grunt](https://github.com/BelinChung/HiApp/tree/grunt)
+* `webpack` at origin/master
+* `fis3` at [origin/fis3](https://github.com/BelinChung/HiApp/tree/fis3)
+* `[DEPRECATED] grunt` at [origin/grunt](https://github.com/BelinChung/HiApp/tree/grunt)
 
 ## Requirements
 
-* gulp `^3.9.0`
 * cordova `^5.0.0`
 * framework7 `^1.4.0`
 
 ## Dependencies
 
-HiApp use `gulp` to build a production versions,
-
-First you need to have `gulp` which you should install globally.
-
 HiApp use `npm` to manage third-party packages now.
-
-```
-$ npm install -g gulp
-```
 
 Then install all dependencies, in repo's root:
 
@@ -95,10 +86,10 @@ Press the `Run` button to deploy the application in the emulator
 
 ## Web App Preview
 
-HiApp use webpack dev server to develop, Just run it in repo's root:
+HiApp use webpack browser sync server to develop, Just run it in repo's root:
 
 ```
-$ gulp build-dev
+$ npm run dev
 ```
 
 WebApp will be available on `http://localhost:3000/`
@@ -106,7 +97,7 @@ WebApp will be available on `http://localhost:3000/`
 ## Web App Release / PhoneGap App Release
 
 ```
-$ gulp build
+$ npm run build
 ```
 
 The result is available in `www/` folder.
@@ -119,7 +110,7 @@ The result is available in `www/` folder.
 
 ## License
 
-Copyright (c) 2014-2015 Belin Chung. MIT Licensed, see [LICENSE] for details.
+Copyright (c) 2014-2016 Belin Chung. MIT Licensed, see [LICENSE] for details.
 
 [http://hi.dearb.me/]: http://hi.dearb.me/
 [LICENSE]:https://github.com/BelinChung/HiApp/blob/master/LICENSE.md

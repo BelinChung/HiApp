@@ -3,6 +3,12 @@ HiApp
 
 A simple and interesting Framework7 hybrid app.With PhoneGap you can easily convert it to native iOS app.
 
+## React Native
+
+HiApp is also written in React Native. [BelinChung/react-native-hiapp](https://github.com/BelinChung/react-native-hiapp)
+
+Unlike PhoneGap/Cordova, React Native provides bindings for native UI controls which totally outclass HTML-based hybrid solutions. so it is simple to write high-performance UI by React Native. 
+
 ## Build Tools
 
 HiApp use different build tools to build the same project, Hope it will helps you select a suitable build tool.

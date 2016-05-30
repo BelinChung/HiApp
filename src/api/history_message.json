@@ -1,0 +1,24 @@
+{
+    "err_code": 0,
+    "err_msg": "success",
+    "data": [
+
+        {
+            "date":"Sunday, Feb 9, 12:58",
+            "text": "Hi, Kate",
+            "from": "sent"
+        },
+        {
+            "text": "How are you?",
+            "from": "sent"
+        },
+        {
+            "text": "Hi, i am good",
+            "from": "received"
+        },
+        {
+            "text": "Hi there, I am also fine, thanks! And how are you?",
+            "from": "received"
+        }
+    ]
+}

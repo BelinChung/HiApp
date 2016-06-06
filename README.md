@@ -51,7 +51,7 @@ Because the PhoneGap app directory should not already exist, so check out the Hi
 ```
 $ cd hiapp  
 $ git init   
-$ git remote add origin git@github.com:BelinChung/HiApp.git  
+$ git remote add origin https://github.com/BelinChung/HiApp.git  
 $ git pull origin fis3  
 $ git reset --hard origin/fis3  
 ```

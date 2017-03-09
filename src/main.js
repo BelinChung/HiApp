@@ -16,7 +16,8 @@ import Framework7ThemeColors from 'framework7/dist/css/framework7.material.color
 */
 
 // Import App Custom Styles
-import './css/app.css'
+import '../static/fonts/iconfont.css'
+import './css/app.less'
 
 // Import Routes
 import Routes from './routes.js'

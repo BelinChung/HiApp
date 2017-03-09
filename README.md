@@ -23,8 +23,7 @@ HiApp use different build tools to build the same project, Hope it will helps yo
 * framework7 `^1.5.0`
 * framework7-vue `^0.8.5`
 
-To build and run apps, you need to install SDKs for each platform you wish to target.
-
+To build and run apps, you need to install SDKs for each platform you wish to target.  
 To check if you satisfy requirements for building the platform:
 
 ``` bash
@@ -107,7 +106,9 @@ Double-click to open the `platforms/ios/HiApp.xcodeproj` file
 
 Press the `Run` button to deploy the application in the emulator or iOs device
 
-## Web App Preview
+## Web App Guides
+
+### Preview
 
 HiApp use webpack browser sync server to develop, Just run it in repo's root:
 
@@ -115,9 +116,9 @@ HiApp use webpack browser sync server to develop, Just run it in repo's root:
 $ npm run dev
 ```
 
-WebApp will be available on `http://localhost:3000/`
+Web app will be available on `http://localhost:3000/`
 
-## Web App Release
+### Release
 
 ```
 $ npm run build
@@ -127,7 +128,7 @@ The result is available in `www/` folder.
 
 ## Demo
 
-[http://hi.dearb.me/]
+[https://hi.dearb.me/]
 
 [![App Store](http://dearb.u.qiniudn.com/appstore-button.png)](https://itunes.apple.com/us/app/hi-liao-gao-xiao-shu-dong/id917320045?mt=8)
 
@@ -135,5 +136,5 @@ The result is available in `www/` folder.
 
 Copyright (c) 2017 Belin Chung. MIT Licensed, see [LICENSE] for details.
 
-[http://hi.dearb.me/]: http://hi.dearb.me/
+[https://hi.dearb.me/]: https://hi.dearb.me/
 [LICENSE]:https://github.com/BelinChung/HiApp/blob/master/LICENSE.md

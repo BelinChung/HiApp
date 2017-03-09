@@ -1,26 +1,42 @@
 HiApp
 =====
 
-A simple and interesting Framework7 hybrid app.With PhoneGap you can easily convert it to native iOS app.
+A simple and interesting Framework7 hybrid app.With Cordova you can easily convert it to native iOS app.
 
 ## React Native
 
 HiApp is also written in React Native. [BelinChung/react-native-hiapp](https://github.com/BelinChung/react-native-hiapp)
 
-Unlike PhoneGap/Cordova, React Native provides bindings for native UI controls which totally outclass HTML-based hybrid solutions. so it is simple to write high-performance UI by React Native. 
+Unlike Cordova, React Native provides bindings for native UI controls which totally outclass HTML-based hybrid solutions. so it is simple to write high-performance UI by React Native. 
 
 ## Build Tools
 
 HiApp use different build tools to build the same project, Hope it will helps you select a suitable build tool.
 
-* `webpack` at origin/master
+* `f7-vue-webpack` at origin/master
+* `f7-webpack` at [origin/f7-webpack](https://github.com/BelinChung/HiApp/tree/f7-webpack)
 * `fis3` at [origin/fis3](https://github.com/BelinChung/HiApp/tree/fis3)
-* `[DEPRECATED] grunt` at [origin/grunt](https://github.com/BelinChung/HiApp/tree/grunt)
 
 ## Requirements
 
-* cordova `^5.0.0`
-* framework7 `^1.4.0`
+* cordova `^6.5.0`
+* framework7 `^1.5.0`
+* framework7-vue `^0.8.5`
+
+To build and run apps, you need to install SDKs for each platform you wish to target.
+
+To check if you satisfy requirements for building the platform:
+
+``` bash
+$ cordova requirements
+
+Requirements check results for ios:
+Apple OS X: installed darwin
+Xcode: installed 8.2.1
+ios-deploy: installed 1.9.1
+CocoaPods: installed
+
+```
 
 ## Dependencies
 
@@ -32,7 +48,7 @@ Then install all dependencies, in repo's root:
 $ npm install 
 ```
 
-## PhoneGap App Guides
+## Cordova App Guides
 
 Install the cordova module using npm utility of Node.js.
 
@@ -50,13 +66,13 @@ $ cordova create hiapp com.hiapp.hiapp HiApp
 
 ### Check out source code
 
-Because the PhoneGap app directory should not already exist, so check out the HiApp source code in this step.
+Because the Cordova app directory should not already exist, so check out the HiApp source code in this step.
 
 ```
 $ cd hiapp  
 $ git init   
 $ git remote add origin https://github.com/BelinChung/HiApp.git  
-$ git pull origin master  
+$ git fetch  
 $ git reset --hard origin/master  
 ```
 
@@ -65,7 +81,7 @@ $ git reset --hard origin/master
 Before you can build the project, you need to specify a set of target platforms.
 
 ```
-$ cordova platform add ios
+$ cordova platform add ios --save
 ```
 
 ### Add Plugins
@@ -73,7 +89,7 @@ $ cordova platform add ios
 You need to add plugins that provide access to core Cordova APIs.
 
 ```
-$ cordova plugin add cordova-plugin-whitelist cordova-plugin-camera cordova-plugin-geolocation cordova-plugin-file-transfer cordova-plugin-inappbrowser cordova-plugin-network-information
+$ cordova plugin add cordova-plugin-camera cordova-plugin-geolocation cordova-plugin-file-transfer cordova-plugin-inappbrowser cordova-plugin-network-information
 ```
 
 ### Build the App
@@ -81,6 +97,7 @@ $ cordova plugin add cordova-plugin-whitelist cordova-plugin-camera cordova-plug
 Run the following command to iteratively build the project:
 
 ```
+$ npm run build
 $ cordova build ios
 ```
 
@@ -88,7 +105,7 @@ $ cordova build ios
 
 Double-click to open the `platforms/ios/HiApp.xcodeproj` file
 
-Press the `Run` button to deploy the application in the emulator
+Press the `Run` button to deploy the application in the emulator or iOs device
 
 ## Web App Preview
 
@@ -100,7 +117,7 @@ $ npm run dev
 
 WebApp will be available on `http://localhost:3000/`
 
-## Web App Release / PhoneGap App Release
+## Web App Release
 
 ```
 $ npm run build
@@ -116,7 +133,7 @@ The result is available in `www/` folder.
 
 ## License
 
-Copyright (c) 2014-2016 Belin Chung. MIT Licensed, see [LICENSE] for details.
+Copyright (c) 2017 Belin Chung. MIT Licensed, see [LICENSE] for details.
 
 [http://hi.dearb.me/]: http://hi.dearb.me/
 [LICENSE]:https://github.com/BelinChung/HiApp/blob/master/LICENSE.md

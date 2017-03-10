@@ -3,11 +3,14 @@ import Vuex from 'vuex'
 import * as getters from './getters'
 import * as actions from './actions'
 import mutations from './mutations'
+import StoreCache from '../utils/storeCache'
 
 Vue.use(Vuex)
+let cache = new StoreCache('vuex')
 
 const state = {
-  user: {}
+  user: {},
+  lang: cache.get('lang') || 'en'
 }
 
 export default new Vuex.Store({

@@ -1,27 +1,25 @@
 <template>
-  <f7-page>
+  <f7-page class="about-page">
     <f7-navbar title="About" back-link="Back" sliding></f7-navbar>
-    <div class="about-view">
-        <f7-block>
-            <div class="logo">
-                <img src="../../static/img/hiapp_logo@2x.png" alt="logo">
-            </div>
-            <div class="app-name">HiApp</div>
-        </f7-block>
-        <f7-block class="detail">
-            <p>GitHub: BelinChung/HiApp</p>
-            <p>Email: BelinChung@gmail.com</p>
-            <p>Twitter: @BelinChung</p>
-        </f7-block>
-        <f7-block class="copyright">
-            Copyright © 2017 BelinChung.
-        </f7-block>
-    </div>
+    <f7-block>
+        <div class="logo">
+            <img src="../../static/img/hiapp_logo@2x.png" alt="logo">
+        </div>
+        <div class="app-name">HiApp</div>
+    </f7-block>
+    <f7-block class="detail">
+        <p>GitHub: BelinChung/HiApp</p>
+        <p>Email: BelinChung@gmail.com</p>
+        <p>Twitter: @BelinChung</p>
+    </f7-block>
+    <f7-block class="copyright">
+        Copyright © 2017 BelinChung.
+    </f7-block>
   </f7-page>
 </template>
 
 <style lang="less">
-    .about-view {
+    .about-page {
         .logo{
             width: 90px;
             height: 90px;

@@ -10,11 +10,10 @@
       <f7-view id="main-view" navbar-through :dynamic-navbar="true" main>
         <f7-navbar theme="white">
           <f7-nav-left>
-            <f7-link icon="iconfont icon-ios7reload" open-panel="left" v-show="activedTab === 'home'"></f7-link>
           </f7-nav-left>
           <f7-nav-center sliding>{{navbarTitle}}</f7-nav-center>
           <f7-nav-right>
-            <f7-link icon="iconfont icon-feedback" icon-size="28" open-panel="right" v-show="activedTab === 'home'"></f7-link>
+            <f7-link icon="iconfont icon-feedback3" icon-size="22" v-show="activedTab === 'home'"></f7-link>
           </f7-nav-right>
         </f7-navbar>
         <f7-pages>

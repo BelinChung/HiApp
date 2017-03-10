@@ -27,7 +27,9 @@
             <f7-tabs>
               <f7-tab id="home" active>Tab 1 content...</f7-tab>
               <f7-tab id="contact">Tab 2 content...</f7-tab>
-              <f7-tab id="setting">Tab 3 content...</f7-tab>
+              <f7-tab id="setting">
+                <settings-view></settings-view>
+              </f7-tab>
             </f7-tabs>
           </f7-page>
         </f7-pages>
@@ -37,5 +39,11 @@
 </template>
 
 <script>
-export default {}
+import SettingsView from './pages/settings.vue'
+
+export default {
+  components: {
+    SettingsView
+  }
+}
 </script>

@@ -27,7 +27,10 @@
 <style lang="less">
     .settings-view{
         .list-block{
-            margin: 25px 0;
+            margin: 20px 0;
+            .iconfont{
+                height: 29px;
+            }
             .icon-language{
                 color: #0099FF;
             }
@@ -44,8 +47,8 @@
                 padding-bottom: 5px;
             }
             .avatar{
-                width: 70px;
-                height: 70px;
+                width: 65px;
+                height: 65px;
                 border-radius: 5px;
             }
             .detail{

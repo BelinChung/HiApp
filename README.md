@@ -88,7 +88,7 @@ $ cordova platform add ios --save
 You need to add plugins that provide access to core Cordova APIs.
 
 ```
-$ cordova plugin add cordova-plugin-camera cordova-plugin-geolocation cordova-plugin-file-transfer cordova-plugin-inappbrowser cordova-plugin-network-information
+$ cordova plugin add cordova-plugin-statusbar cordova-plugin-camera cordova-plugin-geolocation cordova-plugin-file-transfer cordova-plugin-inappbrowser cordova-plugin-network-information
 ```
 
 ### Build the App

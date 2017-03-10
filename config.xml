@@ -18,6 +18,8 @@
     <allow-intent href="geo:*"/>
 
     <preference name="DisallowOverscroll" value="true"/>
+    <preference name="StatusBarBackgroundColor" value="#ff9630" />
+    <preference name="StatusBarStyle" value="lightcontent" />
 
     <platform name="ios">
         <allow-intent href="itms:*"/>

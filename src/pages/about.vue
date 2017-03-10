@@ -1,6 +1,6 @@
 <template>
   <f7-page class="about-page">
-    <f7-navbar title="About" back-link="Back" sliding></f7-navbar>
+    <f7-navbar :title="$t('about')" :back-link="$t('back')" sliding></f7-navbar>
     <f7-block>
         <div class="logo">
             <img src="../../static/img/hiapp_logo@2x.png" alt="logo">

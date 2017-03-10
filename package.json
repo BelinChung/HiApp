@@ -33,6 +33,7 @@
     "framework7": "^1.5.3",
     "framework7-vue": "^0.8.5",
     "vue": "^2.2.2",
+    "vue-i18n": "^5.0.3",
     "vuex": "^2.2.1"
   },
   "devDependencies": {

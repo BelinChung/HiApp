@@ -1,0 +1,20 @@
+export default {
+  app_name: 'HiApp',
+  back: 'Back',
+  save: 'Save',
+  unknown: 'Unknown',
+  home: 'Home',
+  contacts: 'Contacts',
+  settings: 'Settings',
+  city: 'City',
+  profile: 'Profile',
+  language: 'Language',
+  feedback: 'Feedback',
+  about: 'About',
+  avatar: 'Avatar',
+  name: 'Name',
+  gender: 'Gender',
+  location: 'Location',
+  male: 'Male',
+  female: 'Female'
+}

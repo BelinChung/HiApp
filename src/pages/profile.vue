@@ -1,15 +1,15 @@
 <template>
   <f7-page class="profile-page">
-    <f7-navbar title="Profile" back-link="Back" sliding></f7-navbar>
+    <f7-navbar :title="$t('profile')" :back-link="$t('back')" sliding></f7-navbar>
     <f7-list>
-        <f7-list-item title="Avatar" class="avatar-content">
+        <f7-list-item :title="$t('avatar')" class="avatar-content">
             <img class="avatar" slot="after" :src="userInfo.avatarUrl"/>
         </f7-list-item>
-        <f7-list-item title="Name" :after="userInfo.nickName"></f7-list-item>
+        <f7-list-item :title="$t('name')" :after="userInfo.nickName"></f7-list-item>
     </f7-list>
     <f7-list>
-        <f7-list-item title="Gender" :after="userInfo.gender | formatGender"></f7-list-item>
-        <f7-list-item title="Location" :after="userInfo.location"></f7-list-item>
+        <f7-list-item :title="$t('gender')" :after="formatGender(userInfo.gender)"></f7-list-item>
+        <f7-list-item :title="$t('location')" :after="userInfo.location"></f7-list-item>
     </f7-list>
   </f7-page>
 </template>
@@ -40,11 +40,11 @@
         userInfo: state => state.user,
       })
     },
-    filters: {
+    methods: {
       formatGender(gender) {
-        if(gender === 'm') return 'Male'
-        else if(gender === 'f') return 'Female'
-        else return 'unknown'
+        if(gender === 'm') return this.$t('male')
+        else if(gender === 'f') return this.$t('female')
+        else return this.$t('unknown')
       }
     }
   }

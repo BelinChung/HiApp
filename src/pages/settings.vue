@@ -5,20 +5,20 @@
                 <div slot="inner-start" class="detail">
                     <div class="name">{{userInfo.nickName}}</div>
                     <div class="location">
-                        <span>City: </span>
+                        <span>{{$t('city')}}: </span>
                         <span>{{userInfo.location}}</span>
                     </div>
                 </div>
             </f7-list-item>
         </f7-list>
         <f7-list>
-            <f7-list-item title="Language" link="/language/" media="<i class='iconfont icon-language'></i>"></f7-list-item>
+            <f7-list-item :title="$t('language')" link="/language/" media="<i class='iconfont icon-language'></i>"></f7-list-item>
         </f7-list>
         <f7-list>
-            <f7-list-item title="Feedback" link="/feedback/" media="<i class='iconfont icon-feedback2'></i>"></f7-list-item>
+            <f7-list-item :title="$t('feedback')" link="/feedback/" media="<i class='iconfont icon-feedback2'></i>"></f7-list-item>
         </f7-list>
         <f7-list>
-            <f7-list-item title="About" link="/about/" media="<i class='iconfont icon-about1'></i>"></f7-list-item>
+            <f7-list-item :title="$t('about')" link="/about/" media="<i class='iconfont icon-about1'></i>"></f7-list-item>
         </f7-list>
     </div>
 </template>

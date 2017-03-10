@@ -1,8 +1,8 @@
 <template>
   <f7-page class="language-page">
-    <f7-navbar title="Language" back-link="Back" sliding>
+    <f7-navbar :title="$t('language')" :back-link="$t('back')" sliding>
       <f7-nav-right>
-        <f7-link text="Save" @click="saveLang"></f7-link>
+        <f7-link :text="$t('save')" @click="saveLang"></f7-link>
       </f7-nav-right>
     </f7-navbar>
     <f7-list form>
@@ -12,11 +12,8 @@
   </f7-page>
 </template>
 
-<style lang="less">
-    
-</style>
-
 <script>
+  import Vue from 'vue'
   import {mapState} from 'vuex'
   export default {
     computed: {
@@ -27,6 +24,7 @@
     methods: {
       saveLang() {
         let lang = this.$$('input[name="language-radio"]:checked').val()
+        Vue.config.lang = lang
         this.$store.dispatch('setLang', lang)
       }
     }

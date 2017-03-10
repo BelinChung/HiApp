@@ -6,6 +6,26 @@
     background: @mainColor;
 }
 
+.flex-column{
+  display: flex !important;
+  flex-direction: column;
+
+  .flex-rest-height {
+    flex: 1;
+    height: initial;
+  }
+}
+
+.flex-row{
+  display: flex !important;
+  flex-direction: row;
+
+  .flex-rest-width {
+    flex: 1;
+    width: initial;
+  }
+}
+
 .tabbar-fixed .page-content, .tabbar-through .page-content, .toolbar-fixed .page-content, .toolbar-through .page-content {
     padding-bottom: 50px;
 }

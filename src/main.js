@@ -1,10 +1,8 @@
 // Import Vue
 import Vue from 'vue'
 
-// Import F7
+// Import F7, F7-Vue
 import 'framework7'
-
-// Import F7 Vue Plugin
 import Framework7Vue from 'framework7-vue'
 
 // Import F7 iOS Theme Styles
@@ -25,12 +23,20 @@ import Routes from './routes.js'
 // Import App Component
 import App from './app'
 
-// Init F7 Vue Plugin
+// Import Vuex store
+import store from './store'
+import {getLoginUser} from './store/actions'
+
+// Init network framework
+import './network'
+
+// Init Vue Plugin
 Vue.use(Framework7Vue)
 
 // Init App
 new Vue({
   el: '#app',
+  store,
   template: '<app/>',
   // Init Framework7 by passing parameters here
   framework7: {
@@ -44,3 +50,5 @@ new Vue({
     app: App
   }
 })
+
+getLoginUser(store)

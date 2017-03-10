@@ -29,9 +29,11 @@
   },
   "homepage": "https://hi.dearb.me/",
   "dependencies": {
+    "axios": "^0.15.3",
     "framework7": "^1.5.3",
     "framework7-vue": "^0.8.5",
-    "vue": "^2.2.2"
+    "vue": "^2.2.2",
+    "vuex": "^2.2.1"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.2",

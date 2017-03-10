@@ -4,13 +4,13 @@
     <div class="profile-view">
         <f7-list>
             <f7-list-item title="Avatar" class="avatar-content">
-                <img class="avatar" slot="after" src='https://dearb.me/assets/images/avatar.png'/>
+                <img class="avatar" slot="after" :src="userInfo.avatarUrl"/>
             </f7-list-item>
-            <f7-list-item title="Name" after="Belin Chung"></f7-list-item>
+            <f7-list-item title="Name" :after="userInfo.nickName"></f7-list-item>
         </f7-list>
         <f7-list>
-            <f7-list-item title="Gender" after="Male"></f7-list-item>
-            <f7-list-item title="Location" after="Guangdong China"></f7-list-item>
+            <f7-list-item title="Gender" :after="userInfo.gender | formatGender"></f7-list-item>
+            <f7-list-item title="Location" :after="userInfo.location"></f7-list-item>
         </f7-list>
     </div>
   </f7-page>
@@ -35,5 +35,19 @@
 </style>
 
 <script>
-export default {}
+  import {mapState} from 'vuex'
+  export default {
+    computed: {
+      ...mapState({
+        userInfo: state => state.user,
+      })
+    },
+    filters: {
+      formatGender(gender) {
+        if(gender === 'm') return 'Male'
+        else if(gender === 'f') return 'Female'
+        else return 'unknown'
+      }
+    }
+  }
 </script>

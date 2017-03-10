@@ -1,12 +1,12 @@
 <template>
     <div class="settings-view">
         <f7-list class="user-profile">
-            <f7-list-item link="/profile/" media="<img class='avatar' src='https://dearb.me/assets/images/avatar.png'></img>">
+            <f7-list-item link="/profile/" :media="avatarMedia">
                 <div slot="inner-start" class="detail">
-                    <div class="name">BelinChung</div>
+                    <div class="name">{{userInfo.nickName}}</div>
                     <div class="location">
                         <span>City: </span>
-                        <span>Guangdong China</span>
+                        <span>{{userInfo.location}}</span>
                     </div>
                 </div>
             </f7-list-item>
@@ -62,5 +62,15 @@
 </style>
 
 <script>
-    export default {}
+  import {mapState} from 'vuex'
+  export default {
+    computed: {
+      ...mapState({
+        userInfo: state => state.user,
+      }),
+      avatarMedia() {
+        return `<img class='avatar' src='${this.userInfo.avatarUrl}' />`
+      }
+    }
+  }
 </script>

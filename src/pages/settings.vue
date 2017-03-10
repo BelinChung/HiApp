@@ -1,4 +1,3 @@
-
 <template>
     <div class="settings-view">
         <f7-list class="user-profile">

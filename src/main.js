@@ -53,6 +53,9 @@ new Vue({
   // Init Framework7 by passing parameters here
   framework7: {
     root: '#app',
+    modalTitle: Vue.t('app.modal.title'),
+    modalButtonOk: Vue.t('app.modal.button_ok'),
+    modalButtonCancel: Vue.t('app.cancel'),
     /* Uncomment to enable Material theme: */
     // material: true,
     routes: Routes,

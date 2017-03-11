@@ -1,8 +1,8 @@
 <template>
   <f7-page class="language-page">
-    <f7-navbar :title="$t('language')" :back-link="$t('back')" sliding>
+    <f7-navbar :title="$t('app.language')" :back-link="$t('app.back')" sliding>
       <f7-nav-right>
-        <f7-link :text="$t('save')" @click="saveLang"></f7-link>
+        <f7-link :text="$t('app.save')" @click="saveLang"></f7-link>
       </f7-nav-right>
     </f7-navbar>
     <f7-list form>

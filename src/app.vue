@@ -19,9 +19,9 @@
         <f7-pages>
           <f7-page toolbar-fixed navbar-fixed>
             <f7-toolbar tabbar labels>
-              <f7-link icon="iconfont icon-ios7homeoutline" :text="$t('home')" tab-link="#home" active></f7-link>
-              <f7-link icon="iconfont icon-ios7chatbubbleoutline" :text="$t('contacts')" tab-link="#contacts"></f7-link>
-              <f7-link icon="iconfont icon-ios7gearoutline" :text="$t('settings')" tab-link="#settings"></f7-link>
+              <f7-link icon="iconfont icon-ios7homeoutline" :text="$t('app.home')" tab-link="#home" active></f7-link>
+              <f7-link icon="iconfont icon-ios7chatbubbleoutline" :text="$t('app.contacts')" tab-link="#contacts"></f7-link>
+              <f7-link icon="iconfont icon-ios7gearoutline" :text="$t('app.settings')" tab-link="#settings"></f7-link>
             </f7-toolbar>
             <f7-tabs>
               <f7-tab id="home" active @tab:show="tabActived('home')">
@@ -56,11 +56,11 @@ export default {
     navbarTitle() {
       switch(this.activedTab) {
       case 'home':
-        return this.$t('app_name')
+        return this.$t('app.app_name')
       case 'contacts':
-        return this.$t('contacts')
+        return this.$t('app.contacts')
       case 'settings':
-        return this.$t('settings')
+        return this.$t('app.settings')
       }
     }
   },

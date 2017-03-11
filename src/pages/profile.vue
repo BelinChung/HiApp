@@ -1,15 +1,15 @@
 <template>
   <f7-page class="profile-page">
-    <f7-navbar :title="$t('profile')" :back-link="$t('back')" sliding></f7-navbar>
+    <f7-navbar :title="$t('app.profile')" :back-link="$t('app.back')" sliding></f7-navbar>
     <f7-list>
-        <f7-list-item :title="$t('avatar')" class="avatar-content">
+        <f7-list-item :title="$t('app.avatar')" class="avatar-content">
             <img class="avatar" slot="after" :src="userInfo.avatarUrl"/>
         </f7-list-item>
-        <f7-list-item :title="$t('name')" :after="userInfo.nickName"></f7-list-item>
+        <f7-list-item :title="$t('app.name')" :after="userInfo.nickName"></f7-list-item>
     </f7-list>
     <f7-list>
-        <f7-list-item :title="$t('gender')" :after="formatGender(userInfo.gender)"></f7-list-item>
-        <f7-list-item :title="$t('location')" :after="userInfo.location"></f7-list-item>
+        <f7-list-item :title="$t('app.gender')" :after="formatGender(userInfo.gender)"></f7-list-item>
+        <f7-list-item :title="$t('app.location')" :after="userInfo.location"></f7-list-item>
     </f7-list>
   </f7-page>
 </template>
@@ -42,9 +42,9 @@
     },
     methods: {
       formatGender(gender) {
-        if(gender === 'm') return this.$t('male')
-        else if(gender === 'f') return this.$t('female')
-        else return this.$t('unknown')
+        if(gender === 'm') return this.$t('app.male')
+        else if(gender === 'f') return this.$t('app.female')
+        else return this.$t('app.unknown')
       }
     }
   }

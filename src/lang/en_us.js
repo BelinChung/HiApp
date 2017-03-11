@@ -26,6 +26,7 @@ export default {
     }
   },
   feedback: {
-    placeholder: 'Hi, any suggestion to tell us?'
+    placeholder: 'Hi, any suggestion to tell us?',
+    result: 'Thank you for your feedback'
   }
 }

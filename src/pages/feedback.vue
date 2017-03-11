@@ -9,10 +9,6 @@
   </f7-page>
 </template>
 
-<style lang="less">
-    
-</style>
-
 <script>
   import Editor from '../components/editor.vue'
   export default {
@@ -26,7 +22,7 @@
         this.text = text
       },
       sendFeedback() {
-        this.$f7.alert(this.text)
+        this.$f7.alert(this.$t('feedback.result'))
       }
     },
     components: {

@@ -11,5 +11,5 @@ export function getLoginUser({commit}) {
 }
 
 export function setLang({ commit }, lang) {
-  commit(types.SET_LANG, lang)
+  commit(types.UPDATE_LANG, lang)
 }

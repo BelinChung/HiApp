@@ -8,7 +8,7 @@ export default {
   [types.INIT_USER_INFO] (state, { user }) {
     Vue.set(state, 'user', user)
   },
-  [types.SET_LANG] (state, lang) {
+  [types.UPDATE_LANG] (state, lang) {
     Vue.set(state, 'lang', lang)
     cache.set('lang', lang)
   }

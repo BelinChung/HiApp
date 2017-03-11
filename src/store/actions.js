@@ -13,3 +13,12 @@ export function getLoginUser({commit}) {
 export function setLang({ commit }, lang) {
   commit(types.UPDATE_LANG, lang)
 }
+
+export function getContacts({commit}) {
+  axios.get('/contacts.json').then(res => {
+    let contacts = res.data
+    commit(types.INIT_CONTACTS, {
+      contacts
+    })
+  })
+}

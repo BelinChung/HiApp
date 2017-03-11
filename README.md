@@ -47,9 +47,23 @@ Then install all dependencies, in repo's root:
 $ npm install 
 ```
 
+## Mock Server
+
+Before create your first cordova app, please install `http-server` globally so that you can run a mock server with zero configuration.
+
+```
+$ npm install http-server -g
+```
+
+in repo's root:
+
+```
+$ http-server ./mock_api -p 4000 --cors
+```
+
 ## Cordova App Guides
 
-Install the cordova module using npm utility of Node.js.
+Install the cordova as globally.
 
 ```
 $ npm install -g cordova

@@ -11,5 +11,8 @@ export default {
   [types.UPDATE_LANG] (state, lang) {
     Vue.set(state, 'lang', lang)
     cache.set('lang', lang)
+  },
+  [types.INIT_CONTACTS] (state, { contacts }) {
+    Vue.set(state, 'contacts', contacts)
   }
 }

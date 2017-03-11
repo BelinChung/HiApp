@@ -20,6 +20,7 @@ export default {
     female: 'Female',
     send: 'Send',
     cancel: 'Cancel',
+    chat: 'Chat',
     modal: {
       title: 'System',
       button_ok: 'OK'
@@ -28,5 +29,8 @@ export default {
   feedback: {
     placeholder: 'Hi, any suggestion to tell us?',
     result: 'Thank you for your feedback'
+  },
+  message: {
+    placeholder: 'typing message...'
   }
 }

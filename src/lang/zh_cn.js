@@ -20,6 +20,7 @@ export default {
     female: '女',
     send: '发送',
     cancel: '取消',
+    chat: '聊天',
     modal: {
       title: '系统提示',
       button_ok: '确定'
@@ -28,5 +29,8 @@ export default {
   feedback: {
     placeholder: 'Hi, 有什么意见或意见告诉我们吗?',
     result: '感谢您的反馈，我们将第一时间处理。'
+  },
+  message: {
+    placeholder: '说点什么...'
   }
 }

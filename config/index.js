@@ -5,6 +5,7 @@ module.exports = {
   build: {
     env: require('./prod.env'),
     index: path.resolve(__dirname, '../www/index.html'),
+    // build script will delete all assets root files, be careful to set the folder path
     assetsRoot: path.resolve(__dirname, '../www'),
     assetsSubDirectory: 'static',
     assetsPublicPath: '',

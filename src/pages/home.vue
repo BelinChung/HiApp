@@ -1,6 +1,6 @@
 <template>
     <div class="home-view">
-        <card v-for="(item, index) in timeline" :key="item.id" :data="item"></card>        
+        <card v-for="(item, index) in timeline" :key="item.id" :data="item" @card:content-click="routeToPost"></card>        
     </div>
 </template>
 
@@ -24,6 +24,11 @@
           this.$f7.hideIndicator()
         })
       })
+    },
+    methods: {
+      routeToPost(data) {
+        this.$f7.mainView.router.load({url: `/post/?mid=${data.id}`})
+      }
     },
     components: {
       Card

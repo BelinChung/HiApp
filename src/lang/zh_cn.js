@@ -21,7 +21,9 @@ export default {
     send: '发送',
     cancel: '取消',
     chat: '聊天',
+    close: '关闭',
     submitting: '提交中...',
+    empty_container: '暂时还没有内容哦~',
     modal: {
       title: '系统提示',
       button_ok: '确定'
@@ -43,6 +45,9 @@ export default {
   },
   publisher: {
     publisher: '发消息',
-    placeholder: '有什么好玩的告诉我们',
+    placeholder: '随时分享新鲜事...',
+  },
+  post: {
+    post: '正文'
   }
 }

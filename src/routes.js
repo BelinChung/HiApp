@@ -19,4 +19,8 @@ export default [
     path: '/message/',
     component: require('./pages/message.vue')
   },
+  {
+    path: '/post/',
+    component: require('./pages/post.vue')
+  },
 ]

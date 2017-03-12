@@ -1,5 +1,5 @@
 <template>
-  <div class="card">
+  <div class="card" @click="contentClick(data)">
     <div class="card-header">
       <div class="avatar">
         <img :src="getAvatar(data.avatar)" alt="avatar">
@@ -11,16 +11,16 @@
     </div>
     <div class="card-content">
       <div class="text">{{data.text}}</div>
-      <div v-if="data.original_pic" class="image" @click="openPhotoBrowser(data.original_pic)">
+      <div v-if="data.original_pic" class="image" @click.stop="openPhotoBrowser(data.original_pic)">
         <img :src="data.original_pic">
       </div>
     </div>
     <div class="card-footer flex-row" v-if="enableToolbar">
-      <f7-link open-popup="#commentPopup" class="tool tool-border flex-rest-width">
+      <f7-link class="tool tool-border flex-rest-width" @click.stop="openCommentPopup">
         <span class="iconfont icon-comment"></span>
         <span class="text" v-text="data.comment_count ? data.comment_count : $t('tweet.comment')"></span>
       </f7-link>
-      <f7-link class="tool flex-rest-width" :class="{liked: data.liked}" @click="toggleLike(data.id, data.liked)">
+      <f7-link class="tool flex-rest-width" :class="{liked: data.liked}" @click.stop="toggleLike(data.id, data.liked)">
         <span class="iconfont icon-like"></span>
         <span class="text" v-text="data.like_count ? data.like_count : $t('tweet.like')"></span>
       </f7-link>
@@ -122,6 +122,9 @@
       }
     },
     methods: {
+      contentClick(data) {
+        this.$emit('card:content-click', data)
+      },
       openPhotoBrowser(url) {
         let pb = this.$f7.photoBrowser({
           zoom: 400,
@@ -129,6 +132,9 @@
           photos: [url]
         })
         pb.open()
+      },
+      openCommentPopup() {
+        this.$f7.popup('#commentPopup')
       },
       formatTime(time) {
         return moment(time * 1000).fromNow()

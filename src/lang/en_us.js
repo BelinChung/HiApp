@@ -23,6 +23,7 @@ export default {
     chat: 'Chat',
     close: 'Close',
     submitting: 'submitting...',
+    empty_container: 'Empty Container~',
     modal: {
       title: 'System',
       button_ok: 'OK'
@@ -45,5 +46,8 @@ export default {
   publisher: {
     publisher: 'Publisher',
     placeholder: 'what\'s new with you.',
+  },
+  post: {
+    post: 'Post'
   }
 }

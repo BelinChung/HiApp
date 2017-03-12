@@ -48,36 +48,36 @@
 </style>
 
 <script>
-  export default {
-    props: {
-      enableTools: {
-        type: String,
-        default: 'camera,album,emotion,at,location'
-      },
-      text: {
-        type: String,
-        default: ''
-      },
-      placeholder: {
-        type: String,
-        default: ''
-      }
+export default {
+  props: {
+    enableTools: {
+      type: String,
+      default: 'camera,album,emotion,at,location'
     },
-    data() {
-      return {
-        editText: ''
-      }
+    text: {
+      type: String,
+      default: ''
     },
-    watch: {
-      editText(text) {
-        this.$emit('text:change', text)
-      }
-    },
-    methods: {
-      enableTool(name) {
-        let tools = this.enableTools.split(',')
-        return ~tools.indexOf(name)
-      }
+    placeholder: {
+      type: String,
+      default: ''
+    }
+  },
+  data() {
+    return {
+      editText: ''
+    }
+  },
+  watch: {
+    editText(text) {
+      this.$emit('text:change', text)
+    }
+  },
+  methods: {
+    enableTool(name) {
+      let tools = this.enableTools.split(',')
+      return ~tools.indexOf(name)
     }
   }
+}
 </script>

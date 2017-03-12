@@ -13,20 +13,20 @@
 </template>
 
 <script>
-  import Vue from 'vue'
-  import {mapState} from 'vuex'
-  export default {
-    computed: {
-      ...mapState({
-        lang: state => state.lang,
-      })
-    },
-    methods: {
-      saveLang() {
-        let lang = this.$$('input[name="language-radio"]:checked').val()
-        Vue.config.lang = lang
-        this.$store.dispatch('setLang', lang)
-      }
+import Vue from 'vue'
+import {mapState} from 'vuex'
+export default {
+  computed: {
+    ...mapState({
+      lang: state => state.lang,
+    })
+  },
+  methods: {
+    saveLang() {
+      let lang = this.$$('input[name="language-radio"]:checked').val()
+      Vue.config.lang = lang
+      this.$store.dispatch('setLang', lang)
     }
   }
+}
 </script>

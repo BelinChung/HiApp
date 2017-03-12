@@ -33,19 +33,19 @@
 </style>
 
 <script>
-  import {mapState} from 'vuex'
-  export default {
-    computed: {
-      ...mapState({
-        userInfo: state => state.user,
-      })
-    },
-    methods: {
-      formatGender(gender) {
-        if(gender === 'm') return this.$t('app.male')
-        else if(gender === 'f') return this.$t('app.female')
-        else return this.$t('app.unknown')
-      }
+import {mapState} from 'vuex'
+export default {
+  computed: {
+    ...mapState({
+      userInfo: state => state.user,
+    })
+  },
+  methods: {
+    formatGender(gender) {
+      if(gender === 'm') return this.$t('app.male')
+      else if(gender === 'f') return this.$t('app.female')
+      else return this.$t('app.unknown')
     }
   }
+}
 </script>

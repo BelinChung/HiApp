@@ -10,23 +10,23 @@
 </template>
 
 <script>
-  import Editor from '../components/editor.vue'
-  export default {
-    data() {
-      return {
-        text: ''
-      }
-    },
-    methods: {
-      editorTextChange(text) {
-        this.text = text
-      },
-      sendFeedback() {
-        this.$f7.alert(this.$t('feedback.result'))
-      }
-    },
-    components: {
-      Editor
+import Editor from '../components/editor.vue'
+export default {
+  data() {
+    return {
+      text: ''
     }
+  },
+  methods: {
+    editorTextChange(text) {
+      this.text = text
+    },
+    sendFeedback() {
+      this.$f7.alert(this.$t('feedback.result'))
+    }
+  },
+  components: {
+    Editor
   }
+}
 </script>

@@ -16,27 +16,27 @@
 </template>
 
 <script>
-  import Editor from '../components/editor.vue'
-  export default {
-    data() {
-      return {
-        text: ''
-      }
-    },
-    methods: {
-      editorTextChange(text) {
-        this.text = text
-      },
-      sendTweet() {
-        this.$f7.showPreloader(this.$t('app.submitting'))
-        setTimeout(_ => {
-          this.$f7.hidePreloader()
-          this.$f7.closeModal('#publisherPopup')
-        }, 1500)
-      }
-    },
-    components: {
-      Editor
+import Editor from '../components/editor.vue'
+export default {
+  data() {
+    return {
+      text: ''
     }
+  },
+  methods: {
+    editorTextChange(text) {
+      this.text = text
+    },
+    sendTweet() {
+      this.$f7.showPreloader(this.$t('app.submitting'))
+      setTimeout(_ => {
+        this.$f7.hidePreloader()
+        this.$f7.closeModal('#publisherPopup')
+      }, 1500)
+    }
+  },
+  components: {
+    Editor
   }
+}
 </script>

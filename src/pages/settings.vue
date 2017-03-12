@@ -62,15 +62,15 @@
 </style>
 
 <script>
-  import {mapState} from 'vuex'
-  export default {
-    computed: {
-      ...mapState({
-        userInfo: state => state.user,
-      }),
-      avatarMedia() {
-        return `<img class='avatar' src='${this.userInfo.avatarUrl}' />`
-      }
+import {mapState} from 'vuex'
+export default {
+  computed: {
+    ...mapState({
+      userInfo: state => state.user,
+    }),
+    avatarMedia() {
+      return `<img class='avatar' src='${this.userInfo.avatarUrl}' />`
     }
   }
+}
 </script>

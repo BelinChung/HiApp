@@ -106,48 +106,48 @@
 </style>
 
 <script>
-  import moment from 'moment'
-  import {getRemoteAvatar} from '../utils/appFunc'
-  export default {
-    props: {
-      data: {
-        type: Object,
-        default() {
-          return {}
-        }
-      },
-      enableToolbar: {
-        type: Boolean,
-        default: true
+import moment from 'moment'
+import {getRemoteAvatar} from '../utils/appFunc'
+export default {
+  props: {
+    data: {
+      type: Object,
+      default() {
+        return {}
       }
     },
-    methods: {
-      contentClick(data) {
-        this.$emit('card:content-click', data)
-      },
-      openPhotoBrowser(url) {
-        let pb = this.$f7.photoBrowser({
-          zoom: 400,
-          theme: 'dark',
-          photos: [url]
-        })
-        pb.open()
-      },
-      openCommentPopup() {
-        this.$f7.popup('#commentPopup')
-      },
-      formatTime(time) {
-        return moment(time * 1000).fromNow()
-      },
-      getAvatar(id) {
-        return getRemoteAvatar(id)
-      },
-      toggleLike(mid, status) {
-        this.$store.dispatch('updateTimeline', {
-          mid,
-          type: status ? 'unlike' : 'like'
-        })
-      }
+    enableToolbar: {
+      type: Boolean,
+      default: true
+    }
+  },
+  methods: {
+    contentClick(data) {
+      this.$emit('card:content-click', data)
+    },
+    openPhotoBrowser(url) {
+      let pb = this.$f7.photoBrowser({
+        zoom: 400,
+        theme: 'dark',
+        photos: [url]
+      })
+      pb.open()
+    },
+    openCommentPopup() {
+      this.$f7.popup('#commentPopup')
+    },
+    formatTime(time) {
+      return moment(time * 1000).fromNow()
+    },
+    getAvatar(id) {
+      return getRemoteAvatar(id)
+    },
+    toggleLike(mid, status) {
+      this.$store.dispatch('updateTimeline', {
+        mid,
+        type: status ? 'unlike' : 'like'
+      })
     }
   }
+}
 </script>

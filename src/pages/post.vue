@@ -111,56 +111,56 @@
 </style>
 
 <script>
-  import axios from 'axios'
-  import Card from '../components/card.vue'
-  import moment from 'moment'
-  import {getRemoteAvatar} from '../utils/appFunc'
-  import {mapState} from 'vuex'
-  import find from 'lodash/find'
+import axios from 'axios'
+import Card from '../components/card.vue'
+import moment from 'moment'
+import {getRemoteAvatar} from '../utils/appFunc'
+import {mapState} from 'vuex'
+import find from 'lodash/find'
 
-  export default {
-    data() {
-      return {
-        post: {},
-        comments: []
-      }
-    },
-    computed: {
-      ...mapState({
-        timeline: state => state.timeline,
+export default {
+  data() {
+    return {
+      post: {},
+      comments: []
+    }
+  },
+  computed: {
+    ...mapState({
+      timeline: state => state.timeline,
+    })
+  },
+  mounted() {
+    let query = this.$route.query
+    this.post = find(this.timeline, p => p.id === parseInt(query.mid))
+    this.getComments()
+  },
+  methods: {
+    getComments() {
+      let random = Math.floor(Math.random()*2)
+      if(!random) return []
+      axios.get('/comments.json').then(res => {
+        this.comments = res.data
       })
     },
-    mounted() {
-      let query = this.$route.query
-      this.post = find(this.timeline, p => p.id === parseInt(query.mid))
-      this.getComments()
+    formatTime(time) {
+      return moment(time * 1000).fromNow()
     },
-    methods: {
-      getComments() {
-        let random = Math.floor(Math.random()*2)
-        if(!random) return []
-        axios.get('/comments.json').then(res => {
-          this.comments = res.data
-        })
-      },
-      formatTime(time) {
-        return moment(time * 1000).fromNow()
-      },
-      getAvatar(id) {
-        return getRemoteAvatar(id)
-      },
-      openCommentPopup() {
-        this.$f7.popup('#commentPopup')
-      },
-      toggleLike(mid, status) {
-        this.$store.dispatch('updateTimeline', {
-          mid,
-          type: status ? 'unlike' : 'like'
-        })
-      }
+    getAvatar(id) {
+      return getRemoteAvatar(id)
     },
-    components: {
-      Card
+    openCommentPopup() {
+      this.$f7.popup('#commentPopup')
+    },
+    toggleLike(mid, status) {
+      this.$store.dispatch('updateTimeline', {
+        mid,
+        type: status ? 'unlike' : 'like'
+      })
     }
+  },
+  components: {
+    Card
   }
+}
 </script>

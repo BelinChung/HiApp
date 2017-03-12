@@ -38,25 +38,25 @@
 </style>
 
 <script>
-  import {mapState} from 'vuex'
-  import groupBy from 'lodash/groupBy'
-  import {getRemoteAvatar} from '../utils/appFunc'
-  export default {
-    computed: {
-      ...mapState({
-        contacts: state => groupBy(state.contacts, 'header'),
-      })
+import {mapState} from 'vuex'
+import groupBy from 'lodash/groupBy'
+import {getRemoteAvatar} from '../utils/appFunc'
+export default {
+  computed: {
+    ...mapState({
+      contacts: state => groupBy(state.contacts, 'header'),
+    })
+  },
+  mounted() {
+    this.$store.dispatch('getContacts')
+  },
+  methods: {
+    getAvatarMedia(id) {
+      return `<img class='avatar' src='${getRemoteAvatar(id)}' />`
     },
-    mounted() {
-      this.$store.dispatch('getContacts')
-    },
-    methods: {
-      getAvatarMedia(id) {
-        return `<img class='avatar' src='${getRemoteAvatar(id)}' />`
-      },
-      getLink(name) {
-        return `/message/?nickname=${name}`
-      }
+    getLink(name) {
+      return `/message/?nickname=${name}`
     }
   }
+}
 </script>

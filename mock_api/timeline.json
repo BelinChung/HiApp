@@ -3,99 +3,123 @@
     "err_msg": "success",
     "data": [
         {
-            "id": "41",
+            "id": 41,
             "nickname":"Bob Brown",
             "avatar":"1",
             "text": "Behind every successful man there's a lot u unsuccessful years. https://www.google.com/",
             "original_pic": "",
+            "comment_count": 2,
+            "like_count": 1,
             "created_at": "1404709434"
         },
         {
-            "id": "40",
+            "id": 40,
             "nickname":"Jean Kerr",
             "avatar":"7",
             "text": "I think success has no rules, but you can learn a lot from failure. ",
             "original_pic": "",
+            "comment_count": 3,
+            "like_count": 0,
             "created_at": "1404708544"
         },
         {
-            "id": "39",
+            "id": 39,
             "nickname":"Colin L. Powell",
             "avatar":"3",
             "text": "There are no secrets to success. It is the result of preparation, hard work, and learning from failure. www.youtube.com ",
             "original_pic": "",
+            "comment_count": 0,
+            "like_count": 0,
             "created_at": "1404708455"
         },
         {
-            "id": "38",
+            "id": 38,
             "nickname":"Balzac",
             "avatar":"5",
             "text": "There is no such thing as a great talent without great will - power.",
             "original_pic": "http://lorempixel.com/1000/700/nature/5/",
+            "comment_count": 0,
+            "like_count": 0,
             "created_at": "1404707590"
         },
         {
-            "id": "37",
+            "id": 37,
             "nickname":"Charles Chaplin",
             "avatar":"7",
             "text": "You have to believe in yourself. That's the secret of success.",
             "original_pic": "",
+            "comment_count": 12,
+            "like_count": 23,
             "created_at": "1404707580"
         },
         {
-            "id": "36",
+            "id": 36,
             "nickname":"R.M. Nixon",
             "avatar":"4",
             "text": "Our destiny offers not the cup of despair, but the chalice of opportunity. So let us seize it, not in fear, but in gladness.",
             "original_pic": "",
+            "comment_count": 0,
+            "like_count": 0,
             "created_at": "1404707197"
         },
         {
-            "id": "35",
+            "id": 35,
             "nickname":"Erasmus",
             "avatar":"8",
             "text": "None is of freedom or of life deserving unless he daily conquers it anew.",
             "original_pic": "http://lorempixel.com/1000/700/nature/3/",
+            "comment_count": 0,
+            "like_count": 2,
             "created_at": "1404706070"
         },
         {
-            "id": "34",
+            "id": 34,
             "nickname":"John Ruskin",
             "avatar":"3",
             "text": "Living without an aim is like sailing without a compass.",
             "original_pic": "",
+            "comment_count": 0,
+            "like_count": 0,
             "created_at": "1404706060"
         },
         {
-            "id": "33",
+            "id": 33,
             "nickname":"George Eliot",
             "avatar":"6",
             "text": "What makes life dreary is the want of motive.",
             "original_pic": "http://lorempixel.com/1000/700/nature/7/",
+            "comment_count": 20,
+            "like_count": 13,
             "created_at": "1404705260"
         },
         {
-            "id": "32",
+            "id": 32,
             "nickname":"Lincoln",
             "avatar":"6",
             "text": "Towering genius disdains a beaten path. It seeks regions hitherto unexplored.",
             "original_pic": "",
+            "comment_count": 20,
+            "like_count": 10,
             "created_at": "1404705240"
         },
         {
-            "id": "31",
+            "id": 31,
             "nickname":"Erasmus",
             "avatar":"10",
             "text": "None is of freedom or of life deserving unless he daily conquers it anew. ",
             "original_pic": "",
+            "comment_count": 0,
+            "like_count": 0,
             "created_at": "1404705133"
         },
         {
-            "id": "30",
+            "id": 30,
             "nickname":"Thomas Addison",
             "avatar":"8",
             "text": "A strong man will struggle with the storms of fate.",
             "original_pic": "",
+            "comment_count": 20,
+            "like_count": 11,
             "created_at": "1404704742"
         }
     ]

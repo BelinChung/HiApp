@@ -14,5 +14,24 @@ export default {
   },
   [types.INIT_CONTACTS] (state, { contacts }) {
     Vue.set(state, 'contacts', contacts)
+  },
+  [types.INIT_TIMETIME] (state, { timeline }) {
+    Vue.set(state, 'timeline', timeline)
+  },
+  [types.UPDATE_TIMETIME] (state, { mid, type }) {
+    let item = state.timeline.find(p => p.id === mid)
+    let update = {}
+    switch(type) {
+    case 'like':
+      update.like_count = item.like_count + 1
+      update.liked = true
+      break
+    case 'unlike':
+      update.like_count = item.like_count - 1
+      update.liked = false
+      break
+    }
+    // Yes, Object.assign can update state and UI component at same time.
+    item = Object.assign(item, update)
   }
 }

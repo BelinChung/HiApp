@@ -3,59 +3,73 @@
     "err_msg": "success",
     "data": [
         {
-            "id": "48",
+            "id": 48,
             "nickname":"Nicole Sobon",
             "avatar":"5",
             "text": "Sometimes the hardest part isn't letting go, but rather, learning to start over.",
             "original_pic": "",
+            "comment_count": 0,
+            "like_count": 0,
             "created_at": "1404784104"
         },
         {
-            "id": "47",
+            "id": 47,
             "nickname":"Indira Gandhi",
             "avatar":"2",
             "text": "Opportunities are not offered. They must be wrested and worked for. And this calls for perseverance and courage.",
             "original_pic": "http://lorempixel.com/1000/700/nature/1/",
+            "comment_count": 10,
+            "like_count": 21,
             "created_at": "1404783664"
         },
         {
-            "id": "46",
+            "id": 46,
             "nickname":"Sally Nicholls",
             "avatar":"1",
             "text": "There's no point having wishes if you don't at least try to do them.https://twitter.com",
             "original_pic": "",
+            "comment_count": 20,
+            "like_count": 1,
             "created_at": "1404781208"
         },
         {
-            "id": "45",
+            "id": 45,
             "nickname":"Dale Carnegie",
             "avatar":"7",
             "text": "Remember, happiness doesn't depend upon who you are or what you have; it depends solely upon what you think.",
             "original_pic": "http://lorempixel.com/1000/700/nature/3/",
+            "comment_count": 0,
+            "like_count": 0,
             "created_at": "1404781124"
         },
         {
-            "id": "44",
+            "id": 44,
             "nickname":"Ted Mosby",
             "avatar":"3",
             "text": "Sometimes things have to fall apart to make way for better things.",
             "original_pic": "",
+            "comment_count": 13,
+            "like_count": 12,
             "created_at": "1404780946"
         },
         {
-            "id": "43",
+            "id": 43,
             "nickname":"Tim Howard",
             "avatar":"5",
             "text": "It's not about making the amazing saves. It's the little things and small things that made great gatekeepers great.",
             "original_pic": "http://lorempixel.com/1000/700/nature/5/",
+            "comment_count": 0,
+            "like_count": 0,
             "created_at": "1404779710"
         },
         {
-            "id": "42",
+            "id": 42,
             "nickname":"Max Lerner",
             "avatar":"7",
             "text": "The turning point in the process of growing up is when you discover the core of strength within you that survives all hurt.",
             "original_pic": "",
+            "comment_count": 0,
+            "like_count": 0,
             "created_at": "1404779092"
         }
     ]

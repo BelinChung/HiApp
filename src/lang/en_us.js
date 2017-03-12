@@ -26,6 +26,10 @@ export default {
       button_ok: 'OK'
     }
   },
+  tweet: {
+    comment: 'Comment',
+    like: 'Like'
+  },
   feedback: {
     placeholder: 'Hi, any suggestion to tell us?',
     result: 'Thank you for your feedback'

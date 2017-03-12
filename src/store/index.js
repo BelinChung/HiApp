@@ -11,7 +11,8 @@ let cache = new StoreCache('vuex')
 const state = {
   user: {},
   lang: cache.get('lang') || 'en',
-  contacts: []
+  contacts: [],
+  timeline: [],
 }
 
 export default new Vuex.Store({

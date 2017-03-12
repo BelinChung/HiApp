@@ -3,51 +3,63 @@
     "err_msg": "success",
     "data": [
         {
-            "id": "29",
+            "id": 29,
             "nickname":"Jean Paul Sartre",
             "avatar":"9",
             "text": "If you're lonely when you're alone, you're in bad company.",
             "original_pic": "http://lorempixel.com/1000/700/nature/1/",
+            "comment_count": 0,
+            "like_count": 1,
             "created_at": "1404700591"
         },
         {
-            "id": "28",
+            "id": 28,
             "nickname":"Zig Ziglar",
             "avatar":"08",
             "text": "Your attitude, not your aptitude, will determine your altitude.",
             "original_pic": "",
+            "comment_count": 0,
+            "like_count": 0,
             "created_at": "1404698995"
         },
         {
-            "id": "27",
+            "id": 27,
             "nickname":"Winston Churchill",
             "avatar":"1",
             "text": "Success is not final, failure is not fatal: it is the courage to continue that counts.",
             "original_pic": "http://lorempixel.com/1000/700/nature/3/",
+            "comment_count": 33,
+            "like_count": 12,
             "created_at": "1404698321"
         },
         {
-            "id": "26",
+            "id": 26,
             "nickname":"Nishan Panwar",
             "avatar":"4",
             "text": "When life gets hard and you want to give up, remember that life is full of ups and downs, and without the downs, the ups would mean nothing.",
             "original_pic": "",
+            "comment_count": 0,
+            "like_count": 0,
             "created_at": "1404697858"
         },
         {
-            "id": "25",
+            "id": 25,
             "nickname":"Paulo Coelho",
             "avatar":"2",
             "text": "There is only one thing that makes a dream impossible to achieve: the fear of failure.",
             "original_pic": "http://lorempixel.com/1000/700/nature/7/",
+            "comment_count": 0,
+            "like_count": 0,
             "created_at": "1404693147"
         },
         {
-            "id": "24",
+            "id": 24,
             "nickname":"Helen Keller",
             "avatar":"9",
             "text": "When one door of happiness closes, another opens; but often we look so long at the closed door that we do not see the one which has been opened for us.",
             "original_pic": "",
+            "comment_count": 0,
+            "like_count": 0,
             "created_at": "1404692969"
         }
     ]

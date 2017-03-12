@@ -22,3 +22,20 @@ export function getContacts({commit}) {
     })
   })
 }
+
+export function getTimeline({commit}, callback = () => {}) {
+  axios.get('/timeline.json').then(res => {
+    let timeline = res.data
+    commit(types.INIT_TIMETIME, {
+      timeline
+    })
+    callback()
+  })
+}
+
+export function updateTimeline({commit}, { mid, type }) {
+  commit(types.UPDATE_TIMETIME, {
+    mid,
+    type
+  })
+}

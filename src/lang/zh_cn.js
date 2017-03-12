@@ -26,6 +26,10 @@ export default {
       button_ok: '确定'
     }
   },
+  tweet: {
+    comment: '评论',
+    like: '喜欢'
+  },
   feedback: {
     placeholder: 'Hi, 有什么意见或意见告诉我们吗?',
     result: '感谢您的反馈，我们将第一时间处理。'

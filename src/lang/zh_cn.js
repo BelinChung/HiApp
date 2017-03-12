@@ -40,5 +40,9 @@ export default {
   },
   comment: {
     placeholder: '写点什么吧...',
+  },
+  publisher: {
+    publisher: '发消息',
+    placeholder: '有什么好玩的告诉我们',
   }
 }

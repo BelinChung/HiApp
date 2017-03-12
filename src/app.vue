@@ -13,7 +13,7 @@
           </f7-nav-left>
           <f7-nav-center sliding>{{navbarTitle}}</f7-nav-center>
           <f7-nav-right>
-            <f7-link icon="iconfont icon-feedback3" icon-size="22" v-show="activedTab === 'home'"></f7-link>
+            <f7-link open-popup="#publisherPopup" icon="iconfont icon-feedback3" icon-size="22" v-show="activedTab === 'home'"></f7-link>
           </f7-nav-right>
         </f7-navbar>
         <f7-pages>
@@ -39,8 +39,9 @@
       </f7-view>
     </f7-views>
 
-    <!-- Comment Popup -->
+    <!-- Comment, publisher Popup -->
     <comment-popup></comment-popup>
+    <publisher-popup></publisher-popup>
 
   </div>
 </template>
@@ -50,6 +51,7 @@ import HomeView from './pages/home.vue'
 import ContactsView from './pages/contacts.vue'
 import SettingsView from './pages/settings.vue'
 import CommentPopup from './pages/comment.vue'
+import PublisherPopup from './pages/publisher.vue'
 
 export default {
   data() {
@@ -78,7 +80,8 @@ export default {
     HomeView,
     ContactsView,
     SettingsView,
-    CommentPopup
+    CommentPopup,
+    PublisherPopup
   }
 }
 </script>

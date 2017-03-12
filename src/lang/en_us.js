@@ -41,5 +41,9 @@ export default {
   },
   comment: {
     placeholder: 'write a comment...',
+  },
+  publisher: {
+    publisher: 'Publisher',
+    placeholder: 'what\'s new with you.',
   }
 }

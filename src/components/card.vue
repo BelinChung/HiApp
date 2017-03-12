@@ -16,7 +16,7 @@
       </div>
     </div>
     <div class="card-footer flex-row" v-if="enableToolbar">
-      <f7-link href="/tabs/" class="tool tool-border flex-rest-width">
+      <f7-link open-popup="#commentPopup" class="tool tool-border flex-rest-width">
         <span class="iconfont icon-comment"></span>
         <span class="text" v-text="data.comment_count ? data.comment_count : $t('tweet.comment')"></span>
       </f7-link>

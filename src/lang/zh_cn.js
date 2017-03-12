@@ -21,6 +21,7 @@ export default {
     send: '发送',
     cancel: '取消',
     chat: '聊天',
+    submitting: '提交中...',
     modal: {
       title: '系统提示',
       button_ok: '确定'
@@ -36,5 +37,8 @@ export default {
   },
   message: {
     placeholder: '说点什么...'
+  },
+  comment: {
+    placeholder: '写点什么吧...',
   }
 }

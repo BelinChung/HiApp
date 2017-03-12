@@ -38,6 +38,10 @@
         </f7-pages>
       </f7-view>
     </f7-views>
+
+    <!-- Comment Popup -->
+    <comment-popup></comment-popup>
+
   </div>
 </template>
 
@@ -45,6 +49,7 @@
 import HomeView from './pages/home.vue'
 import ContactsView from './pages/contacts.vue'
 import SettingsView from './pages/settings.vue'
+import CommentPopup from './pages/comment.vue'
 
 export default {
   data() {
@@ -72,7 +77,8 @@ export default {
   components: {
     HomeView,
     ContactsView,
-    SettingsView
+    SettingsView,
+    CommentPopup
   }
 }
 </script>

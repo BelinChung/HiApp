@@ -21,6 +21,8 @@ export default {
     send: 'Send',
     cancel: 'Cancel',
     chat: 'Chat',
+    close: 'Close',
+    submitting: 'submitting...',
     modal: {
       title: 'System',
       button_ok: 'OK'
@@ -36,5 +38,8 @@ export default {
   },
   message: {
     placeholder: 'typing message...'
+  },
+  comment: {
+    placeholder: 'write a comment...',
   }
 }

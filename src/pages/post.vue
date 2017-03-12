@@ -116,6 +116,8 @@
   import moment from 'moment'
   import {getRemoteAvatar} from '../utils/appFunc'
   import {mapState} from 'vuex'
+  import find from 'lodash/find'
+
   export default {
     data() {
       return {
@@ -130,7 +132,7 @@
     },
     mounted() {
       let query = this.$route.query
-      this.post = this.timeline.find(p => p.id === parseInt(query.mid))
+      this.post = find(this.timeline, p => p.id === parseInt(query.mid))
       this.getComments()
     },
     methods: {

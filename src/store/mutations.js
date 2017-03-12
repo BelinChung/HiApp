@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import * as types from './mutation-types'
 import StoreCache from '../utils/storeCache'
+import find from 'lodash/find'
 
 let cache = new StoreCache('vuex')
 
@@ -19,7 +20,7 @@ export default {
     Vue.set(state, 'timeline', timeline)
   },
   [types.UPDATE_TIMETIME] (state, { mid, type }) {
-    let item = state.timeline.find(p => p.id === mid)
+    let item = find(state.timeline, p => p.id === mid)
     let update = {}
     switch(type) {
     case 'like':

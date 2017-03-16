@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const DEV_BASE_URL = 'htpp://127.0.0.1:4000'
+const DEV_BASE_URL = 'http://127.0.0.1:4000'
 const PROD_BASE_URL = 'https://raw.githubusercontent.com/BelinChung/HiApp/master/mock_api'
 axios.defaults.baseURL = process.env.NODE_ENV === 'production' ? PROD_BASE_URL : DEV_BASE_URL
 

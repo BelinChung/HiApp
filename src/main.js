@@ -1,3 +1,7 @@
+// Ponyfill
+import 'es6-object-assign/auto'
+import 'es6-promise/auto'
+
 // Import Vue
 import Vue from 'vue'
 

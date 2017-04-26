@@ -2,7 +2,6 @@ import Vue from 'vue'
 import * as types from './mutation-types'
 import StoreCache from '../utils/storeCache'
 import find from 'lodash/find'
-import objectAssign from 'object-assign'
 
 let cache = new StoreCache('vuex')
 
@@ -34,6 +33,6 @@ export default {
       break
     }
     // Yes, Object.assign can update state and UI component at same time.
-    item = objectAssign(item, update)
+    item = Object.assign(item, update)
   }
 }

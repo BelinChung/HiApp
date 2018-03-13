@@ -55,7 +55,7 @@ Install the cordova as globally.
 $ npm install cordova -g
 ```
 
-### Create App
+### 1. Create App
 
 Go to the directory where you maintain your source code, and run a command such as the following:
 
@@ -63,7 +63,7 @@ Go to the directory where you maintain your source code, and run a command such 
 $ cordova create hiapp com.hiapp.hiapp HiApp
 ```
 
-### Check out source code
+### 2. Check out source code
 
 Because the Cordova app directory should not already exist, so check out the HiApp source code in this step.
 
@@ -75,7 +75,7 @@ $ git fetch
 $ git reset --hard origin/master  
 ```
 
-### Add Platforms
+### 3. Add Platforms
 
 Before you can build the project, you need to specify a set of target platforms.
 
@@ -83,7 +83,7 @@ Before you can build the project, you need to specify a set of target platforms.
 $ cordova platform add ios --save
 ```
 
-### Add Plugins
+### 4. Add Plugins
 
 You need to add plugins that provide access to core Cordova APIs.
 
@@ -91,7 +91,7 @@ You need to add plugins that provide access to core Cordova APIs.
 $ cordova plugin add cordova-plugin-whitelist cordova-plugin-statusbar cordova-plugin-camera cordova-plugin-geolocation cordova-plugin-file-transfer cordova-plugin-inappbrowser cordova-plugin-network-information
 ```
 
-### Build the App
+### 5. Build the App
 
 Run the following command to iteratively build the project:
 
@@ -100,15 +100,15 @@ $ npm run build
 $ cordova build ios
 ```
 
-### Test the App on an iOS Device with Xcode
+### 6. Test the App on an iOS Device with Xcode
 
 Double-click to open the `platforms/ios/HiApp.xcodeproj` file
 
-Press the `Run` button to deploy the application in the emulator or iOs device
+Press the `Run` button to deploy the application in the emulator or iOS device
 
 ## Web App Guides
 
-### Preview
+### 1. Preview
 
 HiApp use webpack browser sync server to develop, Just run it in repo's root:
 
@@ -118,7 +118,7 @@ $ npm run dev
 
 Web app will be available on `http://localhost:3000/`
 
-### Release
+### 2. Release
 
 ```
 $ npm run build

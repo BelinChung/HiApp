@@ -1,0 +1,21 @@
+@import "./mixins.less";
+
+#app {
+  .navbar{
+    background-color: @mainColor;
+    &:after {
+      display: none;
+    }
+    .navbar-inner{
+      .title{
+        color: #fff;
+        font-weight: 500 !important;
+      }
+      .right {
+        .iconfont {
+          color: #fff;
+        }
+      }
+    }
+  }
+}

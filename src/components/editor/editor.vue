@@ -76,7 +76,7 @@ export default {
   },
   methods: {
     enableTool(name) {
-      let tools = this.enableTools.split(',')
+      const tools = this.enableTools.split(',')
       return ~tools.indexOf(name)
     }
   }

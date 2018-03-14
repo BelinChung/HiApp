@@ -13,7 +13,7 @@ axios.interceptors.request.use(config => {
 
 // Add a response interceptor
 axios.interceptors.response.use(response => {
-  let data = response.data
+  const data = response.data
   return !data.err_code ? data : Promise.reject(data)
 }, error => {
   return Promise.reject(error)

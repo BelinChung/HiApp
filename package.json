@@ -12,7 +12,7 @@
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
     "build": "node build/build.js",
-    "lint": "eslint --fix --ext .js,.vue src",
+    "lint": "eslint --ext .js,.vue src",
     "copy-fonts": "cpy node_modules/framework7-icons/fonts/*.* src/assets/f7_fonts && cpy node_modules/material-design-icons/iconfont/*.{eot,ttf,woff,woff2} src/assets/f7_fonts",
     "postinstall": "npm run copy-fonts"
   },

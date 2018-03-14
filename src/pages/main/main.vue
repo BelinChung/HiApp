@@ -15,8 +15,7 @@
 
     <f7-tabs>
       <f7-tab id="home" tab-active @tab:show="tabActived('home')">
-        aaaaaa
-        <!-- <home-view></home-view>   -->
+        <home-view></home-view>
       </f7-tab>
       <f7-tab id="contacts" @tab:show="tabActived('contacts')">
         <contacts-view></contacts-view>
@@ -29,7 +28,7 @@
 </template>
 
 <script>
-// import HomeView from './pages/home.vue'
+import HomeView from './tabs/home'
 import ContactsView from './tabs/contacts'
 import SettingsView from './tabs/settings'
 // import CommentPopup from './pages/comment.vue'
@@ -59,8 +58,9 @@ export default {
     }
   },
   components: {
+    HomeView,
+    ContactsView,
     SettingsView,
-    ContactsView
   }
 }
 </script>

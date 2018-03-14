@@ -3,6 +3,7 @@ import aboutPage from './pages/about'
 import feedbackPage from './pages/feedback'
 import languagePage from './pages/language'
 import profilePage from './pages/profile'
+import messagePage from './pages/message'
 
 export default [
   {
@@ -25,10 +26,10 @@ export default [
     path: '/about/',
     component: aboutPage
   },
-  // {
-  //   path: '/message/',
-  //   component: require('./pages/message.vue')
-  // },
+  {
+    path: '/message/',
+    component: messagePage
+  },
   // {
   //   path: '/post/',
   //   component: require('./pages/post.vue')

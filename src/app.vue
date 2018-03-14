@@ -30,8 +30,7 @@
             <!-- <contacts-view></contacts-view> -->
           </f7-tab>
           <f7-tab id="settings" @tab:show="tabActived('settings')">
-            ccccc
-            <!-- <settings-view></settings-view> -->
+            <settings-view></settings-view>
           </f7-tab>
         </f7-tabs>
       </f7-page>
@@ -47,7 +46,7 @@
 <script>
 // import HomeView from './pages/home.vue'
 // import ContactsView from './pages/contacts.vue'
-// import SettingsView from './pages/settings.vue'
+import SettingsView from './pages/settings'
 // import CommentPopup from './pages/comment.vue'
 // import PublisherPopup from './pages/publisher.vue'
 
@@ -75,6 +74,7 @@ export default {
     }
   },
   components: {
+    SettingsView
   }
 }
 </script>

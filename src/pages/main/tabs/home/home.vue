@@ -1,7 +1,9 @@
 <template>
-  <f7-page class="home-view"
+  <f7-page id="homeView" class="home-view"
            ptr
-           @ptr:refresh="onRefresh">
+           infinite
+           @ptr:refresh="onRefresh"
+           @infinite="onInfiniteScroll">
     <card v-for="item in timeline" :key="item.id" :data="item" @card:content-click="routeToPost"></card>
   </f7-page>
 </template>
@@ -14,7 +16,9 @@ import { mapState, mapActions } from 'vuex'
 export default {
   data() {
     return {
-      refreshing: false
+      refreshing: false,
+      loadingMore: false,
+      loadedEnd: false,
     }
   },
   computed: {
@@ -52,6 +56,23 @@ export default {
         }
         this.refreshing = false
         this.$f7.ptr.done()
+      })
+    },
+    onInfiniteScroll() {
+      if (this.loadingMore || this.loadedEnd) return false
+
+      this.loadingMore = true
+      axios.get('/more_timeline.json').then(res => {
+        const id = parseInt(this.timeline[this.timeline.length - 1].id)
+        if (id === 24) {
+          this.loadedEnd = true
+          this.$f7.infiniteScroll.destroy('#homeView .infinite-scroll-content')
+          this.$$('#homeView .infinite-scroll-preloader').remove()
+        } else {
+          const timeline = res.data
+          this.infiniteTimeline(timeline)
+        }
+        this.loadingMore = false
       })
     },
     routeToPost(data) {

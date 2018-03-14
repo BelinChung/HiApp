@@ -1,0 +1,56 @@
+@import "./mixins.less";
+@import "./navbar.less";
+@import "./toolbar.less";
+
+.ios .statusbar{
+  background: @mainColor;
+}
+
+.flex-column{
+  display: flex !important;
+  flex-direction: column;
+
+  .flex-rest-height {
+    flex: 1;
+    height: initial;
+  }
+}
+
+.flex-row{
+  display: flex !important;
+  flex-direction: row;
+
+  .flex-rest-width {
+    flex: 1;
+    width: initial;
+  }
+}
+
+.empty-content{
+  width: 100%;
+  padding: 20px 0;
+  text-align: center;
+  .iconfont{
+    font-size: 80px;
+    color: #929292;
+  }
+  .text {
+    font-size: 14px;
+    color: #929292;
+    margin-top: 6px;
+  }
+}
+
+.ios,
+.android {
+  .photo-browser-page-dark {
+    .navbar {
+      background-color: rgba(30, 30, 30, 0.8) !important;
+      color: #fff;
+    }
+  }
+  .infinite-scroll-preloader {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+}

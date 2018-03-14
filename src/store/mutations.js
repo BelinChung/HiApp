@@ -1,17 +1,10 @@
 import Vue from 'vue'
 import * as types from './mutation-types'
-import StoreCache from '../utils/storeCache'
 import find from 'lodash/find'
-
-let cache = new StoreCache('vuex')
 
 export default {
   [types.INIT_USER_INFO] (state, { user }) {
     Vue.set(state, 'user', user)
-  },
-  [types.UPDATE_LANG] (state, lang) {
-    Vue.set(state, 'lang', lang)
-    cache.set('lang', lang)
   },
   [types.INIT_CONTACTS] (state, { contacts }) {
     Vue.set(state, 'contacts', contacts)
@@ -21,7 +14,7 @@ export default {
   },
   [types.UPDATE_TIMETIME] (state, { mid, type }) {
     let item = find(state.timeline, p => p.id === mid)
-    let update = {}
+    const update = {}
     switch (type) {
       case 'like':
         update.like_count = item.like_count + 1

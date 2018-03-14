@@ -6,18 +6,18 @@ import zhCN from './lang/zh_cn'
 import StoreCache from '@/utils/storeCache'
 
 Vue.use(VueI18n)
-const SCache = new StoreCache('hi')
+const cache = new StoreCache('vuex')
 
 export function getLangConfig() {
   const simplifiedChinese = ['zh', 'zh-cn']
   const traditionalChinese = ['zh-tw', 'zh-hk']
   let browserLang = navigator.userLanguage || window.navigator.language
   browserLang = browserLang.toLowerCase()
-  return SCache.get('customLang') || (~simplifiedChinese.indexOf(browserLang) ? 'zhCN' : ~traditionalChinese.indexOf(browserLang) ? 'zhTW' : 'enUS')
+  return cache.get('lang') || (~simplifiedChinese.indexOf(browserLang) ? 'zhCN' : ~traditionalChinese.indexOf(browserLang) ? 'zhTW' : 'enUS')
 }
 
 export function setLangConfig(lang) {
-  SCache.set('customLang', lang)
+  cache.set('lang', lang)
   i18n.locale = lang
 }
 

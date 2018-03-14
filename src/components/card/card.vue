@@ -16,7 +16,7 @@
       </div>
     </div>
     <div class="card-footer flex-row" v-if="enableToolbar">
-      <f7-link class="tool tool-border flex-rest-width" @click.stop="openCommentPopup">
+      <f7-link class="tool tool-border flex-rest-width">
         <span class="iconfont icon-comment"></span>
         <span class="text" v-text="data.comment_count ? data.comment_count : $t('home.comment')"></span>
       </f7-link>
@@ -134,9 +134,6 @@ export default {
         photos: [url]
       })
       pb.open()
-    },
-    openCommentPopup() {
-      // this.$f7.popup('#commentPopup')
     },
     formatTime(time) {
       return distanceInWordsToNow(time * 1000, { addSuffix: true })

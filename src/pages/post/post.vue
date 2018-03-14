@@ -116,7 +116,7 @@ import axios from 'axios'
 import Card from '@/components/card'
 import distanceInWordsToNow from 'date-fns/distance_in_words_to_now'
 import { getRemoteAvatar } from '@/utils/appFunc'
-import { mapState } from 'vuex'
+import { mapState, mapActions } from 'vuex'
 import find from 'lodash/find'
 
 export default {
@@ -137,6 +137,9 @@ export default {
     this.getComments()
   },
   methods: {
+    ...mapActions([
+      'updatePopup'
+    ]),
     getComments() {
       const random = Math.floor(Math.random() * 2)
       if (!random) return []
@@ -151,7 +154,10 @@ export default {
       return getRemoteAvatar(id)
     },
     openCommentPopup() {
-      this.$f7.popup('#commentPopup')
+      this.updatePopup({
+        key: 'commentOpened',
+        value: true
+      })
     },
     toggleLike(mid, status) {
       this.$store.dispatch('updateTimeline', {

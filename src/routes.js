@@ -1,4 +1,11 @@
+import mainPage from './pages/main'
+import aboutPage from './pages/about'
+
 export default [
+  {
+    path: '/',
+    component: mainPage,
+  },
   // {
   //   path: '/profile/',
   //   component: require('./pages/profile.vue')
@@ -11,10 +18,10 @@ export default [
   //   path: '/feedback/',
   //   component: require('./pages/feedback.vue')
   // },
-  // {
-  //   path: '/about/',
-  //   component: require('./pages/about.vue')
-  // },
+  {
+    path: '/about/',
+    component: aboutPage
+  },
   // {
   //   path: '/message/',
   //   component: require('./pages/message.vue')

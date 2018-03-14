@@ -45,7 +45,7 @@ new Vue({
   framework7: {
     id: 'com.hiliaox.hiapp', // App bundle ID
     name: 'HiApp', // App name
-    theme: 'ios', // set 'auto' to automatic theme detection
+    theme: 'ios', // set 'auto' to enable automatic theme detection
     // App routes
     routes: Routes,
     dialog: {

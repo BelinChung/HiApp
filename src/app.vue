@@ -9,12 +9,25 @@
     <f7-view id="main-view" url="/" main color-theme="orange"></f7-view>
 
     <!-- Comment, publisher Popup -->
-    <!-- <comment-popup></comment-popup>
-    <publisher-popup></publisher-popup> -->
-
+    <!-- <comment-popup></comment-popup> -->
+    <f7-popup :opened="publisherPopupOpened">
+      <publisher-popup></publisher-popup>
+    </f7-popup>
   </div>
 </template>
 
 <script>
-export default {}
+import PublisherPopup from './popup/publisher'
+import { mapState } from 'vuex'
+
+export default {
+  computed: {
+    ...mapState({
+      publisherPopupOpened: state => state.popup.publisherOpened
+    }),
+  },
+  components: {
+    PublisherPopup
+  }
+}
 </script>

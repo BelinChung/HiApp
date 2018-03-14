@@ -9,7 +9,11 @@ Vue.use(Vuex)
 const state = {
   user: {},
   contacts: [],
-  timeline: []
+  timeline: [],
+  popup: {
+    publisherOpened: false,
+    commentOpened: false
+  }
 }
 
 export default new Vuex.Store({

@@ -33,5 +33,8 @@ export default {
     }
     // Yes, Object.assign can update state and UI component at same time.
     item = Object.assign(item, update)
+  },
+  [types.UPDATE_POPUP] (state, { key, value }) {
+    Vue.set(state.popup, key, value)
   }
 }

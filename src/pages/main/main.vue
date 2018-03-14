@@ -4,7 +4,7 @@
       <f7-nav-left></f7-nav-left>
       <f7-nav-title>{{navbarTitle}}</f7-nav-title>
       <f7-nav-right>
-        <f7-link open-popup="#publisherPopup" icon="iconfont icon-feedback3" icon-size="22" v-show="activedTab === 'home'"></f7-link>
+        <f7-link icon="iconfont icon-feedback3" icon-size="22" v-show="activedTab === 'home'" @click="openPublisher"></f7-link>
       </f7-nav-right>
     </f7-navbar>
     <f7-toolbar tabbar labels>
@@ -49,8 +49,7 @@
 import HomeView from './tabs/home'
 import ContactsView from './tabs/contacts'
 import SettingsView from './tabs/settings'
-// import CommentPopup from './pages/comment.vue'
-// import PublisherPopup from './pages/publisher.vue'
+import { mapActions } from 'vuex'
 
 export default {
   data() {
@@ -71,6 +70,9 @@ export default {
     }
   },
   methods: {
+    ...mapActions([
+      'updatePopup'
+    ]),
     tabActived(tab) {
       this.activedTab = tab
     },
@@ -83,6 +85,12 @@ export default {
         }, 2100)
       }, 400)
     },
+    openPublisher() {
+      this.updatePopup({
+        key: 'publisherOpened',
+        value: true
+      })
+    }
   },
   components: {
     HomeView,

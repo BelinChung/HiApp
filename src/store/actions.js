@@ -43,3 +43,10 @@ export function updateTimeline({commit}, { mid, type }) {
     type
   })
 }
+
+export function updatePopup({commit}, { key, value }) {
+  commit(types.UPDATE_POPUP, {
+    key,
+    value
+  })
+}

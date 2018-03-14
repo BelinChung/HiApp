@@ -9,8 +9,14 @@ export default {
   [types.INIT_CONTACTS] (state, { contacts }) {
     Vue.set(state, 'contacts', contacts)
   },
-  [types.INIT_TIMETIME] (state, { timeline }) {
+  [types.INIT_TIMETIME](state, { timeline }) {
     Vue.set(state, 'timeline', timeline)
+  },
+  [types.APPEND_TIMETIME](state, { timeline }) {
+    Vue.set(state, 'timeline', [...state.timeline, ...timeline])
+  },
+  [types.PREPEND_TIMETIME](state, { timeline }) {
+    Vue.set(state, 'timeline', [...timeline, ...state.timeline])
   },
   [types.UPDATE_TIMETIME] (state, { mid, type }) {
     let item = find(state.timeline, p => p.id === mid)

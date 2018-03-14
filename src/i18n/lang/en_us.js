@@ -29,9 +29,10 @@ export default {
       button_ok: 'OK'
     }
   },
-  tweet: {
+  home: {
     comment: 'Comment',
-    like: 'Like'
+    like: 'Like',
+    noNewestPost: 'New article not loaded.'
   },
   contacts: {
     placeholder: 'Search in contacts',

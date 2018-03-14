@@ -15,7 +15,7 @@
 
     <f7-tabs>
       <f7-tab id="home" tab-active @tab:show="tabActived('home')">
-        <home-view></home-view>
+        <home-view @show-tip="showLoadResult"></home-view>
       </f7-tab>
       <f7-tab id="contacts" @tab:show="tabActived('contacts')">
         <contacts-view></contacts-view>
@@ -24,8 +24,26 @@
         <settings-view></settings-view>
       </f7-tab>
     </f7-tabs>
+
+    <div class="load-result">{{$t('home.noNewestPost')}}</div>
   </f7-page>
 </template>
+
+<style lang="less" scoped>
+.load-result{
+    width: 100%;
+    height: 30px;
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    background-color: #ff9500;
+    color: #ffffff;
+    z-index: 5001;
+    text-align: center;
+    line-height: 30px;
+    opacity: 0;
+}
+</style>
 
 <script>
 import HomeView from './tabs/home'
@@ -55,7 +73,16 @@ export default {
   methods: {
     tabActived(tab) {
       this.activedTab = tab
-    }
+    },
+    showLoadResult() {
+      setTimeout(_ => {
+        this.$$('div.load-result').css('opacity', '1').transition(1000)
+
+        setTimeout(_ => {
+          this.$$('div.load-result').css('opacity', '0').transition(1000)
+        }, 2100)
+      }, 400)
+    },
   },
   components: {
     HomeView,

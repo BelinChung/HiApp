@@ -18,11 +18,11 @@
     <div class="card-footer flex-row" v-if="enableToolbar">
       <f7-link class="tool tool-border flex-rest-width" @click.stop="openCommentPopup">
         <span class="iconfont icon-comment"></span>
-        <span class="text" v-text="data.comment_count ? data.comment_count : $t('tweet.comment')"></span>
+        <span class="text" v-text="data.comment_count ? data.comment_count : $t('home.comment')"></span>
       </f7-link>
       <f7-link class="tool flex-rest-width" :class="{liked: data.liked}" @click.stop="toggleLike(data.id, data.liked)">
         <span class="iconfont icon-like"></span>
-        <span class="text" v-text="data.like_count ? data.like_count : $t('tweet.like')"></span>
+        <span class="text" v-text="data.like_count ? data.like_count : $t('home.like')"></span>
       </f7-link>
     </div>
   </div>
@@ -33,7 +33,7 @@
 
   .card.post-card {
     background-color: white;
-    margin: 15px 0;
+    margin: 10px 0;
     border-top: 1px solid #dadada;
     border-bottom: 1px solid #dadada;
     box-shadow: none;

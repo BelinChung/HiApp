@@ -19,13 +19,21 @@ export function getContacts({commit}) {
   })
 }
 
-export function getTimeline({commit}, callback = () => {}) {
-  axios.get('/timeline.json').then(res => {
-    const timeline = res.data
-    commit(types.INIT_TIMETIME, {
-      timeline
-    })
-    callback()
+export function initTimeline({commit}, timeline) {
+  commit(types.INIT_TIMETIME, {
+    timeline
+  })
+}
+
+export function infiniteTimeline({commit}, timeline) {
+  commit(types.APPEND_TIMETIME, {
+    timeline
+  })
+}
+
+export function refreshTimeline({commit}, timeline) {
+  commit(types.PREPEND_TIMETIME, {
+    timeline
   })
 }
 

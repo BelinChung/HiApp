@@ -29,9 +29,10 @@ export default {
       button_ok: '确定'
     }
   },
-  tweet: {
+  home: {
     comment: '评论',
-    like: '喜欢'
+    like: '喜欢',
+    noNewestPost: '没有加载到新动态'
   },
   contacts: {
     placeholder: '搜索联系人',

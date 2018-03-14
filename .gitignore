@@ -42,6 +42,8 @@ dist/
 npm-debug.log
 
 # project
+.vscode/
+typings/
 www/
 plugins/
 hooks/

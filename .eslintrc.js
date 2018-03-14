@@ -29,6 +29,6 @@ module.exports = {
     'comma-dangle': 'off',
   },
   globals: {
-    'SCache': true
+    '$$': true,
   }
 }

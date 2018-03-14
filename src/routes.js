@@ -1,5 +1,6 @@
 import mainPage from './pages/main'
 import aboutPage from './pages/about'
+import feedbackPage from './pages/feedback'
 
 export default [
   {
@@ -14,10 +15,10 @@ export default [
   //   path: '/language/',
   //   component: require('./pages/language.vue')
   // },
-  // {
-  //   path: '/feedback/',
-  //   component: require('./pages/feedback.vue')
-  // },
+  {
+    path: '/feedback/',
+    component: feedbackPage
+  },
   {
     path: '/about/',
     component: aboutPage

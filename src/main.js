@@ -26,11 +26,14 @@ import App from './app'
 import store from './store'
 import { getLoginUser } from './store/actions'
 
-// Init network framework
+// import network framework
 import './network'
 
-// init i18n support
+// import i18n support
 import i18n from './i18n'
+
+// import store cache
+import StoreCache from './utils/storeCache'
 
 // Init F7 Vue Plugin
 Vue.use(Framework7Vue, Framework7)
@@ -52,6 +55,17 @@ new Vue({
       title: i18n.t('app.modal.title'),
       buttonOk: i18n.t('app.modal.button_ok'),
       buttonCancel: i18n.t('app.cancel')
+    }
+  },
+  methods: {
+    onF7Ready(f7) {
+      // mount global functions
+      window.$$ = {
+        alert: f7.dialog.alert,
+        confirm: f7.dialog.confirm,
+        prompt: f7.dialog.prompt,
+        cache: new StoreCache('vuex')
+      }
     }
   },
   // Register App Component

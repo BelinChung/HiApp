@@ -76,7 +76,7 @@ export default {
       })
     },
     routeToPost(data) {
-      // this.$f7.mainView.router.load({url: `/post/?mid=${data.id}`})
+      this.$f7router.navigate(`/post/?mid=${data.id}`)
     }
   },
   components: {

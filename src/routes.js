@@ -4,6 +4,7 @@ import feedbackPage from './pages/feedback'
 import languagePage from './pages/language'
 import profilePage from './pages/profile'
 import messagePage from './pages/message'
+import postPage from './pages/post'
 
 export default [
   {
@@ -30,8 +31,8 @@ export default [
     path: '/message/',
     component: messagePage
   },
-  // {
-  //   path: '/post/',
-  //   component: require('./pages/post.vue')
-  // }
+  {
+    path: '/post/',
+    component: postPage
+  }
 ]

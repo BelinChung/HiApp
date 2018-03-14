@@ -33,6 +33,10 @@ export default {
     comment: 'Comment',
     like: 'Like'
   },
+  contacts: {
+    placeholder: 'Search in contacts',
+    empty: 'Empty Contacts'
+  },
   feedback: {
     placeholder: 'Hi, any suggestion to tell us?',
     result: 'Thank you for your feedback'

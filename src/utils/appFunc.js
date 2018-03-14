@@ -1,3 +1,3 @@
 export function getRemoteAvatar(id) {
-  return `http://lorempixel.com/68/68/people/${id}`
+  return `https://loremflickr.com/70/70/people?lock=${id}`
 }

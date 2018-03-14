@@ -12,14 +12,14 @@
       <f7-link icon="iconfont icon-ios7chatbubbleoutline" :text="$t('app.contacts')" tab-link="#contacts"></f7-link>
       <f7-link icon="iconfont icon-ios7gearoutline" :text="$t('app.settings')" tab-link="#settings"></f7-link>
     </f7-toolbar>
+
     <f7-tabs>
       <f7-tab id="home" tab-active @tab:show="tabActived('home')">
         aaaaaa
         <!-- <home-view></home-view>   -->
       </f7-tab>
       <f7-tab id="contacts" @tab:show="tabActived('contacts')">
-        bbbbb
-        <!-- <contacts-view></contacts-view> -->
+        <contacts-view></contacts-view>
       </f7-tab>
       <f7-tab id="settings" @tab:show="tabActived('settings')">
         <settings-view></settings-view>
@@ -30,8 +30,8 @@
 
 <script>
 // import HomeView from './pages/home.vue'
-// import ContactsView from './pages/contacts.vue'
-import SettingsView from '@/pages/settings'
+import ContactsView from './tabs/contacts'
+import SettingsView from './tabs/settings'
 // import CommentPopup from './pages/comment.vue'
 // import PublisherPopup from './pages/publisher.vue'
 
@@ -59,7 +59,8 @@ export default {
     }
   },
   components: {
-    SettingsView
+    SettingsView,
+    ContactsView
   }
 }
 </script>

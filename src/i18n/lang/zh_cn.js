@@ -33,6 +33,10 @@ export default {
     comment: '评论',
     like: '喜欢'
   },
+  contacts: {
+    placeholder: '搜索联系人',
+    empty: '暂无联系人'
+  },
   feedback: {
     placeholder: 'Hi, 有什么意见或意见告诉我们吗?',
     result: '感谢您的反馈，我们将第一时间处理。'

@@ -1,4 +1,4 @@
-// Ponyfill
+// Auto polyfill
 import 'es6-object-assign/auto'
 import 'es6-promise/auto'
 
@@ -48,7 +48,7 @@ new Vue({
   framework7: {
     id: 'com.hiliaox.hiapp', // App bundle ID
     name: 'HiApp', // App name
-    theme: 'ios', // set 'auto' to enable automatic theme detection
+    theme: 'auto', // set 'auto' to enable automatic theme detection
     // App routes
     routes: Routes,
     dialog: {

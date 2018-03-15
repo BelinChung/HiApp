@@ -38,7 +38,6 @@
     padding-top: 44px;
     .list-group-title {
       line-height: 25px;
-      height: 25px;
       background: #f7f7f7;
       color: #8e8e93;
       font-weight: normal !important;
@@ -49,6 +48,16 @@
         width: 35px;
         height: 35px;
       }
+    }
+  }
+}
+.md {
+  .contacts-view {
+    .searchbar {
+      display: none;
+    }
+    .contacts-list {
+      padding-top: 0;
     }
   }
 }

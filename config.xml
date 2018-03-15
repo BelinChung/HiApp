@@ -16,7 +16,7 @@
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
     <preference name="DisallowOverscroll" value="true" />
-    <preference name="StatusBarBackgroundColor" value="#ff9630" />
+    <preference name="StatusBarBackgroundColor" value="#ff9800" />
     <preference name="StatusBarStyle" value="lightcontent" />
     <platform name="android">
         <allow-intent href="market:*" />

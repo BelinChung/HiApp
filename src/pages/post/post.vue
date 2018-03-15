@@ -26,7 +26,7 @@
         </div>
       </div>
     </div>
-    <f7-toolbar class="custom-toolbar flex-row">
+    <f7-toolbar class="custom-toolbar flex-row" bottom-md>
       <f7-link class="tool tool-border flex-rest-width" @click="openCommentPopup">
         <span class="iconfont icon-comment"></span>
         <span class="text" v-text="post.comment_count ? post.comment_count : $t('home.comment')"></span>
@@ -104,6 +104,24 @@
         .text {
           line-height: 20px;
           color: #5d5d5d;
+        }
+      }
+    }
+  }
+}
+
+.md {
+  .post-page {
+    .custom-toolbar {
+      .tool {
+        &.liked {
+          > span {
+            color: #fff;
+          }
+        }
+        > span {
+          color: rgba(255, 255, 255, 0.7);;
+          vertical-align: middle;
         }
       }
     }

@@ -35,6 +35,8 @@ import i18n from './i18n'
 // import store cache
 import StoreCache from './utils/storeCache'
 
+import { isAndroid } from './utils/appFunc'
+
 // Init F7 Vue Plugin
 Vue.use(Framework7Vue, Framework7)
 
@@ -48,7 +50,7 @@ new Vue({
   framework7: {
     id: 'com.hiliaox.hiapp', // App bundle ID
     name: 'HiApp', // App name
-    theme: 'auto', // set 'auto' to enable automatic theme detection
+    theme: isAndroid() ? 'md' : 'ios',
     // App routes
     routes: Routes,
     dialog: {

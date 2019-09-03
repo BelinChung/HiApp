@@ -13,7 +13,7 @@
         <p>Twitter: @BelinChung</p>
     </f7-block>
     <f7-block class="copyright">
-        Copyright © 2018 BelinChung.
+        Copyright © 2019 BelinChung.
     </f7-block>
   </f7-page>
 </template>

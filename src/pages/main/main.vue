@@ -7,7 +7,7 @@
         <f7-link icon="iconfont icon-feedback3" icon-size="22" v-show="activedTab === 'home'" @click="openPublisher"></f7-link>
       </f7-nav-right>
     </f7-navbar>
-    <f7-toolbar tabbar :labels="!isAndroid">
+    <f7-toolbar tabbar :labels="!isAndroid" bottom>
       <f7-link :icon="!isAndroid ? 'iconfont icon-ios7homeoutline' : ''" :text="$t('app.home')" tab-link="#home" tab-link-active></f7-link>
       <f7-link :icon="!isAndroid ? 'iconfont icon-ios7chatbubbleoutline' : ''" :text="$t('app.contacts')" tab-link="#contacts"></f7-link>
       <f7-link :icon="!isAndroid ? 'iconfont icon-ios7gearoutline' : ''" :text="$t('app.settings')" tab-link="#settings"></f7-link>
@@ -72,6 +72,8 @@ export default {
           return this.$t('app.contacts')
         case 'settings':
           return this.$t('app.settings')
+        default:
+          return this.$t('app.app_name')
       }
     },
     isAndroid() {

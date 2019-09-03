@@ -107,7 +107,7 @@
 </style>
 
 <script>
-import distanceInWordsToNow from 'date-fns/distance_in_words_to_now'
+import { formatDistanceToNow } from 'date-fns'
 import { getRemoteAvatar } from '@/utils/appFunc'
 
 export default {
@@ -136,7 +136,7 @@ export default {
       pb.open()
     },
     formatTime(time) {
-      return distanceInWordsToNow(time * 1000, { addSuffix: true })
+      return formatDistanceToNow(time * 1000, { addSuffix: true })
     },
     getAvatar(id) {
       return getRemoteAvatar(id)

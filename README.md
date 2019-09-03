@@ -20,8 +20,8 @@ HiApp use different build tools to build the same project, Hope it will helps yo
 ## Requirements
 
 * cordova `^8.0.0`
-* framework7 `^2.0.7`
-* framework7-vue `^2.0.7`
+* framework7 `^4.5.0`
+* framework7-vue `^4.5.0`
 
 To build and run apps, you need to install SDKs for each platform you wish to target.  
 To check if you satisfy requirements for building the platform:
@@ -113,7 +113,7 @@ Press the `Run` button to deploy the application in the emulator or iOS device
 HiApp use webpack browser sync server to develop, Just run it in repo's root:
 
 ```
-$ npm run dev
+$ npm run serve
 ```
 
 Web app will be available on `http://localhost:3000/`
@@ -132,7 +132,7 @@ The result is available in `www/` folder.
 
 ## License
 
-Copyright (c) 2016 - 2018 Belin Chung. MIT Licensed, see [LICENSE] for details.
+Copyright (c) 2016 - 2019 Belin Chung. MIT Licensed, see [LICENSE] for details.
 
 [https://hi.dearb.me/]: https://hi.dearb.me/
 [LICENSE]:https://github.com/BelinChung/HiApp/blob/master/LICENSE.md

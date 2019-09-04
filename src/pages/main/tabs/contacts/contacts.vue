@@ -31,11 +31,11 @@
 <style lang="less">
 .contacts-view {
   .searchbar{
-    top: 44px;
+    width: 100% !important;
+    top: 44px !important;
   }
   .contacts-list {
     margin: 20px 0;
-    padding-top: 44px;
     .list-group-title {
       line-height: 25px;
       background: #f7f7f7;
@@ -54,10 +54,8 @@
 .md {
   .contacts-view {
     .searchbar {
-      display: none;
-    }
-    .contacts-list {
-      padding-top: 0;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
     }
   }
 }

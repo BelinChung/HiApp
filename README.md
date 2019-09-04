@@ -19,7 +19,7 @@ HiApp use different build tools to build the same project, Hope it will helps yo
 
 ## Requirements
 
-* cordova `^8.0.0`
+* cordova `^9.0.0`
 * framework7 `^4.5.0`
 * framework7-vue `^4.5.0`
 
@@ -30,10 +30,10 @@ To check if you satisfy requirements for building the platform:
 $ cordova requirements
 
 Requirements check results for ios:
-Apple OS X: installed darwin
-Xcode: installed 9.2
-ios-deploy: installed 1.9.2
-CocoaPods: installed
+Apple macOS: installed darwin
+Xcode: installed 10.3
+ios-deploy: installed 1.9.4
+CocoaPods: installed 1.7.5
 
 ```
 
@@ -101,6 +101,14 @@ $ cordova build ios
 ```
 
 ### 6. Test the App on an iOS Device with Xcode
+
+* Using the command
+
+```
+$ cordova run ios
+```
+
+* Using the Xcode
 
 Double-click to open the `platforms/ios/HiApp.xcodeproj` file
 

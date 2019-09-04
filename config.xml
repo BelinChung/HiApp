@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.hiliaox.hiapp" version="4.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>HiApp</name>
+    <description>
+        A hybrid app made with Framework7.With PhoneGap you can easily convert it to native iOS app.
+    </description>
+    <author email="BelinChung@gmail.com" href="https://hi.dearb.me/">
+        BelinChung
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="StatusBarBackgroundColor" value="#ff9630" />
+    <preference name="StatusBarStyle" value="lightcontent" />
+    <platform name="android">
+        <allow-intent href="market:*" />
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+        <icon height="60" src="www/static/icons/ios/icon-60.png" width="60" />
+        <icon height="120" src="www/static/icons/ios/icon-60@2x.png" width="120" />
+        <icon height="40" src="www/static/icons/ios/icon-40.png" width="40" />
+        <icon height="80" src="www/static/icons/ios/icon-40@2x.png" width="80" />
+        <icon height="57" src="www/static/icons/ios/icon.png" width="57" />
+        <icon height="114" src="www/static/icons/ios/icon@2x.png" width="114" />
+        <icon height="29" src="www/static/icons/ios/icon-small.png" width="29" />
+        <icon height="58" src="www/static/icons/ios/icon-small@2x.png" width="58" />
+        <icon height="76" src="www/static/icons/ios/icon-76.png" width="76" />
+        <icon height="152" src="www/static/icons/ios/icon-76@2x.png" width="152" />
+        <icon height="72" src="www/static/icons/ios/icon-72.png" width="72" />
+        <icon height="144" src="www/static/icons/ios/icon-72@2x.png" width="144" />
+        <icon height="50" src="www/static/icons/ios/icon-50.png" width="50" />
+    </platform>
+    <plugin name="cordova-plugin-statusbar" spec="^2.4.3" />
+    <plugin name="cordova-plugin-camera" spec="^4.1.0" />
+    <plugin name="cordova-plugin-geolocation" spec="^4.0.2" />
+    <plugin name="cordova-plugin-file-transfer" spec="^1.7.1" />
+    <plugin name="cordova-plugin-inappbrowser" spec="^2.0.2" />
+    <plugin name="cordova-plugin-network-information" spec="^2.0.2" />
+    <plugin name="cordova-plugin-whitelist" spec="^1.3.4" />
+</widget>

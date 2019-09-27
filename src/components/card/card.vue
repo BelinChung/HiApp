@@ -136,7 +136,8 @@ export default {
       pb.open()
     },
     formatTime(time) {
-      return formatDistanceToNow(time * 1000, { addSuffix: true })
+      if (!time) return ''
+      return formatDistanceToNow(new Date(time * 1000), { addSuffix: true })
     },
     getAvatar(id) {
       return getRemoteAvatar(id)
